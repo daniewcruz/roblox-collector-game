@@ -1,0 +1,7 @@
+# Gerenciador de versoes de ferramentas (Aftman)
+# Instalar Aftman primeiro: https://github.com/LPGhatguy/aftman
+# Depois rodar `aftman install` nesta pasta para instalar as ferramentas abaixo.
+
+[tools]
+rojo = "rojo-rbx/rojo@7.7.0"
+wally = "UpliftGames/wally@0.3.2"

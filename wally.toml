@@ -1,0 +1,8 @@
+[package]
+name = "daniewcruz/mimo-world"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+# ProfileStore adicionado quando a Fase 3 (persistencia) comecar - D032, D005

@@ -571,3 +571,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `15-licoes-comunidade-roblox.md` expandido. `04-roadmap.md` Fase 10/11 ganha notas sobre algoritmo de Discovery 2026 e risco de "ovo-e-galinha" para sistemas cooperativos futuros.
 - **DATA**: 2026-08-14
+
+---
+
+## D057 — Início da Configuração Técnica: scaffold do projeto criado (sem downloads/instalações ainda)
+- **DECISÃO**: usuário aprovou avançar para a Configuração Técnica (Fase 2). Verificado o ambiente: Roblox Studio, Rojo, Aftman e Wally **não estão instalados** na máquina; só VS Code e `winget` estão disponíveis. Criada a estrutura de pastas do projeto (`src/Client`, `src/Server`, `src/Shared`, com placeholders mínimos testáveis), `default.project.json` (mapeamento Rojo: Shared→ReplicatedStorage, Server→ServerScriptService, Client→StarterPlayerScripts), `aftman.toml` (Rojo v7.7.0 e Wally v0.3.2, versões verificadas nos releases oficiais do GitHub, não presumidas) e `wally.toml` (manifesto vazio, pronto para adicionar ProfileStore na Fase 3). `.gitignore` atualizado para artefatos de Aftman/Wally. Nenhum software foi instalado ainda — só arquivos de configuração locais foram criados.
+- **MOTIVO**: iniciar a Fase 2 com a parte que não exige nenhuma instalação/download (criação de arquivos), deixando a instalação de software real (que exige permissão explícita) para um passo separado e confirmado com o usuário.
+- **ALTERNATIVAS**: instalar tudo imediatamente sem confirmar (rejeitado — instalação de software é ação que exige permissão explícita, diferente de criar arquivos de configuração locais).
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: projeto ganha estrutura de pastas real e configuração Rojo/Aftman/Wally pronta para uso assim que as ferramentas forem instaladas.
+- **DATA**: 2026-08-14

@@ -1,7 +1,13 @@
-# Roblox / Rojo (para quando a fase técnica começar)
+# Roblox / Rojo
 *.rbxl
 *.rbxlx
 sourcemap.json
+
+# Aftman / Wally
+.aftman/
+Packages/
+DevPackages/
+wally.lock
 
 # OS
 .DS_Store
