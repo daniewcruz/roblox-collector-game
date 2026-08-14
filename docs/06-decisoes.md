@@ -360,3 +360,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum negativo — são todas adições de baixo risco (anotadas como candidatas, nenhuma adotada cegamente).
 - **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 4". Fase 2 (Configuração Técnica) passa a incluir comparar `roblox-game-skill` vs. `roblox-dev-skill`, e avaliar `Chrrxs/robloxstudio-mcp` na prática.
 - **DATA**: 2026-08-14
+
+---
+
+## D036 — MCP de documentação Roblox de baixo consumo de tokens + pausa na pesquisa de ferramentas
+- **DECISÃO**: adicionado **n4tivex/mcp-roblox-docs** (14★, MIT, ativo) como candidato de alta prioridade — indexa toda a documentação da Roblox (classes, API, FastFlags, Cloud API) com busca compacta em vez de exigir WebFetch de páginas inteiras. Confirmado também que o MCP oficial da Roblox já tem "resumos compactos" nativos. **Esta é a última rodada de pesquisa de ferramentas antes de agir**: o inventário de `05-ferramentas-github.md` já cobre infraestrutura, persistência, analytics, testes, MCPs, Skills e agora eficiência de tokens — passar para mais uma rodada de pesquisa sem começar a construir passaria a ter retorno decrescente.
+- **MOTIVO**: usuário pediu ferramentas que economizem meu consumo de tokens/contexto, e sinalizou explicitamente querer que o projeto comece a **criar algo**, não só pesquisar — "que faça a gente criar algo".
+- **ALTERNATIVAS**: continuar pesquisando mais rodadas de ferramentas (rejeitado — o inventário já está maduro o suficiente para começar a Configuração Técnica; mais pesquisa agora seria adiar a ação sem necessidade real).
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `05-ferramentas-github.md` ganha a entrada do mcp-roblox-docs. Próximo passo recomendado: iniciar de fato a Configuração Técnica (Fase 2) — criar estrutura de pastas, instalar Rojo, configurar o MCP oficial — em vez de continuar pesquisando.
+- **DATA**: 2026-08-14

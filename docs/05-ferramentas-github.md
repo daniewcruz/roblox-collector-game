@@ -215,6 +215,12 @@ O usuário pediu para ampliar a busca: mais Skills de Claude Code para Roblox, f
 - **Link**: [github.com/awesome-roblox/awesome-roblox](https://github.com/awesome-roblox/awesome-roblox) — 75 estrelas, CC0 (domínio público), 95 commits, organizado em 7 categorias (Software, Experiences, Plugins, Modules, Libraries, Tooling).
 - **Decisão**: não é uma ferramenta em si — é um **índice curado**. Guardar como referência para consultar quando surgir uma necessidade nova (ex: "existe módulo pronto para X?") em vez de pesquisar do zero toda vez.
 
+### 🟢 n4tivex/mcp-roblox-docs — resolve diretamente o pedido de economizar tokens
+- **Link**: [github.com/n4tivex/mcp-roblox-docs](https://github.com/n4tivex/mcp-roblox-docs) — 14 estrelas, MIT, v3.3.1, atualizado em abril/2026, ativo.
+- **Por que é exatamente o que foi pedido**: é um MCP que indexa toda a documentação da Roblox (850+ classes, 35.000+ membros da API, 14.000+ FastFlags, 865 endpoints da Cloud API) com busca de texto completo, cache em memória e respostas compactas — em vez de eu precisar fazer WebFetch em páginas inteiras da documentação (gastando muito mais tokens) toda vez que precisar checar uma API do Roblox durante a Fase 2/3.
+- **Achado complementar**: o **MCP oficial da Roblox já tem, por padrão, "resumos compactos" e "hierarquia de instância como JSON simplificado com filtros"** — ou seja, o design de eficiência de tokens já é uma preocupação nativa da ferramenta principal, não só de terceiros.
+- **Decisão**: candidato de alta prioridade para a Configuração Técnica — reduz diretamente meu consumo de contexto ao escrever/depurar código Roblox.
+
 ### Resumo desta rodada
 
 | Ferramenta | Veredito |
@@ -224,6 +230,7 @@ O usuário pediu para ampliar a busca: mais Skills de Claude Code para Roblox, f
 | sentinelcore/roblox-skills | 🟡 Muito inicial, só observar |
 | MonzterDev/Roblox-Game-Template | 🟡 Usar como referência de estrutura, não como dependência |
 | awesome-roblox/awesome-roblox | 🟢 Guardar como índice de pesquisa futura |
+| n4tivex/mcp-roblox-docs | 🟢 Alta prioridade — resolve diretamente a economia de tokens pedida |
 
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
