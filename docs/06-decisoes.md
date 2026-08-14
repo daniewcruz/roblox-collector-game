@@ -581,3 +581,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: projeto ganha estrutura de pastas real e configuração Rojo/Aftman/Wally pronta para uso assim que as ferramentas forem instaladas.
 - **DATA**: 2026-08-14
+
+---
+
+## D058 — Roblox Studio instalado pelo usuário; Aftman/Rojo/Wally instalados com sucesso
+- **DECISÃO**: usuário instalou o Roblox Studio e entrou na conta (confirmado: processo `RobloxStudioBeta` rodando). Com permissão explícita do usuário, instalado Aftman via `winget` (v0.3.0). Rojo (v7.7.0) e Wally (v0.3.2) instalados via `aftman install`, usando as versões travadas no `aftman.toml` do projeto. PATH do usuário atualizado permanentemente para incluir `%USERPROFILE%\.aftman\bin`. Testado `rojo build` contra o `default.project.json` — build bem-sucedido, confirma que a configuração está correta.
+- **MOTIVO**: usuário confirmou instalação do Studio e autorizou explicitamente a instalação do Aftman (AskUserQuestion) — sequência natural da Configuração Técnica (Fase 2).
+- **ALTERNATIVAS**: instalar Rojo/Wally manualmente sem Aftman (rejeitado — Aftman garante versão travada e reprodutível, já documentado como parte do fluxo em `05-ferramentas-github.md`).
+- **TRADE-OFFS**: nenhum. Nota técnica: o comando `aftman install` exigiu um passo extra de confiança (`aftman trust`) antes de funcionar — não documentado explicitamente antes, registrado aqui para referência futura.
+- **IMPACTO**: ambiente de desenvolvimento local pronto para o próximo passo (habilitar o MCP Server no Studio e sincronizar via Rojo pela primeira vez).
+- **DATA**: 2026-08-14
