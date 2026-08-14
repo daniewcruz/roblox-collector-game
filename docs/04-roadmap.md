@@ -1,0 +1,102 @@
+# Roadmap — Fase 0 a Fase 12
+
+> Cada fase lista objetivo, entregas, dependências, critério de sucesso e principais riscos. Adaptado ao perfil: iniciante solo, 10-20h/semana — por isso as fases iniciais são deliberadamente mais longas em tempo de calendário do que seriam para uma equipe experiente.
+
+## FASE 0 — Pesquisa (ESTA FASE)
+- **Objetivo**: entender mercado, escolher direção de gênero, mapear ferramentas.
+- **Entregas**: os documentos em `docs/`.
+- **Critério de sucesso**: relatório final aprovado pelo usuário, com decisão de conceito tomada conscientemente.
+- **Riscos**: pesquisa desatualizar rápido (mercado Roblox muda mês a mês) — recomenda-se revalidar dados de mercado antes do lançamento real.
+
+## FASE 1 — Conceito
+- **Objetivo**: transformar a recomendação de gênero em um conceito de jogo específico (tema, nome provisório, público-alvo, referência visual).
+- **Dependências**: Fase 0 concluída e aprovada.
+- **Tarefas**: escolher nicho/tema (pesquisa de gaps fora do Roblox), esboçar GDD inicial (core loop, primeira sessão, primeira recompensa), decidir escopo do MVP (Épico → Feature).
+- **Critério de sucesso**: GDD curto (1-2 páginas) capaz de responder "por que o jogador volta amanhã?" de forma concreta.
+
+## FASE 2 — Protótipo (aprendizado técnico)
+- **Objetivo**: aprender o mínimo de Luau/Studio construindo um protótipo descartável (pode ser um Obby simples ou mecânica isolada), não o jogo final.
+- **Dependências**: Fase 1.
+- **Tarefas**: configurar Rojo + Claude Code + MCP Studio oficial (ver `05-ferramentas-github.md`); implementar 1 mecânica isolada; testar localmente.
+- **Critério de sucesso**: usuário consegue rodar Studio, ver código sincronizado via Rojo, e usar Claude Code para gerar/depurar um script simples.
+
+## FASE 3 — Core Gameplay
+- **Objetivo**: implementar o loop central do conceito escolhido (ex: coletar → progressão → mostrar resultado).
+- **Dependências**: Fase 2 (ambiente funcionando).
+- **Tarefas**: arquitetura cliente/servidor inicial (ver seção Arquitetura no relatório), sistema de progressão básico, validação server-side desde o primeiro commit.
+- **Critério de sucesso**: um jogador consegue completar o loop core sozinho, sem bugs bloqueantes, com dados persistidos corretamente.
+
+## FASE 4 — Progressão
+- **Objetivo**: profundidade de progressão (níveis, raridades, upgrades) que sustente sessões repetidas.
+- **Dependências**: Fase 3.
+- **Critério de sucesso**: existe uma curva de progressão testável (ainda que curta) do início ao "final do conteúdo do MVP".
+
+## FASE 5 — Economia
+- **Objetivo**: balancear fontes e sinks de moeda in-game antes de qualquer monetização real.
+- **Dependências**: Fase 4.
+- **Critério de sucesso**: economia não quebra (inflação descontrolada) em testes manuais de sessões longas simuladas.
+
+## FASE 6 — Social/Multiplayer básico
+- **Objetivo**: adicionar elementos sociais mínimos (ver outros jogadores, talvez trocar/mostrar progresso) — sem exigir netcode competitivo.
+- **Dependências**: Fase 5.
+- **Critério de sucesso**: funcionalidade social não quebra a performance nem a economia.
+
+## FASE 7 — Monetização
+- **Objetivo**: implementar Game Passes + Developer Products de forma não agressiva.
+- **Dependências**: Fase 6 (economia e progressão já equilibradas).
+- **Critério de sucesso**: monetização não reduz retenção observável em teste com jogadores reais (ver Fase 9).
+
+## FASE 8 — Polish
+- **Objetivo**: UX/UI, mobile responsivo, feedback visual/sonoro, performance.
+- **Dependências**: Fase 7.
+- **Critério de sucesso**: experiência jogável fim-a-fim sem fricção óbvia, testada em mobile real.
+
+## FASE 9 — Beta
+- **Objetivo**: validar com jogadores reais antes do lançamento público.
+- **Dependências**: Fase 8.
+- **Tarefas**: convidar grupo pequeno, medir D1 preliminar, coletar feedback qualitativo.
+- **Critério de sucesso**: métricas de retenção preliminares dentro da faixa "Bom" dos benchmarks (`01-pesquisa-mercado.md` seção 4).
+
+## FASE 10 — Lançamento
+- **Objetivo**: publicar oficialmente, com ícone/thumbnail/descrição otimizados para Discovery.
+- **Dependências**: Fase 9 com resultado aceitável.
+- **Critério de sucesso**: jogo público, analytics básicos funcionando, sem erros críticos nas primeiras 48h.
+
+## FASE 11 — Crescimento
+- **Objetivo**: aquisição de jogadores além do orgânico do Discovery (conteúdo social, atualizações regulares).
+- **Dependências**: Fase 10.
+- **Critério de sucesso**: crescimento sustentado de DAU/retenção por 2+ atualizações consecutivas.
+
+## FASE 12 — Escala
+- **Objetivo**: só relevante se o jogo already provou tração — endereçar performance/arquitetura para volume maior de jogadores.
+- **Dependências**: Fase 11 com tração comprovada.
+- **Critério de sucesso**: decisão explícita de investir mais tempo/recursos, baseada em dados, não em esperança.
+
+---
+
+## Estrutura Épico → Feature → Tarefa (exemplo aplicado ao MVP)
+
+```
+ÉPICO: Core Gameplay
+  FEATURE: Loop de Coleta
+    - [ ] Definir mecânica de coleta (ação do jogador)
+    - [ ] Implementar spawn de itens coletáveis (servidor)
+    - [ ] Implementar validação server-side da coleta
+    - [ ] UI de feedback imediato (mobile-first)
+  FEATURE: Progressão
+    - [ ] Sistema de níveis/raridades
+    - [ ] Persistência via ProfileService
+    - [ ] Balanceamento inicial (fontes vs. sinks)
+
+ÉPICO: Monetização
+  FEATURE: Developer Products
+    - [ ] Definir produtos (ex: moeda extra)
+    - [ ] Criar IDs no Creator Dashboard
+    - [ ] Implementar ProcessReceipt com validação
+    - [ ] Registrar evento de analytics na compra
+  FEATURE: Game Passes
+    - [ ] Definir passes (ex: VIP, multiplicador permanente)
+    - [ ] Implementar checagem via UserOwnsGamePassAsync
+```
+
+Dependências explícitas: Core Gameplay → Progressão → Economia → Monetização (mesma ordem do prompt mestre, item 25).

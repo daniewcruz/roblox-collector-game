@@ -1,0 +1,11 @@
+# Roblox / Rojo (para quando a fase técnica começar)
+*.rbxl
+*.rbxlx
+sourcemap.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
