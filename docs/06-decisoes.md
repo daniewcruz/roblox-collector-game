@@ -121,3 +121,14 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum trade-off negativo identificado além dos já registrados em D011 (complexidade do híbrido em geral).
 - **IMPACTO**: define o GDD (`10-gdd.md`) e todo o roadmap de conteúdo daqui em diante. Core loop fechado: Explorar → Minerar → Descobrir → Colecionar → Evoluir → Explorar mais fundo.
 - **DATA**: 2026-08-13
+- **STATUS**: **substituído por D013** — tema "mina de cristal" trocado por "mundo mágico" mantendo a mesma estrutura de loop.
+
+---
+
+## D013 — Tema final revisado: Mundo Mágico com Criaturas (substitui a ambientação de D012), inspirado na filosofia de design Nintendo
+- **DECISÃO**: manter a estrutura já validada (Explorar → Descobrir → Colecionar → Evoluir → Explorar mais fundo, score 4.55/5 em `08-analise-retencao-generos.md`), mas trocar a ambientação de "mina de cristal" (fria/genérica, segundo o usuário) para um mundo mágico e fofo, com criaturas reveladas a partir de casulos/sementes/bolhas mágicas em vez de cristais minerados. Referência declarada de filosofia de design: jogos Nintendo (Pokémon, Animal Crossing), sem copiar personagens/IP.
+- **MOTIVO**: usuário identificou que "mineração" soa genérica/já-padrão e quer identidade visual forte com apelo de colecionismo tipo Nintendo. A pesquisa em `11-pivot-fofura-colecao-skins.md` confirmou que a crítica era de posicionamento estético, não de estrutura — a estrutura de retenção validada continua a melhor opção, só precisa de uma ambientação com mais personalidade.
+- **ALTERNATIVAS**: adotar uma das 5 direções originais do usuário "puras" (descartado — cada uma colide de frente com um concorrente dominante: Evomon, Knockout, ou Adopt Me, ver `11-pivot-fofura-colecao-skins.md`).
+- **TRADE-OFFS**: nenhum trade-off estrutural novo — é uma re-ambientação (reskin temático), não uma mudança de sistemas. O trabalho de análise de retenção e escopo de MVP (D011) permanece válido.
+- **IMPACTO**: `10-gdd.md` é revisado com a nova ambientação e uma seção de princípios de design inspirados em Nintendo (Miyamoto: ação principal, foco emocional, ensinar jogando, simplicidade; Pokémon: alegria da completude, descoberta; Animal Crossing: liberdade sem pressão, charme, decoração leve).
+- **DATA**: 2026-08-13

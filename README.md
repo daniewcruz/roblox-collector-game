@@ -13,7 +13,7 @@ FASE 1 — Conceito + nicho/tema + GDD ✅
 CHECKPOINT 1 — aguardando aprovação do usuário ⏳
 ```
 
-**Conceito confirmado**: Híbrido Coleta + Exploração, tema Mineração + Criaturas de Cristal. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo.
+**Conceito confirmado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos"), inspirado na filosofia de design Nintendo (Pokémon, Animal Crossing) sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo.
 
 Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta técnica (MCP/Rojo) foi instalada ainda — por decisão explícita do usuário (ver `docs/06-decisoes.md`, D009).
 
@@ -30,7 +30,8 @@ Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta t�
 | [`docs/06-decisoes.md`](docs/06-decisoes.md) | Log de decisões técnicas (decisão/motivo/alternativas/trade-offs) |
 | [`docs/07-hipoteses.md`](docs/07-hipoteses.md) | Hipóteses registradas e como validá-las |
 | [`docs/08-analise-retencao-generos.md`](docs/08-analise-retencao-generos.md) | Análise profunda de retenção por estrutura de gênero (loops, score ponderado) |
-| [`docs/09-temas-nichos.md`](docs/09-temas-nichos.md) | Pesquisa comparativa de temas/nichos |
-| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1** |
+| [`docs/09-temas-nichos.md`](docs/09-temas-nichos.md) | Pesquisa comparativa de temas/nichos (v1, tema mineração) |
+| [`docs/11-pivot-fofura-colecao-skins.md`](docs/11-pivot-fofura-colecao-skins.md) | Avaliação do pivot para fofura+coleção+skins vs. concorrentes reais (Adopt Me, Evomon, Knockout) |
+| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v2, tema Mundo Mágico)** |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.
