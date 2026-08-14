@@ -232,6 +232,42 @@ O usuário pediu para ampliar a busca: mais Skills de Claude Code para Roblox, f
 | awesome-roblox/awesome-roblox | 🟢 Guardar como índice de pesquisa futura |
 | n4tivex/mcp-roblox-docs | 🟢 Alta prioridade — resolve diretamente a economia de tokens pedida |
 
+## Rodada 5 (D037) — networking, zonas/regiões, geração de arte por IA nativa, e um alerta de spam
+
+### 🟢 ZonePlus (1ForeverHD) — direto relevante para o sistema de regiões do GDD
+- **Link**: [github.com/1ForeverHD/ZonePlus](https://github.com/1ForeverHD/ZonePlus) (verificado via busca — documentação extensa, múltiplas versões, ativo no DevForum até v3.2.0).
+- **Finalidade**: detecta jogadores/objetos dentro de zonas dinâmicas (usando a Spatial Query API + raycasting) — dispara eventos `itemEntered`/`itemExited`.
+- **Por que importa para este projeto**: nosso GDD já prevê regiões com clima/eventos (seção 2d) e transições entre áreas (seção 6) — ZonePlus resolve exatamente "detectar quando o jogador entra numa região" sem reinventar a lógica de colisão/raycasting.
+- **Decisão**: candidato forte para Fase 3 (quando a 1ª região ganhar limites definidos) ou Fase 6 (eventos regionais).
+
+### 🟡 ByteNet (ffrostflame) — otimização de rede, não prioritário agora
+- **Link**: [github.com/ffrostflame/ByteNet](https://github.com/ffrostflame/ByteNet) (verificado — 176★, MIT, 78 commits, ativo).
+- **Finalidade**: serializa dados em buffers para reduzir uso de banda em RemoteEvents, mais eficiente que serialização tradicional.
+- **Decisão**: só relevante quando o jogo tiver volume de jogadores simultâneos alto o bastante para banda ser um problema real — nada a fazer agora, um MVP pequeno não sente esse gargalo. Anotar para Fase 11 (Crescimento) se necessário.
+
+### 🟢 Geração de mesh 3D por IA — recurso NATIVO do Roblox Studio (não é um repositório, é ainda mais direto)
+- **Achado importante**: desde março/2026, o Assistant embutido no Roblox Studio gera **meshes 3D texturizados a partir de um prompt de texto**, direto no editor (`Cube 3D`, via `GenerateModelAsync`). Em abril/2026 ganhou "Planning Mode" e "Procedural Models" (estruturas 3D editáveis definidas em código). [Roblox DevForum](https://devforum.roblox.com/t/assistant-updates-mesh-generation-new-mcp-server-tools-screenshot-tool-and-more/4527258)
+- **Por que isso é potencialmente enorme para este projeto**: pode ajudar diretamente na produção de arte dos Mimos (Fase 8) ou até em placeholders melhores que whitebox já no Protótipo (Fase 2/3) — sem depender de nenhuma ferramenta externa de terceiros, é parte do próprio Studio.
+- **Decisão**: **testar na prática assim que o Studio for aberto** (Fase 2) — é gratuito, nativo, sem risco de dependência externa. Potencialmente resolve parte do gargalo de arte identificado no GDD (seção 12, "o que ainda não resolve").
+
+### ⚪ Localização/tradução — não há lacuna, recurso nativo já cobre
+- Roblox já tem `LocalizationService` + tradução automática (Automatic Text Capture) nativos — não é necessário nenhum repositório de terceiros. Não é uma pendência real deste projeto.
+
+### 🔴 Alerta de spam encontrado: phinehas7/hatch-script-roblox-toolkit
+- Apareceu numa busca por "sistema de eggs/hatching open source" (relevante ao nosso momento de reveal de Mimo) — mas a verificação mostrou que é **vaporware**: 0 estrelas, 0 forks, **nenhum código real**, apenas um README com linguagem de marketing exagerada ("integrações de IA", "suporte 24/7") e um link de download suspeito fora do GitHub padrão.
+- **Registrado como exemplo de alerta**: mesmo com "License: MIT" declarada, isso não significa nada se não há código — reforça por que a verificação individual (D032-D037) é necessária, não presumir que qualquer resultado de busca é confiável.
+- **Decisão**: não usar. Se precisarmos de referência de sistema de "hatching"/reveal, os posts do DevForum com sistemas realmente compartilhados (não este) são mais confiáveis, mas nenhum foi verificado a fundo ainda.
+
+### Resumo desta rodada
+
+| Ferramenta | Veredito |
+|---|---|
+| ZonePlus | 🟢 Candidato forte — resolve detecção de região do GDD (Fase 3/6) |
+| ByteNet | 🟡 Anotado — só relevante em escala maior (Fase 11) |
+| Geração de mesh 3D nativa (Studio Assistant) | 🟢 Testar já na Fase 2 — gratuito, nativo, pode ajudar a resolver o gargalo de arte |
+| Localização | ⚪ Não é lacuna — recurso nativo já resolve |
+| phinehas7/hatch-script-roblox-toolkit | 🔴 Spam/vaporware confirmado — não usar |
+
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
 

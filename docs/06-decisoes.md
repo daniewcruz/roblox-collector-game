@@ -370,3 +370,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `05-ferramentas-github.md` ganha a entrada do mcp-roblox-docs. Próximo passo recomendado: iniciar de fato a Configuração Técnica (Fase 2) — criar estrutura de pastas, instalar Rojo, configurar o MCP oficial — em vez de continuar pesquisando.
 - **DATA**: 2026-08-14
+
+---
+
+## D037 — Rodada 5: networking, zonas/regiões, geração de mesh 3D nativa, alerta de spam
+- **DECISÃO**: usuário pediu para continuar a pesquisa apesar da recomendação de pausar (D036) — respeitado. Novos achados: **ZonePlus** (1ForeverHD, ativo, bem documentado) — detecta jogadores/objetos dentro de zonas dinâmicas, resolve diretamente a necessidade de "detectar região" já prevista no GDD (seção 2d/6) — candidato forte para Fase 3/6. **ByteNet** (176★, MIT, ativo) — otimização de serialização de rede, só relevante em escala maior (Fase 11), anotado sem prioridade agora. **Achado potencialmente importante**: o Assistant nativo do Roblox Studio ganhou geração de mesh 3D texturizado a partir de texto (`Cube 3D`/`GenerateModelAsync`, lançado mar/2026, com Planning Mode e Procedural Models em abr/2026) — recurso gratuito e nativo (não um repositório de terceiros) que pode ajudar diretamente na produção de arte dos Mimos, um dos gargalos já identificados no GDD. Localização: confirmado que não há lacuna, `LocalizationService` nativo já resolve. **Alerta de spam**: `phinehas7/hatch-script-roblox-toolkit` (apareceu numa busca por sistemas de "egg hatching") é vaporware confirmado — 0 estrelas, nenhum código real, apenas README com marketing exagerado e link de download suspeito fora do GitHub padrão.
+- **MOTIVO**: usuário pediu para continuar pesquisando ativamente; o alerta de spam reforça por que a verificação individual (processo já estabelecido em D032-D036) continua necessária mesmo quando um resultado de busca parece relevante ao contexto do jogo.
+- **ALTERNATIVAS**: insistir na pausa de pesquisa recomendada em D036 (rejeitado — usuário decidiu continuar, decisão dele prevalece).
+- **TRADE-OFFS**: nenhum — a rodada trouxe achados genuinamente novos e relevantes (ZonePlus, geração de mesh nativa), não foi busca redundante.
+- **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 5". Geração de mesh 3D nativa deve ser testada já na Fase 2 (é gratuita e sem risco de dependência externa). ZonePlus fica registrado como candidato de Fase 3/6.
+- **DATA**: 2026-08-14
