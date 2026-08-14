@@ -91,3 +91,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — é sequenciamento deliberado (Fase 0 → Checkpoint 0 → Fase 1 → Checkpoint 1 → Configuração técnica → Protótipo).
 - **IMPACTO**: define a ordem de execução registrada em `04-roadmap.md`.
 - **DATA**: 2026-08-13
+
+---
+
+## D010 — Critério de decisão de gênero muda de "tempo de desenvolvimento" para "retenção estrutural ponderada"
+- **DECISÃO**: a comparação Simulador vs. Tycoon (D006) é substituída por uma análise de 4 estruturas (Tycoon puro, Simulador puro, Híbrido Tycoon+Simulador, Híbrido Coleta+Exploração tipo "Fisch"), pontuadas principalmente por potencial de retenção estrutural (loops), não por velocidade de construção.
+- **MOTIVO**: usuário rejeitou explicitamente decidir pelo menor tempo de desenvolvimento — objetivo é o menor jogo construível solo que ainda tenha estrutura de retenção forte o suficiente para crescer em produto de longo prazo.
+- **ALTERNATIVAS**: manter o critério de tempo como decisivo (rejeitado pelo usuário).
+- **TRADE-OFFS**: o vencedor do novo score (Híbrido Fisch-like) é também o mais complexo tecnicamente dos 4 — por isso a recomendação é uma versão deliberadamente simplificada dele, não a escala completa do jogo de referência.
+- **IMPACTO**: nova análise completa em `08-analise-retencao-generos.md`; decisão final de gênero ainda pendente de confirmação do usuário.
+- **DATA**: 2026-08-13

@@ -43,3 +43,44 @@ Escala: 1 (ruim para este perfil) a 5 (ótimo para este perfil).
 - MVP restrito ao core loop + 1 sistema de progressão + 1 mecanismo de monetização (ver `04-roadmap.md` Fase 3-4 e MVP em `00-fase0-relatorio.md`)
 
 Esta é uma recomendação, não uma decisão travada — fica registrada como ponto de checkpoint no relatório final para confirmação do usuário.
+
+---
+
+## Validação Fase 1: Simulador vs. Tycoon (comparação dedicada, pedida pelo usuário)
+
+O ranking original (`D002`) pontuou "dificuldade técnica" de forma qualitativa. Uma pesquisa dedicada trouxe **dados mais específicos de tempo de desenvolvimento** que merecem revisar essa pontuação.
+
+### Tempo de desenvolvimento (achado novo, muda o cálculo)
+
+| Conceito | Tempo solo estimado | Fonte |
+|---|---|---|
+| Tycoon básico | **2-4 semanas** | [game-ace.com](https://game-ace.com/blog/roblox-game-ideas-that-actually-work/) |
+| Obby/tycoon simples | 4-8 semanas | [gameslearningsociety.org](https://www.gameslearningsociety.org/wiki/how-long-does-it-take-to-make-a-roblox-game-by-yourself/) |
+| Simulador multi-sistema com economia persistente | **6-9 meses**, tipicamente exige produtor + 2 engenheiros + suporte de arte | [gameslearningsociety.org](https://www.gameslearningsociety.org/wiki/how-long-does-it-take-to-make-a-roblox-game-by-yourself/) |
+
+**Isso é relevante porque**: o roadmap que desenhamos para o "simulador de coleta/progressão" (Fases 3-7: core loop, progressão, economia, social, monetização) é exatamente o perfil "multi-sistema com economia persistente" citado na fonte — não um simulador raso de fim de semana. Para um solo iniciante em 10-20h/semana, 6-9 meses (com equipe presumida na fonte) pode facilmente virar 12+ meses sozinho, o que é um risco real de abandono do projeto antes de chegar ao lançamento.
+
+### Saturação de mercado — achado que equilibra a balança de volta
+
+- Tycoon é descrito como "a categoria surpresa dos últimos 18 meses" e hoje responde pela **segunda maior fatia de jogo simultâneo** na plataforma — não é um gênero enfraquecido, é o oposto. [RoWatcher](https://rowatcher.com/news/tycoon-games-the-genre-that-built-roblox-and-still-hasn-t-peaked)
+- Porém: buscar "tycoon" na Roblox "afoga" o usuário em milhares de experiências, muitas delas modelos genéricos nunca finalizados — a barreira real não é técnica, é **qualidade/acabamento**. [RoWatcher](https://rowatcher.com/news/tycoon-games-the-genre-that-built-roblox-and-still-hasn-t-peaked)
+- Fronteira de design ainda pouco explorada em tycoons: **construção persistente entre sessões**, visitável/compartilhável — retenção preliminarmente mais forte que tycoons de "sessão reseta ao sair". Isso é uma oportunidade de diferenciação concreta, não só um clone genérico.
+
+### Monetização comparada
+
+- Tycoons e simuladores monetizam de forma parecida: conversão de 2-5% dos jogadores, ARPPU de 100-300 Robux. [Search 2026 data](https://medium.com/@andy.a.g/the-complete-guide-to-monetizing-a-roblox-game-in-2026-c5e915a7c778) — **não há vantagem clara de um sobre o outro aqui**.
+
+### Reavaliação do ranking (critério "Dificuldade técnica" e "Risco técnico")
+
+| Conceito | Dificuldade técnica (ajustada) | Risco técnico (ajustado) | Justificativa da mudança |
+|---|---|---|---|
+| Tycoon simples | **5** (era 3) | **5** (era 4) | Dado concreto de 2-4 semanas para MVP solo; menor superfície de sistemas (persistência pode ser mais simples que economia de simulador multi-camada) |
+| Simulador de coleta/progressão | **3** (era 4) | **3** (era 4) | Um simulador "raso" (sem economia multi-sistema) mantém a pontuação original; mas o **roadmap completo que desenhamos** (Fases 3-7) se aproxima do perfil "6-9 meses", puxando a pontuação real para baixo se formos honestos sobre o escopo pretendido |
+
+**Novo total ponderado**: Tycoon simples sobe para **~30/35** (era 25), superando Simulador que cai para **~24/35** (era 28) *se* o simulador for construído no escopo multi-sistema completo do roadmap original. Se o simulador for deliberadamente simplificado (MVP mais raso, sem economia complexa nas primeiras fases), a pontuação dele se mantém mais próxima do original.
+
+### Conclusão desta validação
+
+**Existe evidência moderada-a-forte de que Tycoon simples é a aposta de menor risco para um solo iniciante em 10-20h/semana**, principalmente pelo tempo de desenvolvimento comprovadamente menor e pelo fato de o gênero estar em alta (não saturado em termos de audiência, apenas em quantidade de projetos malfeitos — o que é uma barreira de qualidade, superável, não uma barreira de mercado fechado).
+
+Isso **não invalida** o simulador — ele continua viável, especialmente se o MVP for deliberadamente mantido simples nas primeiras fases (adiando a "economia multi-sistema" para depois da validação). Mas a escolha deixou de ser óbvia. Ver pergunta ao usuário no relatório principal.
