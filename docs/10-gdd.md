@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v10 — CHECKPOINT 1 APROVADO, Core Gameplay + identidade visual em validação)
+# Game Design Document (GDD) — Fase 1 (revisado, v11 — CHECKPOINT 1 APROVADO, Core Gameplay + identidade visual em validação)
 
 **Nome provisório**: *Mimo World* (placeholder — "Mimo" pode virar nome da categoria de criaturas, não do jogo — decisão em aberto, D040)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: LEGO — mundo de brinquedos, humor físico, personagens com personalidade forte (LEGO Fortnite, LEGO Worlds, LEGO City Undercover, LEGO Star Wars, LEGO Harry Potter — filosofia, não cópia) — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento), Grow a Garden (eventos/retorno), Adopt Me (criaturas/social), Dress to Impress (skins/identidade) — ver seções 1e, 2, 2b, 2c, 2d. Modelo de viralização: cooperativo, não adversarial — ver 2d. **Sem copiar personagens, nomes, assets, peças/studs, minifiguras ou propriedade intelectual de nenhuma obra — só estrutura/filosofia de design (D040).**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
-**Histórico**: v1-v9 — ver versões anteriores (mineração→mundo mágico→princípios Mario→5 franquias Nintendo→estrutura viral→personagem-marca→monetização ética→Core Gameplay como hipótese→6 famílias visuais/Aura). **v10** incorpora a filosofia LEGO (mundo de brinquedos): Mimo redefinido como brinquedo vivo com valor pós-descoberta, mecânica de combinação, lógica de mundo eclético (regiões não precisam de coerência realista), e skins como temas completos com fórmula de escala de conteúdo N×M (D040-D043).
+**Histórico**: v1-v9 — ver versões anteriores (mineração→mundo mágico→princípios Mario→5 franquias Nintendo→estrutura viral→personagem-marca→monetização ética→Core Gameplay como hipótese→6 famílias visuais/Aura). **v10** incorpora a filosofia LEGO (mundo de brinquedos): Mimo redefinido como brinquedo vivo com valor pós-descoberta, mecânica de combinação, lógica de mundo eclético (regiões não precisam de coerência realista), e skins como temas completos com fórmula de escala de conteúdo N×M (D040-D043), mais coleta magnética como candidato de Core Gameplay e montaria/mundo aberto como visão de longo prazo (D044). **v11** adiciona NPCs com personalidade ligados aos sistemas já existentes (Guia, Colecionador, Guardião Sonolento, Costureira Mágica, Mensageiro Caótico) e formaliza um pilar de humor irreverente reaproveitando sistemas já definidos; sistema completo de papéis/classes jogáveis registrado como visão de Fase 6+ (D045).
 
 ---
 
@@ -146,6 +146,33 @@ Skins deixam de ser só variação de cor — cada uma é um **tema completo**: 
 **Fórmula de escala de conteúdo**: N criaturas-base × M variantes temáticas = N×M colecionáveis visuais, sem precisar desenhar uma criatura nova do zero a cada atualização. Ex: 30 criaturas × 10 temas = 300 colecionáveis visuais — multiplica o conteúdo percebido sem multiplicar o esforço de design de silhueta, reforçando a sustentabilidade de Update Loop já valorizada em `08-analise-retencao-generos.md`.
 
 **Escopo no MVP**: poucos temas simples (ver seção 8, monetização ética — sempre preço fixo/conquistado, nunca por chance); o catálogo completo de temas por criatura é trabalho pós-MVP.
+
+## 1g. NPCs com personalidade + pilar de humor irreverente (D045)
+
+Usuário pediu um mundo mais vivo (referência LEGO City Undercover: personagens, situações, humor) — mas em vez de papéis genéricos de RPG (construtor/explorador/guardião/comerciante), os NPCs abaixo estão amarrados aos sistemas que já existem no GDD, para não abrir um sistema paralelo.
+
+### Arquétipos de NPC (leve no MVP, expansível depois)
+
+| NPC | Papel no sistema | Personalidade |
+|---|---|---|
+| 🧭 O Guia | Ensina o loop por ação, não texto (reforça princípio Mario 1-1, seção 2b) | Animado, meio distraído, aponta pro casulo errado antes do certo |
+| 📖 O Colecionador | Comenta/avalia Mimos raros que o jogador mostra | Obsessivo, reage de forma exagerada a raridades |
+| 😴 O Guardião Sonolento | Obstáculo cômico perto de um segredo (reforça "segredo da região", 2b) | Deveria vigiar, vive cochilando — dá pro jogador uma brecha cômica, não um desafio sério |
+| 🎨 A Costureira Mágica | Vende/mostra temas e skins (seção 8, monetização ética) | Dramática, tem opiniões fortes sobre combinações de estilo |
+| 🌪️ O Mensageiro Caótico | Anuncia eventos (reforça estrutura viral, 2d) | Exagera qualquer coisa pequena como se fosse o fim do mundo |
+
+**Escopo no MVP**: 1-2 NPCs (provavelmente O Guia, por resolver onboarding) com poucas falas/animações — não um sistema de diálogo complexo. Os demais ficam como expansão natural quando os sistemas que eles representam (troca, temas, eventos) forem implementados.
+
+### Pilar de humor irreverente (reaproveita sistemas existentes, não cria novos)
+
+- **Reveal escalado por raridade**: reação do NPC/mundo ao momento de descoberta (seção 5) varia de tédio cômico (comum) a comemoração exagerada (raro/lendário) — mesma sequência de reveal já desenhada, só com tom.
+- **Física cômica pontual**: pequenos momentos de física exagerada em interações específicas (ex: um Mimo espirra e empurra o jogador de leve) — reaproveita o mesmo princípio de "juice"/game feel já usado em 4b, não é sistema novo.
+- **Segredos com tom bobo**: nem todo "segredo da região" (2b) precisa ser sério — pode ser puramente nonsense (ex: uma coleção escondida de chapéus sem função nenhuma, só para rir) — reforça a regra de "momento compartilhável" (1c) pela via do humor, não só da raridade.
+- **Easter eggs**: pequenos segredos que geram piada/referência leve — candidatos naturais de conteúdo de LiveOps (Fase 9+), reaproveitando o Update Loop já validado.
+
+### O que fica para Fase 6+ (visão de longo prazo, não MVP)
+
+Sistema completo de **papéis/classes jogáveis** (o jogador escolhe um papel, ganha árvore de habilidades própria, desafios cooperativos que exigem 2+ papéis diferentes) — ideia forte, mas escopo grande demais para o MVP enxuto (mesma régua de D011/D019/D022/D044). Fica registrado como visão de expansão social/multiplayer, a ser desenhado com mais detalhe quando o Core Gameplay pequeno já estiver validado e o jogo tiver tração.
 
 ## 2. Princípios de design (filosofia Nintendo aplicada, não copiada)
 

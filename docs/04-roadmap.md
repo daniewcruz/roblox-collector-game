@@ -49,6 +49,7 @@
 - **Objetivo**: adicionar elementos sociais mínimos (ver outros jogadores, talvez trocar/mostrar progresso) — sem exigir netcode competitivo.
 - **Dependências**: Fase 5.
 - **Critério de sucesso**: funcionalidade social não quebra a performance nem a economia.
+- **Visão de longo prazo (D045, não obrigatório desta fase)**: sistema completo de papéis/classes jogáveis (jogador escolhe um papel, ganha árvore de habilidades própria, desafios cooperativos que exigem 2+ papéis diferentes) — avaliar só depois do Core Gameplay pequeno já validado e do jogo ter alguma tração.
 
 ## FASE 7 — Monetização
 - **Objetivo**: implementar Game Passes + Developer Products de forma não agressiva, seguindo estritamente as regras éticas de `10-gdd.md` seção 8 (D020) — sem loot boxes/pagar-por-chance, sem pressão de urgência artificial, core loop sempre jogável sem gastar.
