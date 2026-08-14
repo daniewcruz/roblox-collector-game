@@ -490,3 +490,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — mini-jogos custam pouco a mais do que a arena já registrada; plataforma de precisão fica sem custo nenhum agora (só documentada).
 - **IMPACTO**: `10-gdd.md` seção de visão Fase 6+ (D047) ganha os 5 mini-jogos como exemplos concretos. `13-backlog-ideias-futuras.md` ganha a mecânica de plataforma de precisão.
 - **DATA**: 2026-08-14
+
+---
+
+## D049 — Mais 7 mini-jogos avaliados: maioria adotada na visão de arena, 2 marcados como maior escopo
+- **DECISÃO**: usuário trouxe mais 7 mini-jogos (corrida de veículos, batalha de construção [repetido], caça ao tesouro [repetido], desafio de destruição, puzzle cooperativo, dança/expressão, arena de combate leve com armas bobas tipo martelo/laser). Avaliados: **puzzle cooperativo** e **dança/expressão** são adotados sem ressalva — baratos, reforçam o modelo cooperativo (D016) e o pilar de humor (D045/1g). **Arena de combate leve** confirma e detalha o tom já recomendado em D047 (armas bobas, não realistas — martelo gigante, laser colorido — em vez de combate sério). **Corrida de veículos** e **desafio de destruição** são adotados também na visão de arena, mas marcados como sub-itens de escopo um pouco maior (exigem sistema de veículo/física de destruição, não só animação/interação simples) — ainda dentro do mesmo bucket "Fase 6+", não precisam de backlog separado.
+- **MOTIVO**: usuário continuou expandindo a lista de mini-jogos para a arena/eventos já aceita em D048 — mesma régua de avaliação aplicada (o que é barato e já no tom "brinquedo" entra na visão; nada disso é MVP).
+- **ALTERNATIVAS**: nenhuma alternativa avaliada — os itens já se encaixam no padrão já aceito.
+- **TRADE-OFFS**: nenhum — tudo fica na visão de Fase 6+, sem custo de implementação agora.
+- **IMPACTO**: `10-gdd.md` lista de mini-jogos de exemplo expandida.
+- **DATA**: 2026-08-14
