@@ -612,3 +612,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **IMPACTO**: próximo passo é confirmar visualmente que os scripts placeholder (`src/Server/init.server.luau`, `src/Client/init.client.luau`) aparecem na árvore do Explorer do Studio, e testar via Play que os `print()` aparecem no Output — fecha o critério de sucesso da Fase 2 restante.
 - **ATUALIZAÇÃO**: confirmado visualmente que `Shared` (ReplicatedStorage), `Server` (ServerScriptService) sincronizaram corretamente via Rojo. Play mode rodou sem erros visíveis, personagem do jogador apareceu normalmente (sinal indireto de que os scripts client/server não travaram a execução). A janela de Saída/Output não foi localizada na interface nesta sessão (menu "Ver" não tem a opção; tentativas via "Janela" e clique direito no Explorer não confirmadas) — **não bloqueia o progresso**, fica como pendência de conveniência para quando debug real for necessário. Critério de sucesso da Fase 2 considerado **atingido** com a evidência disponível (sincronização + Play funcional).
 - **DATA**: 2026-08-14
+
+---
+
+## D061 — MCP Server do Roblox Studio: registrado mas ainda não conectado (não bloqueia)
+- **DECISÃO**: registrado o MCP oficial do Roblox Studio no Claude Code via `claude mcp add Roblox_Studio -- cmd.exe /c "%LOCALAPPDATA%\Roblox\mcp.bat"` (transporte stdio, conforme documentação oficial `create.roblox.com/docs/studio/mcp`, confirmado que `mcp.bat` existe em disco). `claude mcp list` mostra a conexão como **falhou (timeout de 30s)**, e nenhuma ferramenta nova do Roblox apareceu disponível nesta sessão via ToolSearch. Causa provável: o listener local do MCP no Studio pode não estar realmente ativo — a Beta Feature exigia um "Reiniciar para atualizar" que não foi confirmado como concluído; ou o listener só fica ativo com um lugar (place) aberto de forma específica.
+- **MOTIVO**: usuário perguntou se faltava algo de infraestrutura — essa é uma lacuna real (D035 já tinha registrado avaliar isso "na prática" na Fase 2).
+- **ALTERNATIVAS**: nenhuma tentada ainda além da configuração padrão documentada.
+- **TRADE-OFFS**: **não bloqueia o desenvolvimento** — o fluxo via Rojo (editar arquivos localmente, sincronizar com o Studio) já funciona de ponta a ponta e é suficiente para "Claude Code escreve Luau" (a necessidade original que motivou considerar MCP). O MCP adicionaria conveniência (eu rodar comandos/ver a árvore de objetos direto), não é pré-requisito.
+- **IMPACTO**: pendência registrada — reinstalar/reiniciar o Studio por completo e tentar reconectar depois. Desenvolvimento segue via Rojo enquanto isso.
+- **DATA**: 2026-08-14
