@@ -1,18 +1,18 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v2)
+# Game Design Document (GDD) — Fase 1 (revisado, v4)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
-**Tema**: Mundo mágico com criaturas colecionáveis ("Mimos"), reveladas a partir de casulos/sementes/bolhas mágicas encontradas explorando
-**Referências de filosofia de design**: jogos Nintendo — Pokémon (descoberta, coleção, "alegria da completude"), Animal Crossing (charme, liberdade sem pressão, decoração leve), princípios gerais de Miyamoto (ver seção 2). **Sem copiar personagens, nomes ou propriedade intelectual.**
+**Tema**: "Um pequeno mundo cheio de criaturas que você ainda não descobriu" — criaturas colecionáveis ("Mimos") reveladas a partir de casulos/sementes/bolhas mágicas encontradas explorando
+**Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: Fase 1 (Conceito) — sem código, sem Roblox Studio aberto (D009)
-**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 mantém a mesma estrutura validada e troca a ambientação por pedido do usuário (D013) — ver `11-pivot-fofura-colecao-skins.md`; v3 incorpora princípios específicos do design do Super Mario (verbo primário, ensinar jogando, kishōtenketsu, variedade de métodos de coleta, variedade de habilidade, segredos) por pedido direto do usuário (D014, seção 2b).
+**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 trocou a ambientação para mundo mágico (D013); v3 incorporou princípios do Super Mario (D014, seção 2b); v4 amplia a referência para 5 franquias Nintendo e expande personalização/loop social de curiosidade (D015, seções 2c e 6b).
 
 ---
 
 ## 1. Pitch em uma frase
 
-O jogador explora regiões de um mundo pequeno e encantador, encontra casulos/sementes mágicas escondidas, e ao abri-los descobre pequenas criaturas ("Mimos") com raridades e variações visuais únicas (dourada, cristal, neon, arco-íris...) — colecionando-as em um Bestiary e desbloqueando novas regiões com ferramentas/habilidades melhores.
+**Um pequeno mundo cheio de criaturas que você ainda não descobriu.** O jogador explora regiões encantadoras, encontra casulos/sementes mágicas escondidas, e ao abri-los descobre pequenas criaturas ("Mimos") com raridades e variações visuais únicas (dourada, cristal, neon, arco-íris...) — colecionando-as em um Bestiary, personalizando seu personagem/espaço pessoal com o que descobre, e desbloqueando novas regiões com ferramentas/habilidades melhores. (Reformulação de pitch pedida pelo usuário — D015, abandona de vez o enquadramento "jogo de mineração".)
 
 ## 2. Princípios de design (filosofia Nintendo aplicada, não copiada)
 
@@ -41,6 +41,24 @@ Mario é o exemplo mais estudado de design "ensinar jogando" e de variedade dent
 | **Cappy/possessão: variedade de habilidade, não só de número** — em vez de power-ups tradicionais, Mario "possui" inimigos e ganha habilidades novas e temáticas por área. [t3.com](https://www.t3.com/features/super-mario-odyssey-review) | Cada tier de ferramenta/habilidade não deve só ser "mais forte" — deve **desbloquear uma nova forma de interagir** com aquela região específica (ex: tier 2 permite sentir vibração de casulos escondidos; tier 3 permite acalmar Mimos tímidos que fogem). Reforça a progressão como "novas possibilidades", não só "número maior" — mitiga o mesmo risco de grind raso identificado em `08-analise-retencao-generos.md`. |
 | **Saídas secretas e áreas escondidas** — *Super Mario World* tem 96 saídas (contando as secretas), recompensando quem explora fora do caminho óbvio com atalhos e áreas bônus. [mariowiki.com](https://www.mariowiki.com/Secret_exit), [Gamerant](https://gamerant.com/super-mario-world-hidden-areas/) | Cada região do MVP deve ter **pelo menos 1 segredo não sinalizado** (um Mimo raro escondido fora do caminho principal, um atalho para a próxima região). Não é conteúdo extra caro de produzir — é reposicionar o mesmo tipo de objeto (casulo) num lugar menos óbvio. Alto retorno de "uau" por baixíssimo custo de desenvolvimento. |
 | **Mundos tematicamente distintos** (floresta, deserto, gelo...) — cada mundo de Mario tem identidade visual e regras próprias. [mariowiki.com](https://www.mariowiki.com/Secret_exit) | Já estava implícito no MVP (regiões desbloqueadas por progresso); fica explícito agora como regra de design: cada região futura (pós-MVP) deve ter identidade visual e um pequeno "twist" de mecânica próprio, não ser uma repintura da região anterior. |
+
+## 2c. Síntese de 5 franquias Nintendo (pedido do usuário: ampliar além de Mario)
+
+O usuário pediu para estudar especificamente **por que o loop funciona** em 5 franquias, sem copiar personagens/estética. Cada uma resolve um problema de design diferente do nosso projeto — a síntese abaixo mapeia cada uma a um sistema concreto do GDD, evitando sobreposição entre elas:
+
+| Franquia | O que estudar (não copiar) | Sistema concreto em *Mimo World* |
+|---|---|---|
+| 🥇 **Pokémon** | Loop Encontrar → Capturar → Descobrir → Completar coleção → Evoluir; a explosão emocional de achar algo raríssimo ("MEU DEUS, EU ACHEI"); variantes/shiny; exclusividade regional incentivando troca | **Já é o coração do jogo**: momento de reveal (seção 5), Bestiary com % de completude (seção 6), variações por raridade. Trocas entre jogadores ficam fora do MVP, mas o design não fecha a porta para depois (D007/D011). |
+| 🥈 **Animal Crossing** | O jogador não é lembrado "continue jogando" — ele *quer* deixar seu espaço/personagem mais bonito, visitar o espaço dos amigos, colecionar móveis/roupas | Reforça e **expande** o "espaço de exibição pessoal" (antes tratado como leve/secundário) para um sistema de **personalização de personagem e de um pequeno espaço pessoal** (ver seção 6b, nova) — sem virar um jogo de decoração completo tipo Adopt Me, mas mais robusto que a v2. |
+| 🥉 **Mario Odyssey** | Curiosidade como mecânica: "o que será que tem ali?" — ver algo estranho ao longe, ir até lá, descobrir uma área nova | Já coberto por 2b (segredos, kishōtenketsu) — reforçado aqui como regra geral de level design: toda região deve ter pelo menos 1 elemento visível ao longe que gera a pergunta "o que é aquilo?" antes do jogador chegar perto. |
+| ⭐ **Kirby** | Personagem instantaneamente reconhecível e fofo — a reação de "QUE FOFO" acontece antes de qualquer explicação de mecânica | **Vira um critério de arte, não de sistema**: cada Mimo precisa ter uma silhueta simples e reconhecível à distância (mesmo princípio de legibilidade visual do Kirby) — registrado como diretriz para a Fase de arte/protótipo, não implementável ainda na Fase 1. |
+| ⭐ **Pikmin** | Criaturas pequenas com personalidades/comportamentos distintos por tipo, exploração de um mundo pequeno em escala | Cada "tipo elemental" de Mimo (a definir na arte) deve ter um **comportamento visível diferente** no mundo (ex: um Mimo tímido foge, um Mimo curioso se aproxima, um Mimo dorminhoco só aparece em certos horários) — mecânica leve, gera variedade de método de descoberta (reforça o princípio Power Moons de 2b) sem exigir IA/comportamento complexo no MVP. |
+
+### O gatilho social de curiosidade (explicitado a pedido do usuário)
+
+> "Aquele jogador tem uma criatura que eu nunca vi. Como ele conseguiu isso?"
+
+Este é um **Return Loop** e um **Social Loop** ao mesmo tempo, e fica explícito como requisito de design: o espaço de exibição pessoal (seção 6b) precisa ser **visível a outros jogadores** (mesmo que de forma simples no MVP, tipo um "cartão de perfil" com os 3 Mimos mais raros do jogador), para que a descoberta de alguém vire gatilho de meta para outro jogador — sem exigir sistema de visita completo tipo Animal Crossing no MVP.
 
 ## 3. Por que o jogador continua jogando
 
@@ -96,12 +114,22 @@ Estrutura já validada em `08-analise-retencao-generos.md` (score 4.55/5); ambie
 | Ferramenta/habilidade evolutiva | 3-5 tiers (ex: "Toque Mágico" que evolui — substitui a picareta, mesma função de progressão) |
 | Regiões | Bloqueadas por tier de ferramenta/habilidade (progressão espacial visível) |
 | Coleção | Bestiary com % de completude por região |
-| Expressão pessoal (leve) | Pequeno espaço para exibir 3-5 Mimos descobertos (não é sistema de decoração completo — fica simples de propósito) |
+| Personalização de personagem (leve) | Poucos itens cosméticos simples desbloqueados pela coleção (ex: um acessório por marco do Bestiary) — ver 6b |
+| Espaço/cartão de exibição pessoal | Mostra os 3-5 Mimos mais raros do jogador, **visível a outros jogadores** — gatilho do loop social de curiosidade (2c) |
 | Métodos de descoberta (variedade) | Mínimo 2-3 métodos diferentes de encontrar um Mimo na região (casulo escondido, rastro de brilho para seguir, Mimo tímido que se aproxima) — princípio Power Moons (2b), antídoto direto ao grind |
+| Comportamento por tipo de Mimo | Cada tipo elemental tem 1 comportamento visível simples (foge, se aproxima, só aparece em certos horários) — princípio Pikmin (2c), gera variedade sem exigir IA complexa |
 | Segredo da região | 1 Mimo raro ou atalho escondido fora do caminho óbvio (princípio de saídas secretas de *Super Mario World*, 2b) |
 | Eventos ambientais | Eventos simples (ex: "chuva de estrelas" temporária que aumenta chance de casulo especial) |
 
-**Explicitamente fora do MVP**: 2ª região, sistema de troca entre jogadores, sistema de decoração completo (tipo Adopt Me), eventos sazonais com itens exclusivos permanentemente removidos, PvP.
+**Explicitamente fora do MVP**: 2ª região, sistema de troca entre jogadores, sistema de decoração completo de casa/ambiente (tipo Adopt Me), visitar o espaço de outros jogadores (fica só o "cartão" visível, não visita completa), eventos sazonais com itens exclusivos permanentemente removidos, PvP.
+
+## 6b. Personalização — o que pegamos de Animal Crossing, sem virar Adopt Me
+
+Diferença deliberada em relação a um sistema de decoração completo:
+
+- **O que entra no MVP**: 1-2 slots de acessório cosmético no personagem (ex: um chapéu, uma auréola) desbloqueados por marcos do Bestiary — não comprados, **conquistados** pela coleção (reforça "obtidas jogando" da divisão de monetização, seção 8); um "cartão de perfil" simples mostrando os Mimos mais raros.
+- **O que fica para depois** (Fase 4+ do roadmap, fora do MVP): decoração de um espaço pessoal completo, visita ao espaço de amigos, catálogo grande de roupas/móveis — isso é essencialmente o produto central do Adopt Me (`11-pivot-fofura-colecao-skins.md`), e replicá-lo cedo demais either estoura o escopo do solo dev either garante comparação direta com o maior jogo do gênero.
+- **Por que isso ainda entrega a emoção de Animal Crossing** mesmo pequeno: a motivação "quero deixar meu personagem mais bonito" já funciona com poucos itens bem desenhados, desde que sejam **visíveis a outros jogadores** — é a visibilidade social que gera o efeito, não o tamanho do catálogo.
 
 ## 7. Loops completos (framework de `08-analise-retencao-generos.md`, aplicado à nova ambientação)
 
@@ -153,8 +181,10 @@ Regra mantida de D009/roadmap: nada disso é implementado agora — fica para a 
   FEATURE: Bestiary
     - [ ] UI de coleção com % de completude
     - [ ] Persistência via ProfileService (Fase 3 técnica, não Fase 1)
-  FEATURE: Espaço de exibição pessoal (leve)
-    - [ ] Mostrar 3-5 Mimos descobertos (escopo mínimo, não decoração completa)
+  FEATURE: Personalização e exibição pessoal (leve)
+    - [ ] 1-2 slots de acessório cosmético desbloqueados por marco do Bestiary
+    - [ ] Cartão de perfil com os 3-5 Mimos mais raros, visível a outros jogadores
+    - [ ] Comportamento simples por tipo de Mimo (foge/aproxima/horário) — princípio Pikmin
 
 ÉPICO: Economia (MVP mínimo)
   FEATURE: Uso de materiais simples
@@ -194,4 +224,4 @@ CHECKPOINT 1 — aguardando aprovação do usuário
 
 Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta técnica (MCP/Rojo) foi instalada — conforme D009.
 
-**Pergunta para o Checkpoint 1**: este GDD revisado (mundo mágico + Mimos, filosofia Nintendo aplicada sem cópia de IP) está aprovado para avançarmos à Configuração Técnica (MCP Server + Rojo + Roblox Studio) e depois ao Protótipo (Fase 2)? Ou há algo a ajustar antes — por exemplo, nome do jogo/dos "Mimos", ou revisitar a Direção 5 (Toy World)?
+**Pergunta para o Checkpoint 1**: este GDD v4 (mundo mágico + Mimos, síntese de 5 franquias Nintendo, personalização leve + gatilho social de curiosidade, sem cópia de IP) está aprovado para avançarmos à Configuração Técnica (MCP Server + Rojo + Roblox Studio) e depois ao Protótipo (Fase 2)? Ou há algo a ajustar antes — por exemplo, nome do jogo/dos "Mimos", ou revisitar a Direção 5 (Toy World)?

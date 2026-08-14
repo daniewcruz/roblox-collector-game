@@ -142,3 +142,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum negativo — os princípios extraídos são estruturais/pedagógicos, aplicáveis sem risco de violação de propriedade intelectual (nenhum personagem, nome ou asset é reutilizado).
 - **IMPACTO**: `10-gdd.md` seção 2b, mais ajustes no Core Loop (verbo único, variedade de métodos de descoberta) e no escopo do MVP (segredo por região, mínimo de métodos de descoberta variados).
 - **DATA**: 2026-08-13
+
+---
+
+## D015 — Ampliação da referência para 5 franquias Nintendo (Pokémon, Animal Crossing, Mario Odyssey, Kirby, Pikmin) + personalização expandida
+- **DECISÃO**: ampliar a referência de design além de Mario (D014) para uma síntese de 5 franquias, cada uma mapeada a um sistema concreto e não-sobreposto do GDD: Pokémon → coleção/raridade/descoberta (já central); Animal Crossing → personalização de personagem + espaço de exibição pessoal (expandido, seção 6b nova); Mario Odyssey → curiosidade como regra de level design ("o que é aquilo ao longe?"); Kirby → critério de arte (silhueta simples/reconhecível, "fator fofura"); Pikmin → comportamento simples por tipo de criatura, gerando variedade de descoberta sem IA complexa. Pitch reformulado para "um pequeno mundo cheio de criaturas que você ainda não descobriu", abandonando de vez qualquer enquadramento de "mineração". Adicionado explicitamente o gatilho social de curiosidade ("como ele conseguiu isso?") como Return Loop + Social Loop.
+- **MOTIVO**: usuário considerou a referência só a Mario insuficiente e pediu estudo de mais franquias especificamente pela ótica de "por que o loop funciona" (retenção, coleção, personalização, social, competição, emoção) — não só mecânica de exploração. Também pediu explicitamente mais peso em personalização/skins, que a v3 do GDD ainda tratava como sistema secundário.
+- **ALTERNATIVAS**: manter só a referência Mario (D014) — insuficiente segundo o usuário para o objetivo de personalização/skins; copiar sistemas completos de Animal Crossing (decoração de casa completa) — rejeitado por já colidir de frente com Adopt Me, ver `11-pivot-fofura-colecao-skins.md`.
+- **TRADE-OFFS**: sistema de personalização cresce um pouco em relação à v3 (1-2 slots cosméticos + cartão de perfil visível), mas continua deliberadamente menor que um sistema de decoração completo — mantém o MVP pequeno (D011) enquanto entrega a emoção de "quero deixar meu personagem mais bonito" que o usuário pediu.
+- **IMPACTO**: `10-gdd.md` v4 — novo pitch (seção 1), nova seção 2c (síntese das 5 franquias + gatilho social), nova seção 6b (personalização vs. Adopt Me), ajustes nas seções 6 e 10 (Épico/Feature/Tarefa).
+- **DATA**: 2026-08-13
