@@ -380,3 +380,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — a rodada trouxe achados genuinamente novos e relevantes (ZonePlus, geração de mesh nativa), não foi busca redundante.
 - **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 5". Geração de mesh 3D nativa deve ser testada já na Fase 2 (é gratuita e sem risco de dependência externa). ZonePlus fica registrado como candidato de Fase 3/6.
 - **DATA**: 2026-08-14
+
+---
+
+## D038 — Rodada 6: lacunas identificadas pelo próprio Claude (UI de Bestiary, áudio, automação de qualidade)
+- **DECISÃO**: usuário pediu para eu identificar ativamente áreas faltantes, não só responder a pedidos literais. Identifiquei e pesquisei 3 lacunas reais: **UI do Bestiary** (sistema central do MVP, nenhum candidato de UI existia até agora) — **InventoryMaker** (16★, MIT, não exige Fusion) recomendado como referência principal; **Stoway** (11★, exige Fusion) como alternativa condicional. **Áudio do momento de descoberta** (GDD seção 5 descreve som de reveal, mas nenhuma fonte estava identificada) — duas bibliotecas gratuitas encontradas (soundeffectapp/Free-Sound-Effects-Library, arnofaure/free-sfx), com recomendação de usar a Roblox Audio Library nativa como caminho principal e essas como complemento. **Automação de qualidade de código** — StyLua já tem hooks de pre-commit oficiais prontos; Selene tem suporte em desenvolvimento — configurar quando o volume de código justificar (Fase 3+). Também documentada a Creator Store API (busca de assets nativa) como recurso disponível, não prioridade agora.
+- **MOTIVO**: usuário pediu explicitamente para eu identificar o que percebo como necessário para completar o trabalho, não só responder a buscas literais — exercício de iniciativa dentro do processo já estabelecido de pesquisar/verificar antes de recomendar.
+- **ALTERNATIVAS**: continuar só respondendo a pedidos explícitos do usuário (não seria atender ao pedido desta rodada, que foi justamente pedir iniciativa).
+- **TRADE-OFFS**: nenhum — todos os achados são anotações para fases futuras (Fase 3+), nenhum exige ação imediata que atrapalhe o MVP enxuto já definido.
+- **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 6". Fase 3 (Core Gameplay/Bestiary) passa a ter candidatos de UI e áudio já mapeados quando chegar a hora.
+- **DATA**: 2026-08-14

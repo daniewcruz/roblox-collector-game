@@ -268,6 +268,47 @@ O usuário pediu para ampliar a busca: mais Skills de Claude Code para Roblox, f
 | Localização | ⚪ Não é lacuna — recurso nativo já resolve |
 | phinehas7/hatch-script-roblox-toolkit | 🔴 Spam/vaporware confirmado — não usar |
 
+## Rodada 6 (D038) — áreas que eu identifiquei como faltantes para completar o trabalho
+
+Nesta rodada busquei ativamente lacunas que eu mesmo percebi como necessárias para o projeto ficar completo, não só o que foi pedido literalmente: UI de coleção (Bestiary é núcleo do MVP), áudio (o "momento de descoberta" do GDD depende de som), e automação de qualidade de código.
+
+### 🟢 InventoryMaker — melhor candidato para a UI do Bestiary
+- **Link**: [github.com/Asiandayboy/InventoryMaker](https://github.com/Asiandayboy/InventoryMaker) — 16★, MIT, 61 commits, ativo.
+- **Por que é relevante**: o Bestiary (coleção com % de completude) é um dos sistemas centrais do MVP (`10-gdd.md` seção 6/10) e ainda não tínhamos nenhum candidato de UI para ele. Este framework não impõe nenhum design visual (dá liberdade total de estilo) e já resolve containers, filtro e ordenação — exatamente o que um Bestiary precisa (filtrar por raridade, região, família visual).
+- **Vantagem sobre a alternativa**: não exige Fusion como dependência (ao contrário do Stoway abaixo), então não força a decisão de arquitetura de UI antes da hora.
+- **Decisão**: candidato de referência forte para Fase 3 (quando o Bestiary for implementado).
+
+### 🟡 Stoway — alternativa mais robusta, mas exige Fusion
+- **Link**: [github.com/Zyn-ic/Stoway](https://github.com/Zyn-ic/Stoway) — 11★, MIT, 73 commits, ativo. UI reativa com Fusion, replicação delta eficiente, rastreamento de item por UUID.
+- **Decisão**: só faz sentido se decidirmos adotar Fusion para UI (ver Rodada 2, Fusion vs. Vide ainda em aberto) — não decidir agora.
+
+### 🟢 Bibliotecas de áudio gratuito — resolve uma lacuna real do GDD
+- O momento de descoberta (`10-gdd.md` seção 5) descreve efeito sonoro no reveal, mas nenhuma fonte de áudio tinha sido identificada até agora.
+- **soundeffectapp/Free-Sound-Effects-Library** — [github.com/soundeffectapp/Free-Sound-Effects-Library](https://github.com/soundeffectapp/Free-Sound-Effects-Library) — mais de 400.000 efeitos sonoros gratuitos, licenciamento claro por arquivo.
+- **arnofaure/free-sfx** — pacote pequeno sob Creative Commons Attribution 4.0 (uso livre, sem exigência de atribuição).
+- **Recomendação prática**: para produção real, a Roblox Audio Library integrada ao Studio já é o caminho mais direto (assets pré-aprovados pela moderação da plataforma); os dois repositórios acima servem para prototipagem rápida ou como fonte adicional quando a Audio Library não tiver o som certo.
+- **Decisão**: nenhuma ação agora — anotado para quando a Fase 3 (Core Gameplay) precisar do primeiro som de reveal.
+
+### 🟢 Pre-commit hooks para Selene/StyLua — automação de qualidade
+- **StyLua** já tem hooks de pre-commit oficiais prontos (`.pre-commit-hooks.yaml` no próprio repositório) — três variantes (compilar via cargo, binário no PATH, ou baixar automaticamente do GitHub Releases).
+- **Selene** tem suporte de pre-commit em desenvolvimento pela comunidade (PR #565 no repositório oficial).
+- **Por que importa**: em vez de eu (ou o usuário) lembrar de rodar lint/formatação manualmente, um hook de pre-commit garante que todo código commitado já passou por Selene+StyLua automaticamente — appropriado para quando o volume de código justificar (não a Configuração Técnica inicial).
+- **Decisão**: configurar quando Selene/StyLua forem efetivamente adotados (Fase 3+, conforme Rodada 2).
+
+### ⚪ Creator Store API (busca de assets gratuitos) — recurso nativo, não repositório
+- A própria Roblox expõe uma API externa de busca no catálogo (`search.roblox.com/catalog/json`) para consultar meshes, modelos, áudio e plugins do Creator Store/Toolbox programaticamente.
+- **Decisão**: não é uma ferramenta de terceiros a adotar — é um endpoint documentado que pode ser útil se algum dia precisarmos buscar assets gratuitos de forma automatizada, mas não é prioridade agora (o MVP usa geometria simples/whitebox e possivelmente geração de mesh nativa, Rodada 5).
+
+### Resumo desta rodada
+
+| Ferramenta | Veredito |
+|---|---|
+| InventoryMaker | 🟢 Melhor candidato para UI do Bestiary (Fase 3), sem depender de Fusion |
+| Stoway | 🟡 Alternativa melhor só se adotarmos Fusion |
+| Bibliotecas de áudio (2) | 🟢 Resolve lacuna de som do reveal — anotado para Fase 3 |
+| Pre-commit hooks (Selene/StyLua) | 🟢 Configurar quando o volume de código justificar |
+| Creator Store API | ⚪ Recurso nativo, não prioridade agora |
+
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
 
