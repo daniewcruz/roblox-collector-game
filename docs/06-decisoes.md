@@ -340,3 +340,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — as recomendações de adoção (GameAnalytics, Cmdr, RbxUtil modular) têm baixo custo de integração e resolvem problemas reais; as rejeições evitam acoplamento desnecessário sem perder nenhuma capacidade que o MVP precise agora.
 - **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 2 de verificação" com tabela de prioridade por ferramenta e fase do roadmap.
 - **DATA**: 2026-08-14
+
+---
+
+## D034 — Ferramentas para reduzir limitações do próprio Claude Code (testes, CLI, gráficos)
+- **DECISÃO**: usuário pediu especificamente repositórios que melhorem minha capacidade de trabalhar (não só o jogo). Pesquisados: **rbxcloud** (CLI Rust para Open Cloud API, 139★, ativo) — **recomendado**, permite gerenciar DataStores/deploy via terminal em vez de GUI do Studio, endereça diretamente minha limitação de não poder clicar em interface gráfica. **Roblox/testez** (framework de testes oficial) — **arquivado desde 14/09/2024**, não adotar; forks candidatos (`lrockreal/testez-luau`, `l3dotdev/EzSpec`) ainda não verificados, avaliar na Fase 3+. **rojo-rbx/run-in-roblox** (74★, ativo, mesma org do Rojo) — permite rodar scripts/testes via linha de comando com captura de saída, útil mas só quando testes automatizados fizerem sentido (Fase 3+, não na Configuração Técnica). **Lumina** (VFX, 30★) — o próprio autor desaconselha uso em produção, não adotar. Performance: nenhuma ferramenta de terceiros madura encontrada — não é uma lacuna real, a Roblox já resolve nativamente com MicroProfiler/StreamingEnabled.
+- **MOTIVO**: usuário quer um "estúdio autônomo" completo, incluindo ferramentas que resolvam limitações minhas especificamente (não poder usar GUI, não poder rodar/ver resultado de testes automaticamente), além de gráficos/performance.
+- **ALTERNATIVAS**: adotar Lumina mesmo com aviso do autor contra uso em produção (rejeitado — risco desnecessário); assumir que existe lacuna de performance e procurar forçosamente uma ferramenta de terceiros (rejeitado — pesquisa honesta mostrou que a plataforma já cobre isso nativamente).
+- **TRADE-OFFS**: nenhum — rbxcloud é a única adição concreta desta rodada, de baixo risco e alto valor específico para mim.
+- **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 3" com essas descobertas e uma tabela resumo.
+- **DATA**: 2026-08-14

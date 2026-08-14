@@ -153,6 +153,40 @@ Pesquisa encontrada pelo usuário incluía três pontes de terceiros entre Claud
 | NevermoreEngine (inteiro) | Não adotar | — |
 | roblox-compilers | Não relevante | — |
 
+## Rodada 3 (D034) — ferramentas que melhoram especificamente o trabalho do Claude Code
+
+O usuário pediu repositórios que reduzam minhas próprias limitações: testar código sem depender só da GUI do Studio, operar a Roblox Cloud via terminal, e melhorar gráficos/performance.
+
+### 🟢 rbxcloud (Sleitnick) — recomendado, ferramenta de alto valor para IA
+- **Link**: [github.com/Sleitnick/rbxcloud](https://github.com/Sleitnick/rbxcloud) — 139 estrelas, MIT, 227 commits, ativo.
+- **Por que é especialmente útil para mim**: é um CLI (Rust) para a Open Cloud API da Roblox — permite gerenciar DataStores, publicar lugares, mensageria e assets **via terminal**, sem precisar da interface gráfica do Studio. Isso é diretamente relevante à minha limitação de não poder clicar em UI — com rbxcloud, tarefas de deploy/debug de DataStore viram comandos de Bash que eu consigo rodar diretamente.
+- **Onde entra**: Fase 2 (Configuração Técnica) ou quando começarmos a testar persistência (Fase 3) — baixo risco, instalação simples via Aftman.
+
+### 🟡 Testes automatizados: TestEZ está arquivado — usar um fork mantido
+- **Roblox/testez** (framework oficial de testes BDD da Roblox) — [github.com/Roblox/testez](https://github.com/Roblox/testez) — **arquivado desde 14/09/2024**, mesmo padrão do Knit (projeto bom, mas abandonado). Não adotar o original.
+- **Alternativas encontradas, ainda não verificadas em profundidade**: `lrockreal/testez-luau` (fork independente da Roblox) e `l3dotdev/EzSpec` (framework novo inspirado em TestEZ/FusionCI) — **nenhum verificado ainda**, avaliar antes de adotar quando chegarmos na fase de testes automatizados.
+- **rojo-rbx/run-in-roblox** — [github.com/rojo-rbx/run-in-roblox](https://github.com/rojo-rbx/run-in-roblox) — 74 estrelas, MIT, ativo, mantido pela mesma organização do Rojo. Permite rodar scripts/testes dentro do Studio a partir da linha de comando, capturando saída — a peça que falta para eu conseguir "rodar e ver o resultado" de forma automatizada em vez de pedir para o usuário testar manualmente no Studio.
+- **Decisão**: útil, mas fica para quando o projeto tiver lógica complexa o suficiente para justificar testes automatizados (Fase 3+) — não é prioridade da Configuração Técnica inicial (D022).
+
+### 🔴 Gráficos/VFX: nada maduro o suficiente para recomendar agora
+- **Lumina** (sistema de partículas com editor visual) — [github.com/Mqxsyy/Lumina](https://github.com/Mqxsyy/Lumina) — só 30 estrelas, e o próprio autor avisa: **"heavily work in progress"**, recomenda **não usar em produção**. Não adotar.
+- Outros resultados de VFX encontrados (vfx-editor, roblox-vfx) eram ainda menores/menos documentados — não verificados a fundo por não passarem no primeiro filtro de maturidade.
+- **Conclusão honesta**: não existe um repositório de VFX maduro o suficiente para recomendar agora. Para o MVP, o sistema de partículas **nativo** do Roblox (ParticleEmitter, Beam, Trail) já é suficiente para os efeitos simples previstos no GDD (reveal de Mimo, clima) — não é uma limitação real neste estágio, é simplesmente cedo demais para precisar de uma lib externa de VFX.
+
+### 🔴 Performance: não existe (nem precisa existir) um repositório de terceiros
+- A pesquisa não encontrou uma ferramenta de terceiros madura para profiling/otimização — porque a Roblox já resolve isso nativamente com o **MicroProfiler** (embutido no Studio) e a configuração `StreamingEnabled`. Isso não é uma lacuna do ecossistema, é uma área que a própria plataforma já cobre bem. Nenhuma ação necessária agora — otimização entra na Fase 8 (Polish) usando as ferramentas nativas.
+
+### Resumo desta rodada
+
+| Ferramenta | Veredito |
+|---|---|
+| rbxcloud | ✅ Recomendado — opera Open Cloud via terminal, direto relevante para mim |
+| run-in-roblox | 🟡 Útil, mas só quando testes automatizados fizerem sentido (Fase 3+) |
+| TestEZ (oficial) | ❌ Arquivado — não adotar |
+| testez-luau / EzSpec | 🟡 Candidatos não verificados — avaliar na Fase 3+ se testes automatizados virarem prioridade |
+| Lumina (VFX) | ❌ Não adotar — o próprio autor desaconselha uso em produção |
+| Performance de terceiros | Não há lacuna — MicroProfiler nativo já cobre isso |
+
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
 
