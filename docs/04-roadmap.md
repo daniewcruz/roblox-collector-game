@@ -30,6 +30,7 @@
 - **Pendência técnica (D052)**: decidir Character Controller Library (sistema novo de movimento por habilidades modulares) vs. Humanoid tradicional — relevante se algum candidato de interação (ex: arremesso preciso) precisar de habilidade de mira/movimento customizada.
 - **Método de prototipagem recomendado pela documentação oficial (D052)**: Paper Prototyping (mais rápido, sem código, bom para validar UI/sistemas) ou Studio Prototyping (testa viabilidade técnica real) — prototipagem deve ser "rápida e estreita", testando só o aspecto específico da interação, não a feature inteira.
 - **Critério de sucesso**: usuário consegue rodar Studio, ver código sincronizado via Rojo, usar Claude Code para gerar/depurar um script simples — **e** uma interação central validada como divertida por si só, escolhida entre os candidatos testados.
+- **Prática recomendada pela comunidade de desenvolvedores (D055, `15-licoes-comunidade-roblox.md`)**: mostrar o protótipo (mesmo bruto/whitebox) para 2-3 pessoas fora do projeto **já nesta fase**, não só esperar o Beta (Fase 9) — desenvolvimento solo cria "câmara de eco"; feedback externo antecipado é barato e reduz risco real de o projeto travar sem ninguém perceber.
 
 ## FASE 3 — Core Gameplay
 - **Objetivo**: implementar o loop central do conceito escolhido (ex: coletar → progressão → mostrar resultado).

@@ -551,3 +551,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `14-mecanicas-roblox-oficial.md` ganha seção 10. Convenção de nomenclatura de RemoteEvents por direção única vira prática recomendada para a Fase 2/3.
 - **DATA**: 2026-08-14
+
+---
+
+## D055 — Lições da comunidade de desenvolvedores (erros comuns, postmortems) + feedback externo antecipado
+- **DECISÃO**: pesquisada sabedoria da comunidade DevForum sobre erros comuns e jogos que falharam. Achado principal: uma thread de 8 anos de experiência confirma quase exatamente a disciplina de escopo já praticada nesta sessão — "superambição" (adicionar features antes de terminar o núcleo) é o erro nº1 citado, e "fat vs. tall" (priorizar sistemas centrais sobre polimento/conteúdo) confirma D024. Também confirmado: "70% cópia/30% originalidade" (validando a base em Fisch + originalidade no tema), e erros técnicos já cobertos (confiar no cliente, performance, modelos gratuitos com scripts ruins). Postmortem de "Chaos at the Bistro" mostra que profundidade de conteúdo insuficiente mata jogos mesmo com boa execução — reforça a necessidade dos "métodos de descoberta variados" já no MVP. **Nova prática adotada**: buscar feedback externo real (mesmo informal) já no Protótipo (Fase 2/3), não só esperar o Beta (Fase 9) — ataca o risco de "câmara de eco" de desenvolvimento solo identificado pela comunidade como causa comum de projetos travarem.
+- **MOTIVO**: usuário pediu para vasculhar a comunidade por erros comuns e feedback negativo, para não repetir os mesmos erros.
+- **ALTERNATIVAS**: nenhuma — pesquisa complementar de validação.
+- **TRADE-OFFS**: nenhum — feedback externo cedo é barato (mostrar protótipo simples a 2-3 pessoas), alto valor de redução de risco.
+- **IMPACTO**: novo documento `15-licoes-comunidade-roblox.md`. `04-roadmap.md` Fase 2/3 ganha a prática de buscar feedback externo antecipado.
+- **DATA**: 2026-08-14
