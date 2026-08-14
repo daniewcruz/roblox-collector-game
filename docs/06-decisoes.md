@@ -101,3 +101,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: o vencedor do novo score (Híbrido Fisch-like) é também o mais complexo tecnicamente dos 4 — por isso a recomendação é uma versão deliberadamente simplificada dele, não a escala completa do jogo de referência.
 - **IMPACTO**: nova análise completa em `08-analise-retencao-generos.md`; decisão final de gênero ainda pendente de confirmação do usuário.
 - **DATA**: 2026-08-13
+
+---
+
+## D011 — Gênero/estrutura confirmado: Híbrido Coleta + Exploração (Fisch-like), MVP deliberadamente pequeno
+- **DECISÃO**: confirmado o Híbrido Coleta+Exploração (vencedor do score em `08-analise-retencao-generos.md`) como estrutura do jogo. Escopo do MVP definido explicitamente pelo usuário: 1 área jogável, poucas dezenas de itens/criaturas, 3-5 níveis de raridade, algumas mutações/variantes visuais, uma ferramenta que evolui, coleção/Bestiary, progressão suficiente para desbloquear uma 2ª área no futuro (não incluída no MVP).
+- **MOTIVO**: melhor equilíbrio entre retenção estrutural e complexidade viável para um solo iniciante, segundo o usuário — mas só aceitável se o escopo for muito menor que o jogo de referência (Fisch).
+- **ALTERNATIVAS**: Simulador puro (2º lugar no score, mais simples) — descartado pelo usuário em favor do híbrido, desde que o MVP seja pequeno.
+- **TRADE-OFFS**: mais complexidade técnica que um simulador puro (sistema de raridade/mutação, Bestiary, minigame de coleta), compensada por escopo restrito nas primeiras fases.
+- **IMPACTO**: este escopo de MVP passa a ser a referência para todo o roadmap (`04-roadmap.md`) e o GDD (Fase 1, próxima etapa). A pesquisa de tema (D007) agora é feita especificamente para essa estrutura.
+- **DATA**: 2026-08-13
