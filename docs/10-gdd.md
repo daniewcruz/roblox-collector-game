@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v4)
+# Game Design Document (GDD) — Fase 1 (revisado, v5)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: Fase 1 (Conceito) — sem código, sem Roblox Studio aberto (D009)
-**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 trocou a ambientação para mundo mágico (D013); v3 incorporou princípios do Super Mario (D014, seção 2b); v4 amplia a referência para 5 franquias Nintendo e expande personalização/loop social de curiosidade (D015, seções 2c e 6b).
+**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 trocou a ambientação para mundo mágico (D013); v3 incorporou princípios do Super Mario (D014, seção 2b); v4 amplia a referência para 5 franquias Nintendo e expande personalização/loop social de curiosidade (D015, seções 2c e 6b); v5 incorpora estrutura viral pesquisada em jogos Roblox atuais (Steal a Brainrot, Grow a Garden, Adopt Me, Roblox Dig) — eventos server-wide, Hall of Fame, eventos-mistério, restrição de design de thumbnail — favorecendo o modelo cooperativo (Grow a Garden) sobre o adversarial (Steal a Brainrot) por coerência com os pilares já estabelecidos (D016, seção 2d).
 
 ---
 
@@ -59,6 +59,37 @@ O usuário pediu para estudar especificamente **por que o loop funciona** em 5 f
 > "Aquele jogador tem uma criatura que eu nunca vi. Como ele conseguiu isso?"
 
 Este é um **Return Loop** e um **Social Loop** ao mesmo tempo, e fica explícito como requisito de design: o espaço de exibição pessoal (seção 6b) precisa ser **visível a outros jogadores** (mesmo que de forma simples no MVP, tipo um "cartão de perfil" com os 3 Mimos mais raros do jogador), para que a descoberta de alguém vire gatilho de meta para outro jogador — sem exigir sistema de visita completo tipo Animal Crossing no MVP.
+
+## 2d. Estrutura viral: por que alguns jogos Roblox geram vídeo/conteúdo espontâneo
+
+O usuário pediu para olhar especificamente para os jogos que hoje dominam Roblox por visitas/CCU e geram conteúdo orgânico em TikTok/YouTube (Steal a Brainrot, Grow a Garden, Adopt Me, Brookhaven, Dress to Impress, 99 Nights, MM2) e perguntou o que os torna compartilháveis, não só jogáveis. Pesquisa confirma: **não existe um gênero vencedor único — existe uma estrutura vencedora**, e ela aparece tanto na versão "caótica" (Steal a Brainrot) quanto na versão "calma" (Grow a Garden), o que muda são os mecanismos específicos, não a fórmula geral.
+
+### Os dois modelos extremos encontrados na pesquisa
+
+| | **Steal a Brainrot** (modelo adversarial) | **Grow a Garden** (modelo cooperativo) |
+|---|---|---|
+| Mecânica central | Roubar Brainrots de outros jogadores: quem rouba fica lento, perde itens, e o dono é alertado — qualquer jogador pode atacar o ladrão para devolver o item ao dono original. [u7buy.com](https://www.u7buy.com/blog/steal-a-brainrot-game-mechanics/) | Clima muda a chance de mutação das plantas (chuva/tempestade aumentam mutações raras, algumas multiplicam o valor em 100-135x); eventos administrados introduzem mutações exclusivas por tempo limitado; clima varia por servidor, incentivando trocar de servidor. [bluestacks.com](https://www.bluestacks.com/blog/game-guides/roblox/rl-gag-weather-mutations-guide-en.html), [pcgamesn.com](https://www.pcgamesn.com/grow-a-garden/mutations) |
+| Recorde de CCU | **25 milhões** (recorde histórico da Roblox, set/2025) — "o jogo mais jogado da história" no pico. [Wikipedia](https://en.wikipedia.org/wiki/Steal_a_Brainrot) | **21,6-22,3 milhões** (jul-ago/2025) — sem nenhuma mecânica de PvP/perda. |
+| Por que gera vídeo | Momentos de perda/ganho imprevisíveis e de alto risco emocional — "ELE ROUBOU MEU BRAINROT" é inerentemente dramático. | Momentos de sorte/descoberta ("consegui uma mutação de 135x!") + estética simplesmente bonita de mostrar. |
+| Risco de design | Mecânica adversarial gera atrito real entre jogadores (frustração, sensação de injustiça, moderação de conflito) — exige suporte à comunidade que um solo dev não tem capacidade de sustentar. | Nenhum atrito entre jogadores — todo o "caos" vem do ambiente (clima, eventos), não de outro jogador. |
+
+**Conclusão desta pesquisa, antes de aplicar ao GDD**: a fórmula viral **não depende** de uma mecânica de PvP/roubo — Grow a Garden prova isso na prática, com CCU quase idêntico ao Steal a Brainrot sem nenhum atrito entre jogadores. Dado que este projeto já estabeleceu como pilar "liberdade sem pressão, sem manipulação" (D013, seção 2, princípio Animal Crossing; `07-hipoteses.md` H2/H4), **a recomendação é seguir o modelo Grow a Garden** (caos ambiental/de evento, não caos entre jogadores) — ver pergunta ao usuário no final desta seção antes de fechar isso como decisão.
+
+### Sistemas concretos recomendados (inspirados nos jogos pesquisados, sem copiar assets)
+
+| Sistema | Inspiração | Como funciona em *Mimo World* | Fase do roadmap |
+|---|---|---|---|
+| **Clima que muda chance de mutação** | Grow a Garden | Clima da região (chuva mágica, névoa, "noite de aurora") altera temporariamente a chance de casulo especial ou desbloqueia uma variação exclusiva daquele clima — reaproveita o sistema de raridade já existente, só adiciona um multiplicador contextual. | Compatível com o MVP (seção 6, "eventos ambientais") — é a mesma "chuva de estrelas" já prevista, só formalizada com mais variações de clima. |
+| **Evento server-wide cooperativo** ("Mimo Lendário avistado") | Grow a Garden (eventos administrados) + Roblox Dig (boss com marcador no mapa) | Aviso no topo da tela + marcador no mapa quando um Mimo raríssimo aparece no servidor; jogadores convergem para a área; recompensa compartilhada entre quem chegou a tempo (não é "quem pega primeiro leva tudo" — reduz atrito). [destructoid.com](https://www.destructoid.com/roblox-dig-boss-guide/) | Fase 6 (Social/Multiplayer) — mecanicamente simples (spawn especial + broadcast), mas depende de já ter jogadores simultâneos suficientes para fazer sentido, por isso pós-MVP. |
+| **Hall of Fame / status** | Adopt Me (status social), pedido direto do usuário | Placar simples: "1º jogador a encontrar [Mimo Lendário]", "1º a completar o Bestiary da região", "maior coleção do servidor" — tecnicamente barato (`OrderedDataStore`), alto impacto de status social. | Fase 4 (Progressão) ou Fase 6 — baixa complexidade técnica, pode entrar cedo. |
+| **Eventos-mistério (não anunciados)** | Reação de criadores de conteúdo tipo "SECRET EVENT FOUND" | Mudanças ambientais sutis e não explicadas (céu muda de cor, música diferente, NPC comporta-se de forma diferente) que sinalizam um evento raro prestes a acontecer — gera curiosidade e vídeo de "o que está acontecendo?" sem exigir sistema novo (reaproveita FX e o clima acima). | Fase 9 (Beta)/11 (Crescimento) — é uma tática de LiveOps (`08-analise-retencao-generos.md`, "Update Loop"), não um sistema a construir agora. |
+| **Design de thumbnail/ícone legível em segundos** | Pedido direto do usuário + pesquisa de mercado | Um sujeito só, alto contraste (>4:1), cor saturada, ação/expressão clara, pouco ou nenhum texto — legível a 150×150px. Ícones assim aumentam CTR em 30-50%, podendo dobrar/triplicar a taxa de cliques. [reelmind.ai](https://reelmind.ai/blog/roblox-how-to-make-thumbnails-designing-clickable-previews-for-gaming-content), [Roblox Creator Hub](https://create.roblox.com/docs/production/publishing/thumbnails) | Não é sistema de jogo — é **restrição de arte** a aplicar desde os primeiros designs de Mimo (reforça o critério "Kirby" já em 2c: cada Mimo precisa ter silhueta simples e reconhecível, isso é literalmente o que faz um bom thumbnail funcionar). |
+
+### Pergunta em aberto: adotamos alguma forma de tensão/rivalidade entre jogadores?
+
+O usuário observou corretamente que "situações que geram vídeo" muitas vezes vêm de **conflito**, não só de coleção pacífica. A pesquisa mostra que dá para gerar caos de conteúdo sem PvP direto (clima + eventos + sorte já fazem isso, ver Grow a Garden). Mas existe uma versão intermediária, mais segura que "roubar item de outro jogador", que pode valer a pena considerar mais adiante (pós-MVP, Fase 6+): uma **corrida** pelo Mimo Lendário do evento server-wide (todos veem o mesmo Mimo raro aparecer, é uma disputa de quem chega primeiro, mas ninguém perde o que já tem) — cria tensão e narrativa ("ELE CONSEGUIU ANTES DE MIM!") sem o risco de atrito/moderação de um sistema de roubo de inventário.
+
+**Isso fica registrado como decisão em aberto, não implementada agora** — ver pergunta ao usuário no final do documento.
 
 ## 3. Por que o jogador continua jogando
 
@@ -121,7 +152,9 @@ Estrutura já validada em `08-analise-retencao-generos.md` (score 4.55/5); ambie
 | Segredo da região | 1 Mimo raro ou atalho escondido fora do caminho óbvio (princípio de saídas secretas de *Super Mario World*, 2b) |
 | Eventos ambientais | Eventos simples (ex: "chuva de estrelas" temporária que aumenta chance de casulo especial) |
 
-**Explicitamente fora do MVP**: 2ª região, sistema de troca entre jogadores, sistema de decoração completo de casa/ambiente (tipo Adopt Me), visitar o espaço de outros jogadores (fica só o "cartão" visível, não visita completa), eventos sazonais com itens exclusivos permanentemente removidos, PvP.
+**Explicitamente fora do MVP**: 2ª região, sistema de troca entre jogadores, sistema de decoração completo de casa/ambiente (tipo Adopt Me), visitar o espaço de outros jogadores (fica só o "cartão" visível, não visita completa), eventos sazonais com itens exclusivos permanentemente removidos, PvP/roubo entre jogadores.
+
+**Fora do MVP, mas já desenhado para ser compatível depois (ver 2d)**: eventos server-wide cooperativos ("Mimo Lendário avistado"), Hall of Fame/placar de status, eventos-mistério de LiveOps, variações de clima adicionais além do evento simples do MVP — todos reaproveitam os mesmos sistemas de dados (raridade, spawn, Bestiary) já no MVP, então não exigem redesenho de arquitetura quando forem implementados (Fases 4/6/9 do roadmap).
 
 ## 6b. Personalização — o que pegamos de Animal Crossing, sem virar Adopt Me
 
@@ -224,4 +257,8 @@ CHECKPOINT 1 — aguardando aprovação do usuário
 
 Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta técnica (MCP/Rojo) foi instalada — conforme D009.
 
-**Pergunta para o Checkpoint 1**: este GDD v4 (mundo mágico + Mimos, síntese de 5 franquias Nintendo, personalização leve + gatilho social de curiosidade, sem cópia de IP) está aprovado para avançarmos à Configuração Técnica (MCP Server + Rojo + Roblox Studio) e depois ao Protótipo (Fase 2)? Ou há algo a ajustar antes — por exemplo, nome do jogo/dos "Mimos", ou revisitar a Direção 5 (Toy World)?
+**Perguntas para o Checkpoint 1** (v5):
+
+1. Este GDD (mundo mágico + Mimos, síntese de 5 franquias Nintendo, estrutura viral inspirada em Grow a Garden/Steal a Brainrot/Adopt Me/Dig, sem cópia de IP) está aprovado para avançarmos à Configuração Técnica (MCP Server + Rojo + Roblox Studio) e depois ao Protótipo (Fase 2)?
+2. **Decisão em aberto (seção 2d)**: confirma o modelo **cooperativo** (clima/eventos/sorte, ao estilo Grow a Garden) em vez do modelo **adversarial** (roubo entre jogadores, ao estilo Steal a Brainrot)? A recomendação é cooperativo, por coerência com os pilares já estabelecidos (sem pressão/manipulação) e por menor risco de moderação para um solo dev — mas os dados mostram que ambos os modelos atingem CCU recorde, então a escolha é legítima nos dois sentidos.
+3. Algo mais a ajustar — nome do jogo/dos "Mimos", ou revisitar a Direção 5 (Toy World)?
