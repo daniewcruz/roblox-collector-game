@@ -162,3 +162,34 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: modelo cooperativo pode gerar menos momentos de drama extremo que o modelo adversarial, mas evita custo de suporte/moderação que um solo dev não tem capacidade de sustentar — trade-off aceito dado o perfil do projeto (10-20h/semana, sem equipe).
 - **IMPACTO**: `10-gdd.md` v5, nova seção 2d. Roadmap (`04-roadmap.md`) ganha referência a esses sistemas nas Fases 4/6/9 quando formos detalhá-las.
 - **DATA**: 2026-08-13
+- **STATUS**: fechada no Checkpoint 1 — modelo cooperativo confirmado pelo usuário (ver D019).
+
+---
+
+## D017 — Mimo elevado a personagem/marca do jogo, não apenas pet colecionável
+- **DECISÃO**: o Mimo passa a ter status de personagem central/mascote do jogo, com critérios de art direction explícitos: extremamente fofo ou visualmente impressionante, silhueta reconhecível, bom para virar skin/meme/thumbnail/animação, suporta dezenas de variantes, desejável mesmo sem entender o jogo. Registrado como diretriz de arte (não sistema de código) para a fase de arte/protótipo.
+- **MOTIVO**: usuário quer que o personagem carregue a identidade da marca do jogo (paralelo a mascotes de franquias de sucesso), mudando a meta de "jogo de coletar criaturas" para "EU QUERO AQUELE BICHINHO" — reação de desejo imediato, não só interesse em mecânica.
+- **ALTERNATIVAS**: manter Mimo como item de coleção sem status especial de marca (era o padrão implícito das v1-v5) — insuficiente para o objetivo de identidade/viralização visual que o usuário quer.
+- **TRADE-OFFS**: nenhum trade-off técnico — é uma diretriz de arte, não adiciona sistema/complexidade de código ao MVP.
+- **IMPACTO**: `10-gdd.md` v6, nova seção 1b. Reforça a decisão já tomada de poucas espécies-base muito bem desenhadas em vez de muitas médias (`09-temas-nichos.md`).
+- **DATA**: 2026-08-13
+
+---
+
+## D018 — Regra de design: "momento compartilhável" como filtro obrigatório
+- **DECISÃO**: toda criatura, skin ou evento futuro precisa ser capaz de gerar um momento que o jogador queira mostrar a alguém (categorias: descoberta, mutação/variação, evento, social, coleção). Este filtro deve ser aplicado antes de qualquer feature entrar no roadmap, inclusive pós-MVP.
+- **MOTIVO**: usuário quer garantir que a estrutura viral pesquisada em D016 não fique só documentada, mas vire critério ativo de priorização de features daqui em diante.
+- **ALTERNATIVAS**: tratar viralização como preocupação só de marketing/thumbnail, não de design de sistema (rejeitado pelo usuário).
+- **TRADE-OFFS**: nenhum negativo — é um filtro de priorização, não uma obrigação de construir mais coisas.
+- **IMPACTO**: `10-gdd.md` v6, nova seção 1c. Deve ser aplicado em toda decisão futura de roadmap/feature a partir de agora.
+- **DATA**: 2026-08-13
+
+---
+
+## D019 — CHECKPOINT 1 APROVADO: GDD fechado, MVP reconfirmado enxuto, avança para Configuração Técnica
+- **DECISÃO**: usuário aprova o GDD v6 no Checkpoint 1. Confirma modelo cooperativo (fecha D016). Descarta definitivamente a Direção 5 (Toy World), sem revisitar. Reconfirma o MVP enxuto, explicitando que ficam fora do MVP (mesmo sendo tecnicamente simples): Hall of Fame, eventos-mistério elaborados, dezenas de biomas, economia avançada, troca entre jogadores, sistemas grandes de pets, centenas de skins. O MVP precisa provar uma única frase: "uma pessoa entra, encontra um Mimo, acha outro, vê uma criatura rara e pensa: quero continuar". Libera o avanço para a Configuração Técnica (MCP Server + Rojo + Roblox Studio), com a condição explícita de que a arquitetura seja preparada para expansão futura sem construir, agora, sistemas que o MVP não precisa.
+- **MOTIVO**: fechar a Fase 1 de forma decisiva antes de qualquer trabalho técnico, e evitar que a Configuração Técnica ou o Protótipo comecem a construir prematuramente sistemas pós-MVP (Hall of Fame, eventos complexos etc.) só porque foram documentados como "compatíveis" em D016.
+- **ALTERNATIVAS**: incluir mais sistemas no MVP desde já (rejeitado — contraria D011 e a regra de simplicidade do prompt mestre original, item 42).
+- **TRADE-OFFS**: nenhum negativo — é a aplicação direta do MVP já definido, com reforço explícito para não ser inflado durante a implementação técnica.
+- **IMPACTO**: encerra a Fase 1. Próxima etapa é a Configuração Técnica (D009 deixa de bloquear instalação de ferramentas). `10-gdd.md` marcado como v6/Checkpoint 1 aprovado.
+- **DATA**: 2026-08-13

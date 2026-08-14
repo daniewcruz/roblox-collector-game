@@ -1,18 +1,53 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v5)
+# Game Design Document (GDD) — Fase 1 (revisado, v6 — CHECKPOINT 1 APROVADO)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
-**Tema**: "Um pequeno mundo cheio de criaturas que você ainda não descobriu" — criaturas colecionáveis ("Mimos") reveladas a partir de casulos/sementes/bolhas mágicas encontradas explorando
-**Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
+**Tema**: "Um pequeno mundo cheio de criaturas que você ainda não descobriu" — o Mimo é o **personagem/marca do jogo** (não só um pet colecionável), revelado a partir de casulos/sementes/bolhas mágicas encontradas explorando
+**Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. Modelo de viralização: cooperativo (Grow a Garden), não adversarial (Steal a Brainrot) — ver 2d. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
-**Status**: Fase 1 (Conceito) — sem código, sem Roblox Studio aberto (D009)
-**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 trocou a ambientação para mundo mágico (D013); v3 incorporou princípios do Super Mario (D014, seção 2b); v4 amplia a referência para 5 franquias Nintendo e expande personalização/loop social de curiosidade (D015, seções 2c e 6b); v5 incorpora estrutura viral pesquisada em jogos Roblox atuais (Steal a Brainrot, Grow a Garden, Adopt Me, Roblox Dig) — eventos server-wide, Hall of Fame, eventos-mistério, restrição de design de thumbnail — favorecendo o modelo cooperativo (Grow a Garden) sobre o adversarial (Steal a Brainrot) por coerência com os pilares já estabelecidos (D016, seção 2d).
+**Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
+**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019).
 
 ---
 
 ## 1. Pitch em uma frase
 
 **Um pequeno mundo cheio de criaturas que você ainda não descobriu.** O jogador explora regiões encantadoras, encontra casulos/sementes mágicas escondidas, e ao abri-los descobre pequenas criaturas ("Mimos") com raridades e variações visuais únicas (dourada, cristal, neon, arco-íris...) — colecionando-as em um Bestiary, personalizando seu personagem/espaço pessoal com o que descobre, e desbloqueando novas regiões com ferramentas/habilidades melhores. (Reformulação de pitch pedida pelo usuário — D015, abandona de vez o enquadramento "jogo de mineração".)
+
+## 1b. Mimo como personagem/marca do jogo (não apenas um pet colecionável)
+
+Ajuste conceitual pedido pelo usuário: o Mimo não é só um item de coleção dentro do jogo — ele é **o personagem que representa o jogo**, na mesma lógica de como um mascote/protagonista carrega a identidade de uma franquia inteira. A diferença-alvo:
+
+> Não é "jogo de coletar criaturas". É **"EU QUERO AQUELE BICHINHO."**
+
+### Critérios de design que todo Mimo precisa atender (diretriz para a Fase de arte, não implementável no código ainda)
+
+- Extremamente fofo **ou** visualmente impressionante (pelo menos um dos dois, com clareza).
+- Reconhecível pela silhueta (critério "Kirby" de 2c, reforçado aqui como requisito central, não só desejável).
+- Funciona bem como skin/variante (silhueta simples permite recolorir/ornamentar sem perder legibilidade).
+- Tem potencial de virar meme (algo levemente exagerado, expressivo, ou com um trejeito único).
+- Funciona em thumbnail a 150×150px (ver 2d — a mesma regra de contraste/sujeito único).
+- Anima bem (poses de descoberta, reação, idle — não precisa ser complexo, precisa ser expressivo).
+- Suporta dezenas de variantes sem ficar repetitivo (a forma base é simples o bastante para receber cor/textura/efeito variados).
+- É desejável **mesmo para quem nunca jogou** — só de ver uma imagem/vídeo do Mimo, alguém deveria pensar "quero isso", sem precisar entender a mecânica do jogo.
+
+Isso não é um sistema a implementar na Fase 1 — é uma **diretriz de art direction** que passa a valer a partir do Protótipo/Fase de arte, e que já influencia decisões de escopo (poucas espécies-base muito bem desenhadas > muitas espécies medianas, reforçando a decisão já tomada em `09-temas-nichos.md` de qualidade de variação sobre quantidade).
+
+## 1c. Regra de design: todo sistema precisa gerar um "momento compartilhável"
+
+Regra adicionada pelo usuário, para ser aplicada **antes** de qualquer mecânica ser implementada — não é um sistema à parte, é um filtro de decisão:
+
+> Toda criatura, skin ou evento deve ser capaz de gerar um momento que o jogador queira mostrar a alguém.
+
+| Categoria | Exemplo do momento |
+|---|---|
+| Descoberta | "ENCONTREI O MIMO MAIS RARO!" |
+| Mutação/variação | "MEU MIMO VIROU DOURADO!" |
+| Evento | "O CÉU FICOU ROXO E TODO MUNDO CORREU PRA FLORESTA." |
+| Social | "OLHA O MIMO QUE ELE TEM!" |
+| Coleção | "FINALMENTE COMPLETEI A FLORESTA!" |
+
+**Como aplicar na prática**: antes de qualquer feature entrar no roadmap (mesmo pós-MVP), passar pelo teste "isso gera um momento de alguma das 5 categorias acima?" — se não gerar, ou a feature precisa de ajuste, ou não vale a pena priorizar. Isso já filtra a favor de sistemas com forte componente visual/emocional (reveal, raridade, clima, coleção) sobre sistemas puramente numéricos (ex: só "mais um upgrade de +5%"), reforçando decisões já tomadas em `08-analise-retencao-generos.md` e `10-gdd.md` 2d.
 
 ## 2. Princípios de design (filosofia Nintendo aplicada, não copiada)
 
@@ -156,6 +191,16 @@ Estrutura já validada em `08-analise-retencao-generos.md` (score 4.55/5); ambie
 
 **Fora do MVP, mas já desenhado para ser compatível depois (ver 2d)**: eventos server-wide cooperativos ("Mimo Lendário avistado"), Hall of Fame/placar de status, eventos-mistério de LiveOps, variações de clima adicionais além do evento simples do MVP — todos reaproveitam os mesmos sistemas de dados (raridade, spawn, Bestiary) já no MVP, então não exigem redesenho de arquitetura quando forem implementados (Fases 4/6/9 do roadmap).
 
+### 6a-bis. Reconfirmação do MVP enxuto (D019, checkpoint 1)
+
+O usuário reforçou explicitamente que o MVP precisa provar **uma única coisa**:
+
+> "Uma pessoa entra, encontra um Mimo, acha outro, vê uma criatura rara e pensa: quero continuar."
+
+Confirmado explicitamente **fora do MVP** (reforça e simplifica a lista acima, sem contradizê-la): Hall of Fame (fica para depois, mesmo que tecnicamente simples), eventos-mistério elaborados, dezenas de biomas (1 região é suficiente para provar o loop), economia avançada, troca entre jogadores, sistemas grandes de pets (o MVP tem só o essencial de coleção, não um sistema de "cuidar do pet"), centenas de skins (poucas variantes bem desenhadas, conforme 1b).
+
+Se o MVP provar essa única frase, o resto do universo (regiões, eventos, Hall of Fame, personalização profunda) é construído depois, com validação real de jogadores — não antes.
+
 ## 6b. Personalização — o que pegamos de Animal Crossing, sem virar Adopt Me
 
 Diferença deliberada em relação a um sistema de decoração completo:
@@ -242,20 +287,26 @@ Dependências: Exploração/Descoberta → Coleção → Economia (mesmo padrão
 - Números exatos de balanceamento (chances de raridade, custos de progressão) — vem na Fase 3/5 com testes reais.
 - Design detalhado dos eventos ambientais ("chuva de estrelas") — mencionado, não especificado.
 - Estratégia de monetização detalhada além da divisão de categorias (Fase 7).
-- Validação da Direção 5 (Toy World) como tema alternativo — descartada por ora a favor desta síntese, mas não pesquisada a fundo (`11-pivot-fofura-colecao-skins.md`, pergunta 3).
+- Validação da Direção 5 (Toy World) como tema alternativo — **descartada definitivamente** pelo usuário no Checkpoint 1 (D019), não será revisitada.
 
 ---
 
-## Checkpoint 1 — pronto para aprovação (revisado)
+## Checkpoint 1 — APROVADO (2026-08-13)
 
 ```
 FASE 0 — Pesquisa Estratégica ✅
 CHECKPOINT 0 — aprovado ✅
-FASE 1 — Conceito + nicho/tema + GDD ✅ (revisado nesta versão)
-CHECKPOINT 1 — aguardando aprovação do usuário
+FASE 1 — Conceito + nicho/tema + GDD ✅
+CHECKPOINT 1 — APROVADO ✅ (D017, D018, D019)
+   ↓
+CONFIGURAÇÃO TÉCNICA — próxima etapa (MCP Server + Rojo + Roblox Studio)
+   ↓
+PROTÓTIPO (Fase 2)
 ```
 
-Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta técnica (MCP/Rojo) foi instalada — conforme D009.
+Decisões do Checkpoint 1: modelo cooperativo confirmado (D016 fechada); Mimo elevado a personagem/marca do jogo com critérios de art direction (D017); regra de design "momento compartilhável" adotada como filtro de decisão para toda feature futura (D018); MVP reconfirmado enxuto, Toy World descartada definitivamente, arquitetura da Configuração Técnica deve ser preparada para expansão sem construir sistemas que o MVP ainda não precisa (D019).
+
+Nenhum código foi escrito, Roblox Studio não foi aberto ainda — a Configuração Técnica é a próxima etapa, não mais bloqueada por D009.
 
 **Perguntas para o Checkpoint 1** (v5):
 

@@ -10,12 +10,14 @@ Projeto de desenvolvimento de um jogo Roblox tratado como Game Studio + Startup 
 FASE 0 — Pesquisa Estratégica ✅
 CHECKPOINT 0 — aprovado ✅
 FASE 1 — Conceito + nicho/tema + GDD ✅
-CHECKPOINT 1 — aguardando aprovação do usuário ⏳
+CHECKPOINT 1 — APROVADO ✅ (D017-D019)
+   ↓
+CONFIGURAÇÃO TÉCNICA — próxima etapa ⏳ (MCP Server + Rojo + Roblox Studio)
 ```
 
-**Conceito confirmado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos"), inspirado na filosofia de design Nintendo (Pokémon, Animal Crossing) sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo.
+**Conceito aprovado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos") — Mimo é o personagem/marca do jogo, não só um pet colecionável. Modelo de viralização cooperativo (estilo Grow a Garden), regra de design "momento compartilhável" aplicada a toda feature futura. Inspirado em 5 franquias Nintendo (Pokémon, Animal Crossing, Mario Odyssey, Kirby, Pikmin) sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v6).
 
-Nenhum código foi escrito, Roblox Studio não foi aberto, nenhuma ferramenta técnica (MCP/Rojo) foi instalada ainda — por decisão explícita do usuário (ver `docs/06-decisoes.md`, D009).
+Nenhum código foi escrito, Roblox Studio ainda não foi aberto — a Configuração Técnica é a próxima etapa aprovada pelo usuário (ver `docs/06-decisoes.md`, D019).
 
 ## Estrutura da documentação
 
