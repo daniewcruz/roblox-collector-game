@@ -510,3 +510,14 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — visão de Fase 6+, sem custo agora.
 - **IMPACTO**: `10-gdd.md` lista de mini-jogos expandida + regra de tom infantil formalizada para toda a visão de arena.
 - **DATA**: 2026-08-14
+
+---
+
+## D051 — Estrutura/ritmo para corridas-fuga-PvP (última rodada de visão, conforme combinado com o usuário) + FECHAMENTO da expansão de escopo
+- **DECISÃO**: adotado o template de ritmo proposto pelo usuário para qualquer mini-jogo de corrida/fuga/PvP da arena (D047-D050): Preparação (instruções rápidas) → Início leve (obstáculos simples) → Caos crescente (blocos móveis, perseguições) → Clímax (momento de maior tensão) → Final (recompensa para todos, não só o vencedor) → Interlúdio irreverente (cena engraçada pós-partida). É um princípio de estrutura, não um sistema novo — zero custo de implementação agora, só orienta o design desses mini-jogos quando forem construídos (Fase 6+). **Esta foi a última rodada de expansão de visão combinada com o usuário** — a partir daqui, o foco volta para validar o Core Gameplay pequeno (seção 4b) e avançar à Configuração Técnica.
+- **MOTIVO**: usuário pediu para trazer mais uma leva antes de fechar, conforme AskUserQuestion anterior (opção "mais uma rodada, depois fechamos").
+- **ALTERNATIVAS**: nenhuma — é a aplicação da mesma régua já usada, mas desta vez o próprio usuário definiu que seria a última rodada por ora.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `10-gdd.md` ganha o template de ritmo na seção de visão Fase 6+. Encerra (por ora) a fase de expansão de visão — próximo passo é a Configuração Técnica (Fase 2), por acordo explícito do usuário.
+- **ATUALIZAÇÃO**: usuário pediu para fundamentar o template em estudos/análises de design já publicados (não só raciocínio próprio) — pesquisado e confirmado: Crash Bandicoot ("ensina mecânica → garante que o jogador usou → só então aumenta dificuldade", mesmo princípio de "ensinar jogando" de 2b, não exclusivo do Mario); Traveller's Tales/jogos LEGO (filosofia declarada do estúdio é acessível+engraçado+cooperativo para jogadores jovens, confirma D040 não como interpretação nossa, mas como filosofia real do estúdio que define o gênero); design de sequências de perseguição (a ameaça deve aparecer como obstáculo mais cedo, antes da perseguição de verdade, para o jogador entender o comportamento dela — incorporado ao passo 2 do template). Fontes citadas em `10-gdd.md`.
+- **DATA**: 2026-08-14
