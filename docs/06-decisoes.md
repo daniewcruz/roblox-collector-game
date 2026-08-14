@@ -480,3 +480,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: sistema de arena exige dano/vida/hit detection/balanceamento — **fora do MVP**, fica como visão de Fase 6+ (Social/Multiplayer) ou mais tarde. Recomendação de tom: manter a arena no mesmo registro "brinquedo"/não-violento já estabelecido (1f/1g) — ex: contestos de empurrar/derrubar, não combate realista com sangue/armas — para não contradizer a identidade "toy world" nem as salvaguardas éticas de público infantil (D020).
 - **IMPACTO**: `10-gdd.md` ganha nota de visão em Fase 6/roadmap. `04-roadmap.md` Fase 6 atualizada com a menção de arena PvP opcional ao lado do sistema de papéis/classes já registrado (D045).
 - **DATA**: 2026-08-14
+
+---
+
+## D048 — Mini-jogos leves adotados na visão de arena; plataforma estilo Crash Bandicoot vai para o backlog
+- **DECISÃO**: usuário trouxe Crash Bandicoot como referência (caixas/frutas, máscara-escudo, perseguições, saltos de precisão, vidas) para evitar tédio no loop de exploração/coleção, mais 5 mini-jogos (corrida de blocos, batalha de construção, caça ao tesouro competitivo, pintura, batalha de bolinhas de espuma). Avaliado e confirmado pelo usuário: os **5 mini-jogos são adotados** como exemplos concretos da arena leve/opcional já registrada (D047) e dos eventos cooperativos já previstos (2d) — encaixam no tom "brinquedo" sem exigir mudança de gênero. A **mecânica de plataforma de precisão** (pulos precisos, perseguição, vidas, escudo temporário) é reconhecida como um gênero diferente do verbo central do jogo (tocar/despertar, D014) e vai para o backlog (`13-backlog-ideias-futuras.md`) — exigiria movimento de personagem preciso, câmera dedicada, sistema de vidas/checkpoint, tudo além do escopo técnico atual.
+- **MOTIVO**: usuário identificou corretamente que exploração/coleção pura pode ficar tediosa sem picos de intensidade — necessidade real e válida. A resposta não foi rejeitar a necessidade, foi separar as soluções baratas (mini-jogos, já quase prontos na arena) das caras (gênero de plataforma novo).
+- **ALTERNATIVAS**: adotar a plataforma de precisão como sistema real (oferecida como opção, usuário não escolheu); ignorar a necessidade de "clímax" (rejeitado — é uma observação de design válida).
+- **TRADE-OFFS**: nenhum — mini-jogos custam pouco a mais do que a arena já registrada; plataforma de precisão fica sem custo nenhum agora (só documentada).
+- **IMPACTO**: `10-gdd.md` seção de visão Fase 6+ (D047) ganha os 5 mini-jogos como exemplos concretos. `13-backlog-ideias-futuras.md` ganha a mecânica de plataforma de precisão.
+- **DATA**: 2026-08-14

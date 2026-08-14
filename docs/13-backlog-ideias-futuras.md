@@ -31,6 +31,10 @@ Tomado como um todo, este pacote de ideias descreve um jogo **estruturalmente di
 1. **Princípio de dosagem tonal** (sério vs. irreverente, eventos programados não constantes) — `10-gdd.md` 1g.
 2. **PvP leve opcional em arena separada** — decisão própria, ver D047 e `10-gdd.md` seção correspondente. Não é deste backlog exatamente (veio de uma pergunta separada), mas é o item de maior porte que *foi* aprovado para entrar na visão de roadmap (Fase 6+), diferente do resto deste documento.
 
+### Plataforma de precisão estilo Crash Bandicoot (D048)
+- Caixas que quebram dão itens/pontos; frutas colecionáveis aumentam pontuação; máscara-escudo temporária; fases lineares com perseguições (Crash fugindo de algo) e sequências de salto preciso; sistema de vidas; memorização de padrões fixos de inimigos/armadilhas; gemas/cristais escondidos para exploração opcional.
+- **Observação**: reconhecida como necessidade real (evitar tédio na exploração pura), mas resolvida de forma mais barata via mini-jogos de arena (D048, adotados no GDD) em vez de um gênero de plataforma completo — que exigiria movimento de personagem preciso, câmera dedicada e sistema de vidas/checkpoint muito além do verbo central já definido (tocar/despertar, D014) e do escopo técnico atual.
+
 ## Como revisitar este backlog
 
 Quando o jogo tiver tração real (métricas de retenção validadas, base de jogadores estabelecida — Fase 9+/11), revisitar este documento e escolher itens específicos para avaliar com o mesmo rigor já aplicado a tudo neste projeto: pesquisa → comparação → decisão registrada — não adotar em bloco.
