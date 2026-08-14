@@ -35,15 +35,18 @@
 - **Onde seria usado**: Fase 3 (Core Gameplay) em diante, substituindo a menção a ProfileService nas decisões anteriores (D005).
 - **Risco**: baixo — mesmo autor/linhagem do ProfileService já validado pela comunidade.
 
-## ReplicaService
+## ReplicaService — verificado, mas tem sucessor mais novo ("Replica")
 - **Finalidade**: replicar dados do servidor para o cliente de forma segura, complementa ProfileService/ProfileStore.
-- **Motivo de considerar**: mesmo raciocínio — problema comum e já resolvido.
+- **Link**: [github.com/MadStudioRoblox/ReplicaService](https://github.com/MadStudioRoblox/ReplicaService) — **verificado, é real**, mesmo autor (loleris/MadStudioRoblox) do ProfileService/ProfileStore.
+- **Atualização (D039)**: mesmo padrão do ProfileService — o próprio autor lançou um sucessor chamado **"Replica"** (anunciado pelo loleris no DevForum/X), mais recente que o ReplicaService. Documentação completa da API ainda "pendente" segundo o anúncio do autor — verificar maturidade antes de escolher entre os dois.
 - **Onde seria usado**: junto com ProfileStore, Fase 3+.
-- **Status**: não verificado nesta rodada (o link "Loleris/ProfileService" citado pelo usuário retornou 404 — o autor correto é MadStudioRoblox/loleris, mas o repositório específico do ReplicaService ainda precisa ser confirmado antes de adotar).
+- **Decisão**: avaliar "Replica" (sucessor) vs. "ReplicaService" (estável, mais documentado) no momento de implementar — mesmo raciocínio já aplicado ao ProfileStore (D032): sucessor mais novo pode valer a pena, mas só se já tiver documentação madura o suficiente.
 
-## Rojo
+## Rojo — verificado, ferramenta fundamental do projeto confirmada
 - **Finalidade**: sincroniza arquivos de código entre um editor externo (ex: VS Code / pasta usada pelo Claude Code) e o Roblox Studio — permite versionar o projeto com git de verdade, em vez de escrever tudo dentro do Studio.
-- **Link**: `rojo-rbx/rojo` (repositório oficial da comunidade — não verificado nesta rodada, mas é o nome consistentemente citado por múltiplas fontes independentes).
+- **Link**: [github.com/rojo-rbx/rojo](https://github.com/rojo-rbx/rojo) — **verificado (D039)**: 1.700 estrelas, 312 forks, 1.528 commits, MPL-2.0, muito ativo. Confirmado como a ferramenta oficial/autêntica da organização `rojo-rbx`.
+- **Achado importante**: além da sincronização básica, o Rojo já suporta **sincronização bidirecional** ("syncback" — trazer mudanças feitas no Studio de volta para os arquivos locais) e deploy via linha de comando direto para a Roblox — recursos que não tínhamos mapeado antes.
+- **Por que isso importa**: sendo a ferramenta mais central de todo o fluxo (sem ela, o "Claude Code escreve Luau" não funciona), é bom finalmente ter confirmado que não é um nome mal citado — é real, maduro e amplamente adotado.
 - **Motivo de considerar**: essencial para que Claude Code consiga editar arquivos de script como texto normal — sem Rojo, o fluxo "Claude Code escreve Luau" fica muito mais manual.
 - **Onde seria usado**: Fase 2 (Protótipo), como parte do setup inicial de ambiente.
 
@@ -162,9 +165,11 @@ O usuário pediu repositórios que reduzam minhas próprias limitações: testar
 - **Por que é especialmente útil para mim**: é um CLI (Rust) para a Open Cloud API da Roblox — permite gerenciar DataStores, publicar lugares, mensageria e assets **via terminal**, sem precisar da interface gráfica do Studio. Isso é diretamente relevante à minha limitação de não poder clicar em UI — com rbxcloud, tarefas de deploy/debug de DataStore viram comandos de Bash que eu consigo rodar diretamente.
 - **Onde entra**: Fase 2 (Configuração Técnica) ou quando começarmos a testar persistência (Fase 3) — baixo risco, instalação simples via Aftman.
 
-### 🟡 Testes automatizados: TestEZ está arquivado — usar um fork mantido
+### 🟡 Testes automatizados: TestEZ está arquivado — alternativas agora verificadas (D039)
 - **Roblox/testez** (framework oficial de testes BDD da Roblox) — [github.com/Roblox/testez](https://github.com/Roblox/testez) — **arquivado desde 14/09/2024**, mesmo padrão do Knit (projeto bom, mas abandonado). Não adotar o original.
-- **Alternativas encontradas, ainda não verificadas em profundidade**: `lrockreal/testez-luau` (fork independente da Roblox) e `l3dotdev/EzSpec` (framework novo inspirado em TestEZ/FusionCI) — **nenhum verificado ainda**, avaliar antes de adotar quando chegarmos na fase de testes automatizados.
+- **`lrockreal/testez-luau`** — **verificado (D039): 0 estrelas, 0 forks, sem atividade visível** — na prática, um fork abandonado/não usado. **Não recomendado.**
+- **`l3dotdev/EzSpec`** — **verificado (D039): 6 estrelas, MIT, 14 commits**, inspirado no BoatTEST/FusionCI, com API minimalista, suporte a testes aninhados, benchmarking de tempo de execução, e já vem com configuração de Selene/StyLua. Pequeno, mas estruturado como projeto real (não abandonado).
+- **Decisão revisada**: entre os dois forks, **EzSpec é a escolha melhor fundamentada** se testes automatizados virarem necessários — `testez-luau` está efetivamente morto.
 - **rojo-rbx/run-in-roblox** — [github.com/rojo-rbx/run-in-roblox](https://github.com/rojo-rbx/run-in-roblox) — 74 estrelas, MIT, ativo, mantido pela mesma organização do Rojo. Permite rodar scripts/testes dentro do Studio a partir da linha de comando, capturando saída — a peça que falta para eu conseguir "rodar e ver o resultado" de forma automatizada em vez de pedir para o usuário testar manualmente no Studio.
 - **Decisão**: útil, mas fica para quando o projeto tiver lógica complexa o suficiente para justificar testes automatizados (Fase 3+) — não é prioridade da Configuração Técnica inicial (D022).
 
@@ -183,7 +188,7 @@ O usuário pediu repositórios que reduzam minhas próprias limitações: testar
 | rbxcloud | ✅ Recomendado — opera Open Cloud via terminal, direto relevante para mim |
 | run-in-roblox | 🟡 Útil, mas só quando testes automatizados fizerem sentido (Fase 3+) |
 | TestEZ (oficial) | ❌ Arquivado — não adotar |
-| testez-luau / EzSpec | 🟡 Candidatos não verificados — avaliar na Fase 3+ se testes automatizados virarem prioridade |
+| EzSpec | 🟢 Verificado, candidato real (testez-luau descartado — abandonado) |
 | Lumina (VFX) | ❌ Não adotar — o próprio autor desaconselha uso em produção |
 | Performance de terceiros | Não há lacuna — MicroProfiler nativo já cobre isso |
 
@@ -324,9 +329,14 @@ O usuário colou uma lista maior, gerada por outra IA, com vários repositórios
 ## Ferramenta de gestão de processo/mapa
 - **Decisão desta fase**: Markdown + estrutura de pastas em `docs/` (ver `06-decisoes.md` para justificativa completa). Não adotar Notion/ClickUp/Plane agora — exigiriam autenticação não disponível nesta sessão e adicionam uma dependência externa sem necessidade comprovada para um solo dev nesta fase inicial.
 
-## O que ainda falta avaliar (pendências para Fase 2)
-- Licença exata do `roblox-game-skill` antes de qualquer uso de código dele
-- Rojo: verificar diretamente o repositório oficial (`rojo-rbx/rojo`) antes de instalar — ainda não verificado nesta rodada
-- Decisão explícita "Luau puro vs. roblox-ts" antes de considerar Reflex/awesome-roblox-ts
-- Ferramentas de analytics dentro do próprio Roblox (Creator Hub Analytics nativo) vs. soluções de terceiros — não pesquisado a fundo nesta rodada
+## O que ainda falta avaliar (pendências reais para Fase 2/3)
+- Licença exata do `roblox-game-skill` antes de qualquer uso de código dele — ainda pendente
+- Decisão explícita "Luau puro vs. roblox-ts" antes de considerar Reflex/awesome-roblox-ts/Stoway — ainda pendente, afeta várias escolhas de UI
+- Comparar `roblox-game-skill` vs. `roblox-dev-skill` na prática antes de escolher qual usar (D035) — ainda pendente
+- Avaliar `Chrrxs/robloxstudio-mcp` (captura de tela) na prática ao lado do MCP oficial (D035) — ainda pendente
+- "Replica" (sucessor do ReplicaService) vs. ReplicaService estável — checar maturidade da documentação antes de escolher (D039)
+- Ferramentas de analytics dentro do próprio Roblox (Creator Hub Analytics nativo) vs. GameAnalytics SDK — comparação direta ainda não feita
+- Qualquer item da lista "não verificada" em rodadas anteriores, se o usuário quiser considerá-los especificamente
+
+~~Rojo: verificar repositório oficial~~ — **resolvido (D039)**: confirmado 1.700★, ativo, oficial.
 - Qualquer item da lista "não verificada" acima, se o usuário quiser considerá-los específicamente

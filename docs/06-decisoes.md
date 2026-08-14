@@ -390,3 +390,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — todos os achados são anotações para fases futuras (Fase 3+), nenhum exige ação imediata que atrapalhe o MVP enxuto já definido.
 - **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 6". Fase 3 (Core Gameplay/Bestiary) passa a ter candidatos de UI e áudio já mapeados quando chegar a hora.
 - **DATA**: 2026-08-14
+
+---
+
+## D039 — Auditoria de pendências: verificado o Rojo (nunca tinha sido checado!) e outras lacunas antigas
+- **DECISÃO**: usuário pediu para procurar ativamente lacunas — em vez de nova busca por área nova, auditei o próprio documento em busca de itens marcados "não verificado" em rodadas anteriores e nunca resolvidos. Achado mais importante: **o Rojo, a ferramenta mais central de todo o fluxo de trabalho, nunca tinha sido verificado de fato** — confirmado agora: 1.700★, 312 forks, 1.528 commits, MPL-2.0, muito ativo, org oficial `rojo-rbx`, com recursos adicionais não mapeados antes (sincronização bidirecional "syncback", deploy via CLI). **ReplicaService confirmado real** (MadStudioRoblox/ReplicaService), mas mesmo padrão do ProfileService: o autor lançou um sucessor mais novo chamado "Replica", documentação ainda "pendente" segundo o próprio autor — avaliar maturidade antes de escolher entre os dois. **Testes**: `lrockreal/testez-luau` verificado como **abandonado** (0 estrelas, sem atividade); `l3dotdev/EzSpec` verificado como candidato real (6★, estruturado, configurado com Selene/StyLua) — recomendação passa a ser EzSpec, não mais "ambos não verificados".
+- **MOTIVO**: usuário pediu para continuar procurando lacunas ativamente. Uma auditoria do que já estava documentado como "pendente de verificação" revelou que itens fundamentais (o próprio Rojo!) tinham ficado sem checagem real por várias rodadas — risco de recomendar algo com base só em "nome consistentemente citado", não em verificação de fato.
+- **ALTERNATIVAS**: continuar buscando áreas temáticas novas em vez de auditar pendências antigas (também válido, mas essa auditoria tinha prioridade por envolver a ferramenta mais crítica do projeto).
+- **TRADE-OFFS**: nenhum — só reduz risco.
+- **IMPACTO**: `05-ferramentas-github.md` seções de ReplicaService, Rojo e testes atualizadas com dados reais. Lista de pendências reescrita para refletir o que genuinamente ainda falta (não mais Rojo).
+- **DATA**: 2026-08-14
