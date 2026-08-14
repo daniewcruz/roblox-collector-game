@@ -111,3 +111,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: mais complexidade técnica que um simulador puro (sistema de raridade/mutação, Bestiary, minigame de coleta), compensada por escopo restrito nas primeiras fases.
 - **IMPACTO**: este escopo de MVP passa a ser a referência para todo o roadmap (`04-roadmap.md`) e o GDD (Fase 1, próxima etapa). A pesquisa de tema (D007) agora é feita especificamente para essa estrutura.
 - **DATA**: 2026-08-13
+
+---
+
+## D012 — Tema final: Mineração + Criaturas de Cristal
+- **DECISÃO**: confirmado o tema "Mineração + Criaturas de Cristal" (Opção A de `09-temas-nichos.md`), com um refinamento de design proposto pelo próprio usuário: a criatura não é o recurso principal, é a **recompensa da exploração** — descoberta ao quebrar um cristal raro, com um momento de reveal dedicado ("Algo está se movendo dentro...").
+- **MOTIVO**: cria identidade visual/narrativa própria (não é confundível com Fisch/Catch Bugs à primeira vista, ao contrário da Opção B); mineração favorece produção incremental natural (novo minério → nova profundidade → nova criatura → nova ferramenta), facilitando expansão pós-MVP; reduz necessidade de centenas de espécies porque a criatura é rara por design, não o volume principal de conteúdo.
+- **ALTERNATIVAS**: Opção B (Oceano + Mutação) — descartada por comparação mais fácil com Fisch.
+- **TRADE-OFFS**: nenhum trade-off negativo identificado além dos já registrados em D011 (complexidade do híbrido em geral).
+- **IMPACTO**: define o GDD (`10-gdd.md`) e todo o roadmap de conteúdo daqui em diante. Core loop fechado: Explorar → Minerar → Descobrir → Colecionar → Evoluir → Explorar mais fundo.
+- **DATA**: 2026-08-13
