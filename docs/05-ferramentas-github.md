@@ -97,6 +97,62 @@ Pesquisa encontrada pelo usuário incluía três pontes de terceiros entre Claud
 
 **Decisão**: nenhuma dessas substitui o MCP Server oficial da Roblox já registrado acima — todas têm poucas estrelas, poucos commits e adoção mínima. Ficam anotadas como "para acompanhar", não para adotar agora.
 
+## Rodada 2 de verificação (D033) — análise individual pedida pelo usuário
+
+### 🟢 Recomendados para adotar (Fase 2/3)
+
+**GameAnalytics SDK Roblox** — [github.com/GameAnalytics/GA-SDK-ROBLOX](https://github.com/GameAnalytics/GA-SDK-ROBLOX)
+- 71 estrelas, 222 commits, MIT, mantido pela própria empresa GameAnalytics (não é projeto hobby).
+- **Por que importa**: resolve diretamente o item de analytics que o prompt mestre original pede desde o protótipo (retenção D1/D7/D30, funil de eventos) — em vez de construir instrumentação do zero. Gratuito na configuração básica.
+- **Onde entra**: Fase 3 (Core Gameplay), junto com os primeiros eventos de analytics (entrada, primeira descoberta, retorno).
+
+**evaera/Cmdr** — [github.com/evaera/Cmdr](https://github.com/evaera/Cmdr)
+- 514 estrelas, 630 commits, MIT — maduro, documentado, com Discord de suporte.
+- **Por que importa**: console de comandos de desenvolvedor (tipo Counter-Strike/Skyrim) — permite testar o jogo (dar Mimo, teleportar, forçar raridade) sem precisar editar código a cada teste manual. Ferramenta de produtividade para um solo dev, não faz parte do jogo publicado.
+- **Onde entra**: Fase 2/3, como ferramenta de desenvolvimento/debug — não é dependência do jogo em produção.
+
+**Sleitnick/RbxUtil** — [github.com/Sleitnick/RbxUtil](https://github.com/Sleitnick/RbxUtil)
+- 447 estrelas, 534 commits, MIT, CI/CD ativo, 33+ módulos (Signal, Trove, Comm, Net, Promise-like, TableUtil...).
+- **Por que importa**: resolve o link quebrado da rodada anterior (o "Sleitnick/rbxts-signal" que você citou vive aqui dentro). É uma caixa de ferramentas pequenas e independentes — dá para instalar só o Signal ou só o Trove via Wally, sem adotar um framework inteiro. Isso respeita a regra de simplicidade (evitar dependência grande tipo Knit/NevermoreEngine).
+- **Onde entra**: Fase 3+, módulo a módulo, conforme a necessidade aparecer (ex: Signal para eventos internos, Comm para RemoteEvents).
+
+### 🟡 Candidatos para decidir mais adiante (não bloqueiam nada agora)
+
+**centau/vide** — [github.com/centau/vide](https://github.com/centau/vide)
+- 313 estrelas, MIT, ativo. Biblioteca de UI reativa (inspirada em Solid.js), alternativa ao Fusion já registrado acima.
+- **Decisão**: Fusion e Vide resolvem o mesmo problema (UI declarativa) — escolher **um dos dois** quando a Fase 3+ chegar na UI do Bestiary/loja, não os dois. Registrar como opção B do Fusion.
+
+**Sleitnick/RbxObservers** — [github.com/Sleitnick/RbxObservers](https://github.com/Sleitnick/RbxObservers)
+- 54 estrelas, MIT, pequeno e específico (utilitários de observação/reatividade).
+- **Decisão**: só relevante se o projeto adotar um padrão reativo (Vide/Fusion) de forma mais profunda — reavaliar nessa hora, não agora.
+
+### 🔴 Não recomendados para este projeto
+
+**matter-ecs/matter** — [github.com/matter-ecs/matter](https://github.com/matter-ecs/matter)
+- 111 estrelas, MIT, ativo e bem mantido — mas é um framework **ECS (Entity Component System)**, um paradigma de arquitetura significativamente mais complexo que o necessário para um MVP pequeno solo. Adotar ECS agora seria complexidade prematura (mesma regra que já afastou o Knit) — não porque a ferramenta é ruim, mas porque não combina com o tamanho do projeto.
+- **Decisão**: não adotar. Reavaliar só se o jogo crescer para um nível de complexidade de simulação que justifique (não é o caso do MVP nem das fases próximas).
+
+**Quenty/NevermoreEngine** — [github.com/Quenty/NevermoreEngine](https://github.com/Quenty/NevermoreEngine)
+- 606 estrelas, 5.754 commits, MIT, extremamente maduro (já rodou em bilhões de sessões de jogo) — mas é uma **mega-coleção de 278 pacotes**, um "framework completo" no mesmo espírito do Knit (mas, diferente do Knit, este está ativo).
+- **Decisão**: **não adotar como framework inteiro** — o tamanho e o acoplamento entre os 278 pacotes é overkill para um solo dev com MVP pequeno. Se algum módulo específico (ex: Maid, Spring) for útil isoladamente mais adiante, avaliar puxar só aquele módulo via Wally, não o engine inteiro.
+
+**roblox-compilers (organização)** — [github.com/roblox-compilers](https://github.com/roblox-compilers)
+- Coleção de compiladores que traduzem outras linguagens (Python, C/C++, LLVM) para Luau. Vários dos repositórios estão **arquivados**.
+- **Decisão**: **não relevante para este projeto** — não há motivo para escrever o jogo em outra linguagem e compilar para Luau; isso adicionaria uma camada de complexidade/risco sem nenhum benefício para o nosso caso (Rojo + Luau direto já é o fluxo padrão e mais simples).
+
+### Resumo de prioridade (D033)
+
+| Ferramenta | Prioridade | Fase |
+|---|---|---|
+| GameAnalytics SDK | Alta | Fase 3 |
+| evaera/Cmdr | Alta (produtividade de dev) | Fase 2/3 |
+| RbxUtil (módulos avulsos) | Alta, conforme necessidade | Fase 3+ |
+| Fusion **ou** Vide (escolher 1) | Média | Fase 3+ |
+| RbxObservers | Baixa | Só se adotar padrão reativo |
+| Matter ECS | Não adotar | — |
+| NevermoreEngine (inteiro) | Não adotar | — |
+| roblox-compilers | Não relevante | — |
+
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
 

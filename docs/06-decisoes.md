@@ -330,3 +330,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — o custo de verificação (WebFetch em cada link) foi baixo comparado ao risco de adotar uma dependência inexistente ou abandonada.
 - **IMPACTO**: `05-ferramentas-github.md` reescrito com todas as entradas verificadas, corrigidas ou marcadas como não verificadas. `06-decisoes.md` D005 marcada como revisada.
 - **DATA**: 2026-08-14
+
+---
+
+## D033 — Segunda rodada: análise individual de 8 ferramentas adicionais
+- **DECISÃO**: verificados individualmente 8 repositórios pedidos pelo usuário. Recomendados para adotar: **GameAnalytics SDK Roblox** (analytics gratuito, MIT, mantido pela empresa — Fase 3), **evaera/Cmdr** (console de comandos de dev/debug, 514★, maduro — Fase 2/3, ferramenta de desenvolvimento, não do jogo publicado), **Sleitnick/RbxUtil** (447★, coleção de módulos pequenos independentes — adotar módulo a módulo via Wally, não o pacote inteiro). Candidatos para decidir depois: **centau/vide** (alternativa ao Fusion para UI reativa — escolher um dos dois na Fase 3+, não os dois) e **Sleitnick/RbxObservers** (só relevante se adotar padrão reativo). **Não recomendados**: **matter-ecs/matter** (framework ECS — complexidade de arquitetura desproporcional a um MVP solo pequeno, mesmo raciocínio que já afastou o Knit), **Quenty/NevermoreEngine** (606★, muito maduro, mas é uma mega-coleção de 278 pacotes acoplados — overkill para o projeto; módulos individuais podem ser avaliados isoladamente no futuro), **roblox-compilers** (org de compiladores de outras linguagens para Luau — não relevante, seria complexidade sem benefício já que o fluxo Rojo+Luau direto já é simples e padrão).
+- **MOTIVO**: usuário pediu análise individual de cada ferramenta para expandir o "ecossistema" de desenvolvimento — aplicando o mesmo processo de verificação (Pesquisar → Comparar → Validar) da rodada anterior (D032), e a mesma régua de simplicidade já usada para rejeitar Knit (D005/histórico) e para não adotar frameworks grandes cedo demais.
+- **ALTERNATIVAS**: adotar frameworks grandes (Matter, NevermoreEngine inteiro) para "ter mais recursos disponíveis" — rejeitado por violar a regra de simplicidade do prompt mestre (item 42) e por não haver necessidade comprovada num MVP pequeno solo.
+- **TRADE-OFFS**: nenhum — as recomendações de adoção (GameAnalytics, Cmdr, RbxUtil modular) têm baixo custo de integração e resolvem problemas reais; as rejeições evitam acoplamento desnecessário sem perder nenhuma capacidade que o MVP precise agora.
+- **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 2 de verificação" com tabela de prioridade por ferramenta e fase do roadmap.
+- **DATA**: 2026-08-14
