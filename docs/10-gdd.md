@@ -26,6 +26,10 @@ Ajuste conceitual pedido pelo usuário: o Mimo não é só um item de coleção 
 
 A fofura é **uma** das portas de entrada, não a única. Ver seção 1e para as 6 famílias visuais que ampliam essa definição (Cute, Cool, Majestic, Mystic, Chaotic, Legendary).
 
+### Calibração de nível: "impressionante", não "infantil de 5 anos" (D031)
+
+Mesmo os Mimos da família Cute não devem ler como voltados a bebês/pré-escolar — a referência de nível é **personagem icônico com apelo amplo**, tipo Mario Bros: poses com presença, contornos fortes, atravessando idades. Fofura ≠ passividade/simplicidade excessiva. Isso é uma calibração de execução (Fase de arte), não muda os critérios abaixo.
+
 ### Critérios de design que todo Mimo precisa atender (diretriz para a Fase de arte, não implementável no código ainda)
 
 - Extremamente fofo, poderoso, imponente, misterioso, engraçado **ou** simplesmente lindo — pelo menos um apelo forte e claro, não necessariamente fofura.

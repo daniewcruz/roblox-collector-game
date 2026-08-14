@@ -303,3 +303,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum trade-off técnico relevante — skins de ferramenta reaproveitam a mesma arquitetura de cosméticos já prevista (6b/8); o candidato de arremesso é só mais uma opção a testar no protótipo, não uma escolha travada.
 - **IMPACTO**: `10-gdd.md` seção 4b ganha o 5º candidato de interação; seção 6b/8 passam a mencionar skins de ferramenta como categoria cosmética. `12-conceitos-mimo.md` ganha nova seção com os 3 esboços de ferramenta.
 - **DATA**: 2026-08-14
+
+---
+
+## D031 — Calibração de art direction: "impressionante", não "infantil de 5 anos"
+- **DECISÃO**: os esboços produzidos até aqui (formas redondas, estáticas, cores pastel simples) leram como voltados a crianças muito pequenas — não é a calibração certa. A diretriz de arte passa a ser explicitamente **"impressionante" no nível de personagens icônicos tipo Mario Bros** (apelo amplo, atravessando idades, não só pré-escolar): poses mais dinâmicas, contornos fortes, presença visual de impacto, mesmo em criaturas da família Cute — fofura não deve significar "bebê"/"passivo". Isso não substitui as 6 famílias visuais (D026) nem os critérios de 1b — é uma correção de **execução/nível de acabamento**, não de conceito.
+- **MOTIVO**: usuário observou que os esboços pareciam mirar crianças de 5 anos, quando o objetivo é um personagem/marca com apelo amplo e impressionante, citando Mario Bros como referência de nível.
+- **ALTERNATIVAS**: manter o estilo atual e só ajustar na produção de arte final (rejeitado — melhor calibrar a referência agora, barato em esboço, do que descobrir o problema só na Fase 8).
+- **TRADE-OFFS**: nenhum — esboços em SVG continuam rápidos/baratos mesmo com poses mais dinâmicas; não muda o cronograma.
+- **IMPACTO**: gerado um exemplo comparativo (Draconyx v1 vs. v2, pose dinâmica + contorno forte) mostrado ao usuário nesta sessão. Nota importante de limitação: esboços em SVG simples têm teto de acabamento — a elevação real a "nível Mario Bros" acontece na produção de arte de verdade (Fase 8, com ilustrador/ferramenta de arte apropriada), os esboços servem só para testar silhueta/pose/conceito, não para prever o resultado final.
+- **DATA**: 2026-08-14
