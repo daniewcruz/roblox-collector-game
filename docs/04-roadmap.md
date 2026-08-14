@@ -45,6 +45,7 @@
 ## FASE 5 — Economia
 - **Objetivo**: balancear fontes e sinks de moeda in-game antes de qualquer monetização real.
 - **Dependências**: Fase 4.
+- **Método recomendado pela documentação oficial (D053)**: calcular Valor Esperado (EV = valor do item × probabilidade de obtenção) para prever se a chance de raridade gera excesso/escassez de recursos antes de publicar; usar sumidouros eficazes (itens cosméticos por tempo limitado, moeda de evento exclusiva) em vez de só reduzir ganho.
 - **Critério de sucesso**: economia não quebra (inflação descontrolada) em testes manuais de sessões longas simuladas.
 
 ## FASE 6 — Social/Multiplayer básico

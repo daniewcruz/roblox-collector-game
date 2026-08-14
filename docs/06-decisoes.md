@@ -531,3 +531,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — não mudou nenhuma decisão estrutural já tomada, só validou e adicionou detalhe prático de execução.
 - **IMPACTO**: novo documento `14-mecanicas-roblox-oficial.md`. Pendência técnica nova para Fase 2: decidir Character Controller Library vs. Humanoid tradicional.
 - **DATA**: 2026-08-14
+
+---
+
+## D053 — Consumidos mais 4 documentos oficiais (design-for-roblox, economia, quests, UI/UX, analytics)
+- **DECISÃO**: consumidos mais 4-5 documentos oficiais do Creator Hub. Achado mais importante: **design-for-roblox.md** define 3 pilares específicos da plataforma — (1) Comportamento: "jogos single-player sofrem significativamente" na Roblox, interação social impulsiona retenção; (2) Público: jovens priorizam exploração/socialização sobre competição, "esquisitice e criatividade são parte central da cultura Roblox", polimento visual importa menos que diversão; (3) Engine: mobile-first essencial, UI baseada em ícone. Isso valida com fonte oficial várias decisões já tomadas: visibilidade social mesmo no MVP pequeno (cartão de perfil, 2c), priorizar validar diversão do Core Gameplay antes de arte (D024), e a lógica de mundo eclético/toy-world (D040/D042) como coerente com a cultura da plataforma, não um risco. Também consumidos: framework de economia (Valor Esperado = valor×probabilidade, sumidouros mais eficazes = moedas de evento exclusivas — aplicar na Fase 5); design de missões (Achievements vs. Dailies — Bestiary já funciona como Achievements natural, Dailies fica candidato pós-MVP); UI/UX (mobile minimalista, UI contextual, convenções já estabelecidas tipo prompt de tecla "E"); analytics (confirma 3 categorias de KPI já usadas: engajamento/retenção/monetização, mais Experiments/Configs como ferramentas nativas de ajuste sem republicar).
+- **MOTIVO**: usuário pediu para continuar buscando documentação sobre tudo que é necessário no jogo.
+- **ALTERNATIVAS**: nenhuma — pesquisa confirmatória/complementar.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `14-mecanicas-roblox-oficial.md` expandido com seções 5-9. `10-gdd.md` ganha os 3 pilares como fundamentação oficial adicional.
+- **DATA**: 2026-08-14
