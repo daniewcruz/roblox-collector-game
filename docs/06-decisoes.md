@@ -601,3 +601,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — mesmo plugin, mesma versão, só método de instalação diferente. Usuário precisa reabrir o Studio para o plugin aparecer.
 - **IMPACTO**: plugin do Rojo instalado localmente. Próximo passo: usuário reabre o Studio, confirma que o botão do Rojo aparece na aba Plugins, e testamos a conexão com `rojo serve`.
 - **DATA**: 2026-08-14
+
+---
+
+## D060 — Conexão Rojo ↔ Studio confirmada funcionando
+- **DECISÃO**: `rojo serve` iniciado em background (porta 34872). Usuário conectou o plugin do Rojo dentro do Studio ao projeto `MimoWorld` com sucesso — painel do plugin confirma sincronização ativa. **Isso cumpre parte do critério de sucesso da Fase 2** (`04-roadmap.md`): "usuário consegue rodar Studio, ver código sincronizado via Rojo".
+- **MOTIVO**: passo natural de verificação após resolver a instalação do plugin (D059).
+- **ALTERNATIVAS**: nenhuma.
+- **TRADE-OFFS**: nenhum. Nota: `rojo serve` precisa continuar rodando em background durante todo o desenvolvimento para a sincronização se manter ativa.
+- **IMPACTO**: próximo passo é confirmar visualmente que os scripts placeholder (`src/Server/init.server.luau`, `src/Client/init.client.luau`) aparecem na árvore do Explorer do Studio, e testar via Play que os `print()` aparecem no Output — fecha o critério de sucesso da Fase 2 restante.
+- **DATA**: 2026-08-14
