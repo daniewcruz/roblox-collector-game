@@ -187,6 +187,44 @@ O usuário pediu repositórios que reduzam minhas próprias limitações: testar
 | Lumina (VFX) | ❌ Não adotar — o próprio autor desaconselha uso em produção |
 | Performance de terceiros | Não há lacuna — MicroProfiler nativo já cobre isso |
 
+## Rodada 4 (D035) — mais Skills, MCP com visão de cena 3D, templates reutilizáveis
+
+O usuário pediu para ampliar a busca: mais Skills de Claude Code para Roblox, ferramentas que me ajudem a "enxergar" o cenário 3D, e sistemas/templates reutilizáveis de jogabilidade.
+
+### 🟢 Chrrxs/robloxstudio-mcp — achado importante: MCP com captura de tela
+- **Link**: [github.com/Chrrxs/robloxstudio-mcp](https://github.com/Chrrxs/robloxstudio-mcp) — 171 estrelas, MIT, 80 commits, ativamente mantido (v2.23.1).
+- **Por que é relevante para "identificar no 3D"**: inclui uma ferramenta `capture_screenshot` que captura o viewport do Studio, além de debugging de runtime, profiling de performance/memória e automação de playtest (solo e multiplayer). Isso é exatamente o tipo de capacidade que falta no fluxo padrão — eu consigo ler a árvore de objetos (`DataModel`) via MCP oficial, mas **ver visualmente** o resultado (para checar se um Mimo ficou bem posicionado, se a UI está legível) é uma capacidade adicional.
+- **Ressalva**: é mais maduro que os outros MCPs de terceiros já avaliados (D032), mas ainda é um projeto de terceiros, não oficial — a captura de tela é "renderização por dados de geometria" em alguns forks similares, não necessariamente uma imagem fotorrealista pronta para eu interpretar como uma screenshot normal.
+- **Decisão**: candidato a **avaliar na prática durante a Configuração Técnica** (Fase 2), como complemento ao MCP oficial da Roblox — não substituto, mas pode preencher a lacuna de "visão" que o MCP oficial não cobre claramente.
+
+### 🟢 MSayib/roblox-dev-skill — alternativa mais recentemente ativa ao roblox-game-skill
+- **Link**: [github.com/MSayib/roblox-dev-skill](https://github.com/MSayib/roblox-dev-skill) — 7 estrelas (poucas), mas **atividade confirmada em agosto/2026** (mesmo mês desta pesquisa), versão 2.4.0, MIT.
+- **Por que vale considerar**: 5.800+ linhas de conhecimento curado, busca de API local-first (mais eficiente em tokens), integração MCP, e — diferente do `roblox-game-skill` do brockmartin (D003, manutenção incerta, só 3 commits visíveis) — este mostra atualização bem mais recente.
+- **Decisão**: **comparar diretamente com `roblox-game-skill` na Fase 2**, antes de escolher qual (ou se ambos, um como referência de leitura) — critério de manutenção ativa pesa a favor deste, mas o `roblox-game-skill` tem mais estrelas/adoção (133 vs. 7). Validar licença de ambos antes de usar código, não só a Skill em si.
+
+### 🟡 sentinelcore/roblox-skills — modular, mas muito inicial
+- **Link**: [github.com/sentinelcore/roblox-skills](https://github.com/sentinelcore/roblox-skills) — 13 estrelas, 4 commits, estrutura modular interessante (7 módulos: monetização, DataStores, RemoteEvents, GUI, segurança, animações, performance).
+- **Decisão**: estágio inicial demais para adotar agora — a estrutura modular é um bom padrão de referência, mas o conteúdo em si tem pouca maturidade comprovada (poucos commits).
+
+### 🟡 MonzterDev/Roblox-Game-Template — referência de arquitetura, não adoção direta
+- **Link**: [github.com/MonzterDev/Roblox-Game-Template](https://github.com/MonzterDev/Roblox-Game-Template) — 15 estrelas, 11 commits. Template com ProfileService + Cmdr + Net + Reflex + React (branch "Standard") ou versão mais simples com GUI nativa do Studio (branch "Simple").
+- **Por que é útil mesmo sendo pequeno**: mostra um padrão real de como organizar um projeto Roblox profissional (estrutura de pastas, Rojo+Wally+Aftman configurados). A branch "Simple" combina melhor com o nosso perfil (solo, sem Reflex/React ainda).
+- **Decisão**: **usar como referência de estrutura de pastas na Configuração Técnica**, não importar o código inteiro — poucos commits/estrelas para confiar como dependência viva, mas útil para copiar o *padrão* de organização.
+
+### 🟢 awesome-roblox/awesome-roblox — bom índice para pesquisas futuras
+- **Link**: [github.com/awesome-roblox/awesome-roblox](https://github.com/awesome-roblox/awesome-roblox) — 75 estrelas, CC0 (domínio público), 95 commits, organizado em 7 categorias (Software, Experiences, Plugins, Modules, Libraries, Tooling).
+- **Decisão**: não é uma ferramenta em si — é um **índice curado**. Guardar como referência para consultar quando surgir uma necessidade nova (ex: "existe módulo pronto para X?") em vez de pesquisar do zero toda vez.
+
+### Resumo desta rodada
+
+| Ferramenta | Veredito |
+|---|---|
+| Chrrxs/robloxstudio-mcp | 🟢 Avaliar na prática na Fase 2 — pode dar "visão" de screenshot que falta |
+| MSayib/roblox-dev-skill | 🟢 Comparar com roblox-game-skill antes de escolher (mais ativo, menos adotado) |
+| sentinelcore/roblox-skills | 🟡 Muito inicial, só observar |
+| MonzterDev/Roblox-Game-Template | 🟡 Usar como referência de estrutura, não como dependência |
+| awesome-roblox/awesome-roblox | 🟢 Guardar como índice de pesquisa futura |
+
 ## greedychipmunk/agent-skills — verificado, não específico de Roblox
 - **Link**: [github.com/greedychipmunk/agent-skills](https://github.com/greedychipmunk/agent-skills) — 13 estrelas, MIT, biblioteca de skills genéricas para agentes de IA (DevOps, observability, frameworks web) — **não é focado em Roblox** apesar de ter sido sugerido nesse contexto. Não relevante para este projeto.
 

@@ -350,3 +350,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — rbxcloud é a única adição concreta desta rodada, de baixo risco e alto valor específico para mim.
 - **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 3" com essas descobertas e uma tabela resumo.
 - **DATA**: 2026-08-14
+
+---
+
+## D035 — Rodada 4: mais Skills, MCP com captura de tela, templates de referência
+- **DECISÃO**: pesquisados mais Skills de Claude Code para Roblox, MCPs com capacidade de "visão" do cenário 3D, e templates reutilizáveis. Achados: **Chrrxs/robloxstudio-mcp** (171★, MIT, ativo) — tem ferramenta `capture_screenshot` que captura o viewport do Studio, preenchendo uma lacuna real (eu consigo ler a árvore de objetos via MCP oficial, mas não "ver" visualmente o resultado) — candidato a avaliar na prática na Fase 2, como complemento ao MCP oficial, não substituto. **MSayib/roblox-dev-skill** (7★, mas atividade confirmada em agosto/2026, mais recente que o `roblox-game-skill` do brockmartin) — candidato a comparar diretamente antes de escolher qual Skill usar. **sentinelcore/roblox-skills** (13★, muito inicial) e **MonzterDev/Roblox-Game-Template** (15★, útil como referência de estrutura de pastas, não como dependência) — anotados, não adotados. **awesome-roblox/awesome-roblox** (75★, CC0) — guardado como índice de pesquisa futura, não é uma ferramenta em si.
+- **MOTIVO**: usuário pediu para ampliar a busca especificamente por Skills adicionais, ferramentas que ajudem a "identificar no 3D" (visão espacial/screenshot), e sistemas de jogabilidade reutilizáveis.
+- **ALTERNATIVAS**: continuar só com o `roblox-game-skill` original sem comparar alternativas (rejeitado — regra de ouro do prompt mestre pede comparar antes de escolher); adotar o MonzterDev/Roblox-Game-Template inteiro como base do projeto (rejeitado — poucas estrelas/commits para ser dependência viva, mas serve como referência de padrão).
+- **TRADE-OFFS**: nenhum negativo — são todas adições de baixo risco (anotadas como candidatas, nenhuma adotada cegamente).
+- **IMPACTO**: `05-ferramentas-github.md` ganha seção "Rodada 4". Fase 2 (Configuração Técnica) passa a incluir comparar `roblox-game-skill` vs. `roblox-dev-skill`, e avaliar `Chrrxs/robloxstudio-mcp` na prática.
+- **DATA**: 2026-08-14
