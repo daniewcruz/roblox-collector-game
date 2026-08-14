@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v18 — CHECKPOINT 1 APROVADO, validado contra documentação oficial da Roblox, avançando à Configuração Técnica)
+# Game Design Document (GDD) — Fase 1 (revisado, v19 — CHECKPOINT 1 APROVADO, validado contra documentação oficial da Roblox, avançando à Configuração Técnica)
 
 **Nome provisório**: *Mimo World* (placeholder — "Mimo" pode virar nome da categoria de criaturas, não do jogo — decisão em aberto, D040)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -345,6 +345,8 @@ Estas são hipóteses concretas para comparar no protótipo, não uma escolha fe
 6. **Coleta magnética** (D044, inspirado pela referência de jogabilidade LEGO trazida pelo usuário): recursos/moedas próximos "voam" até o jogador ao serem coletados, em vez de simplesmente desaparecer — é uma técnica de "juice" barata (mesma família de princípios da seção 4b) usada em jogos LEGO e em praticamente todo jogo de coleta de mundo aberto, porque o feedback físico do item se movendo até o jogador é satisfatório por si só. Baixa complexidade de implementação, alto retorno de sensação de polimento — bom candidato para testar cedo.
 
 **Critério de validação no protótipo**: pedir para alguém repetir a ação 15-20 vezes seguidas **sem receber nada raro** e observar se ainda parece agradável, ou se só a expectativa de raridade estava carregando a diversão. Se for a segunda opção, a interação escolhida precisa mudar antes de seguir para o Core Gameplay (Fase 3) completo.
+
+**Base técnica documentada (D054, `14-mecanicas-roblox-oficial.md`)**: candidatos "toque físico" e "empurrar/rolar" podem usar `Touched`/`TouchEnded` + `PhysicsService` (grupos de colisão) — recursos nativos documentados oficialmente, evitando raycasting manual desnecessário no protótipo.
 
 ### Referência trazida pelo usuário: vibe LEGO (dragão épico + jogabilidade de mundo aberto)
 

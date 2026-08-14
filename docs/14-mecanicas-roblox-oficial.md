@@ -142,6 +142,19 @@ Este documento é o mais estrutural de todos: define **3 pilares** de design esp
 - Duas ferramentas nativas mencionadas: **Experiments** (testes A/B para medir impacto causal de mudanças) e **Configs** (ajustar valores do jogo em tempo real, sem reiniciar servidores) — candidatos a usar já na Fase 3/5 para balancear a chance de raridade sem precisar republicar o jogo a cada ajuste.
 - Documento oficial mais detalhado ainda não consumido: `/docs/en-us/production/analytics/get-started` — pendência para quando a instrumentação de analytics for implementada (Fase 3).
 
+## 10. Física/colisão e segurança técnica — mecânica crucial ainda não documentada (D054)
+
+### Detecção de colisão (direto relevante aos candidatos de Core Gameplay, seção 4b)
+- Colisão é detectada via eventos **`Touched`/`TouchEnded`** — funcionam independente do valor de `CanCollide` da parte. [Roblox Creator Hub](https://create.roblox.com/docs/workspace/collisions)
+- **PhysicsService** permite criar/registrar grupos de colisão (`RegisterCollisionGroup`) para controlar quais conjuntos físicos colidem entre si — útil para os candidatos "toque físico com reação" e "empurrar/rolar" (4b), onde só o casulo deve reagir ao toque do jogador, não a outros objetos do cenário.
+- **Aplicação direta**: ao prototipar os candidatos de interação na Fase 2, usar `Touched`/`PhysicsService` como base técnica documentada, em vez de raycasting manual — mais simples e já validado pela engine.
+
+### Segurança de RemoteEvents — tática adicional não coberta na Fase 0
+- Princípio já conhecido reforçado: "qualquer medida de segurança que dependa de aplicação no lado do cliente eventualmente será contornada" — presumir que todo dado vindo do cliente foi manipulado. [Roblox Creator Hub](https://github.com/Roblox/creator-docs/blob/main/content/en-us/scripting/security/security-tactics.md)
+- **Achado novo e acionável**: desenhar RemoteEvents com **propósito direcional único** — alguns exclusivamente cliente→servidor, outros exclusivamente servidor→cliente, nunca bidirecionais no mesmo remote. Se um explorador tentar disparar um remote servidor→cliente a partir do cliente, isso é um **sinal confiável de detecção de exploit** — jogabilidade legítima nunca dispararia comunicação na direção errada. [Roblox Creator Hub — server-side-detection.md](https://github.com/Roblox/creator-docs/blob/main/content/en-us/scripting/security/server-side-detection.md)
+- **Diferença entre RemoteEvent e RemoteFunction**: RemoteEvent = comunicação de mão única (dispara e não espera resposta); RemoteFunction = comunicação de mão dupla (dispara e aguarda resposta do destinatário). [Roblox Creator Hub — remote.md](https://github.com/Roblox/creator-docs/blob/main/content/en-us/scripting/events/remote.md)
+- **Aplicação direta**: quando a arquitetura de RemoteEvents for desenhada (Fase 2/3), nomear e organizar remotes por direção única (ex: `RE_RequestOpenCasulo` cliente→servidor, `RE_CasuloResult` servidor→cliente) — a convenção de nomenclatura já facilita auditoria de segurança e detecção de exploit por design.
+
 ## Conclusão
 
 A pesquisa não revelou nenhuma contradição com o que já está no GDD — pelo contrário, **validou a estrutura já escolhida** (core loop de 3 camadas, abordagem de prototipagem rápida/estreita, onboarding por ação, mobile-first, visibilidade social, cultura de "esquisitice") usando a fonte mais autoritativa possível (documentação oficial da própria plataforma). Os ajustes práticos (visibilidade de metas cedo, XP inicial baixo, CCL como pendência técnica, framework de EV para economia, estrutura de Achievements/Dailies para o Bestiary, diretrizes de UI/UX mobile) foram incorporados ao GDD/roadmap.

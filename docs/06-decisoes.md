@@ -541,3 +541,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `14-mecanicas-roblox-oficial.md` expandido com seções 5-9. `10-gdd.md` ganha os 3 pilares como fundamentação oficial adicional.
 - **DATA**: 2026-08-14
+
+---
+
+## D054 — Física/colisão e tática de segurança direcional de RemoteEvents (mecânica crucial não coberta antes)
+- **DECISÃO**: consumida documentação oficial de física/colisão e segurança de scripting. Achados: (1) detecção de colisão via `Touched`/`TouchEnded` (funciona independente de `CanCollide`) + `PhysicsService`/grupos de colisão — base técnica documentada para os candidatos de Core Gameplay "toque físico" e "empurrar/rolar" (seção 4b), evitando raycasting manual desnecessário; (2) **tática de segurança nova**: desenhar RemoteEvents com propósito direcional único (cliente→servidor OU servidor→cliente, nunca os dois no mesmo remote) — se um exploit disparar um remote na direção errada, isso vira um sinal confiável de detecção, porque jogabilidade legítima nunca faria isso. Diferença RemoteEvent (mão única) vs. RemoteFunction (mão dupla) também documentada.
+- **MOTIVO**: usuário pediu para continuar buscando documentação crucial de mecânica que ainda faltava — física/colisão (base técnica dos protótipos de gameplay) e segurança (já era pilar do projeto, mas faltava esse detalhe tático específico).
+- **ALTERNATIVAS**: nenhuma — pesquisa complementar.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `14-mecanicas-roblox-oficial.md` ganha seção 10. Convenção de nomenclatura de RemoteEvents por direção única vira prática recomendada para a Fase 2/3.
+- **DATA**: 2026-08-14
