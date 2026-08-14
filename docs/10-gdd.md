@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v7 — CHECKPOINT 1 APROVADO)
+# Game Design Document (GDD) — Fase 1 (revisado, v8 — CHECKPOINT 1 APROVADO, Core Gameplay em validação)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. Modelo de viralização: cooperativo (Grow a Garden), não adversarial (Steal a Brainrot) — ver 2d. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
-**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d).
+**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d); v8 marca o Core Gameplay (interação minuto-a-minuto) como **hipótese ainda não validada** — a coleção/skins/retenção já estão bem definidas, mas falta provar que a ação central é divertida por si só, não só como veículo de recompensa (D022-D024, nova seção 4b).
 
 ---
 
@@ -53,11 +53,15 @@ Regra adicionada pelo usuário, para ser aplicada **antes** de qualquer mecânic
 
 O usuário identificou que a maior decisão do projeto pode não ser a mecânica — pode ser **qual criatura faz alguém olhar para a tela e pensar "EU QUERO ESSE"**. Isso é coerente com o critério "Kirby"/personagem-marca (1b): se o Mimo não gerar desejo visual instantâneo, nenhuma mecânica por trás dele compensa.
 
+**A pergunta-teste (refinada pelo usuário)** não é "qual Mimo é mais bonito?" — é:
+
+> "Qual deles faria uma criança parar o scroll e dizer: EU QUERO ESSE?"
+
 **Nova etapa no roadmap, antes de comprometer arte final ou entrar na Fase 2 (Protótipo) de verdade**:
 
 1. Gerar/esboçar **5-10 conceitos visuais diferentes** de Mimo (podem ser silhuetas simples, rascunhos, ou gerados com apoio de IA como material de estudo — ver `04-roadmap.md` e regra 17 do escopo original sobre uso de IA em arte).
-2. Avaliar cada conceito pelos critérios da seção 1b (silhueta reconhecível, fofura/impacto visual, potencial de variação, legibilidade em thumbnail).
-3. Se possível, coletar reação de algumas pessoas fora do projeto (mesmo informalmente) — a pergunta-teste é literalmente "você quer esse bichinho?", não "você entende a mecânica?".
+2. Avaliar cada conceito pelos critérios expandidos (D023): silhueta, fofura, expressão, personalidade, possibilidade de animação, potencial de virar meme, potencial de skin, reconhecimento em thumbnail pequena, possibilidade de criar uma família de variantes, diferenciação de outros jogos Roblox.
+3. Se possível, coletar reação de algumas pessoas fora do projeto (mesmo informalmente, idealmente incluindo crianças do público-alvo) — a pergunta-teste é literalmente "você quer esse bichinho?", não "você entende a mecânica?".
 4. Só depois de escolher a direção visual vencedora, seguir para produção de arte do MVP.
 
 Esta etapa é **barata e rápida** (esboços, não arte final) e reduz o risco de investir semanas de desenvolvimento técnico em cima de um personagem que não gera desejo visual — o oposto do erro de "programar primeiro, descobrir se é atraente depois". Fica posicionada entre o Checkpoint 1 (aprovado) e o início efetivo da Configuração Técnica/Protótipo — não bloqueia a configuração técnica em si (que é infraestrutura, independente da arte), mas bloqueia a produção de arte final e o polish (Fase 8).
@@ -173,6 +177,31 @@ RETORNO no dia seguinte: Bestiary incompleto + curiosidade sobre a próxima regi
 ```
 
 Estrutura já validada em `08-analise-retencao-generos.md` (score 4.55/5); ambientação revisada por `11-pivot-fofura-colecao-skins.md` e D013.
+
+## 4b. ⚠️ Core Gameplay: hipótese ainda não validada (D022-D024)
+
+**O que já está resolvido neste GDD**: retenção (loops, `08-analise-retencao-generos.md`), coleção/raridade (Pokémon), personalização/skins (Animal Crossing + monetização ética), eventos/viralização (2d), social (cartão de perfil). Tudo isso é a **estrutura ao redor do jogo**.
+
+**O que ainda não está resolvido**: se a ação central — "tocar/despertar" um casulo — é **divertida por si só**, minuto a minuto, mesmo nas dezenas de vezes em que o resultado é comum, não raro. O usuário identificou corretamente que o risco real é o jogo virar:
+
+> andar → encontrar Mimo → clicar → ganhou Mimo → repetir
+
+Isso seria "pet simulator disfarçado de mundo mágico" — a coleção/skins mascarando uma interação de clique vazia, em vez de amplificar uma interação que já é boa sozinha. **Coleção e skins devem amplificar a diversão da ação central, não substituí-la.**
+
+### Princípio orientador (pesquisa de "game feel"/"juice")
+
+Um jogo parece bom quando três coisas se alinham: o controle responde instantaneamente ao toque, toda ação produz um feedback legível, e uma camada de polimento (squash-and-stretch, partículas, som) torna cada interação satisfatória — **isso vale mesmo quando não há recompensa rara nenhuma envolvida**. [egmatic.com](https://egmatic.com/blog/how-to-make-your-game-feel-good), [designthegame.com](https://www.designthegame.com/learning/tutorial/how-tactile-interactions-game-juice-drive-player-engagement) A filosofia "toy-first" de Miyamoto (já citada em 2) reforça o mesmo ponto: o protótipo mais antigo de um jogo bom costuma ser literalmente um brinquedo testável, sem pontuação nem objetivo, que já é agradável de mexer. [designthegame.com](https://www.designthegame.com/learning/tutorial/how-tactile-interactions-game-juice-drive-player-engagement)
+
+### Candidatos de interação central a testar no Protótipo (Fase 2) — nenhum decidido ainda
+
+Estas são hipóteses concretas para comparar no protótipo, não uma escolha fechada. Todas mantêm o verbo único já definido ("tocar/despertar", seção 2b) mas variam **como** essa ação é fisicamente executada:
+
+1. **Toque físico com reação (squash-and-stretch)**: o casulo reage fisicamente ao toque — treme, quica, se deforma — como estourar bolha de plástico-bolha. Simples de prototipar, testa se só a física de reação já é satisfatória.
+2. **Coaxar por ritmo/tempo**: uma pequena sequência de toque no tempo certo "convence" o Mimo a sair (parecido com o timing de pesca do Fisch, mas aplicado à revelação, não à captura). Adiciona uma pequena habilidade sem virar minigame complexo.
+3. **Escavar/limpar**: o jogador precisa "escovar" ou remover camadas mágicas (poeira, vinhas, cristal fino) até o casulo se abrir sozinho — interação repetitiva mas com feedback progressivo (cada camada removida muda visualmente o objeto).
+4. **Empurrar/rolar**: casulos podem ser fisicamente empurrados/rolados pelo cenário antes de abrir (inspirado em manipulação física tipo Katamari) — testa se a manipulação do objeto no mundo, não só o toque final, já é agradável.
+
+**Critério de validação no protótipo**: pedir para alguém repetir a ação 15-20 vezes seguidas **sem receber nada raro** e observar se ainda parece agradável, ou se só a expectativa de raridade estava carregando a diversão. Se for a segunda opção, a interação escolhida precisa mudar antes de seguir para o Core Gameplay (Fase 3) completo.
 
 ## 5. O momento de descoberta (mantido do GDD v1, só muda o material)
 
@@ -323,25 +352,21 @@ Dependências: Exploração/Descoberta → Coleção → Economia (mesmo padrão
 
 ---
 
-## Checkpoint 1 — APROVADO (2026-08-13)
+## Checkpoint 1 — APROVADO (2026-08-13), com ressalva ativa sobre Core Gameplay
 
 ```
 FASE 0 — Pesquisa Estratégica ✅
 CHECKPOINT 0 — aprovado ✅
-FASE 1 — Conceito + nicho/tema + GDD ✅
-CHECKPOINT 1 — APROVADO ✅ (D017, D018, D019)
+FASE 1 — Conceito + nicho/tema + GDD ✅ (aprovado como BASE, não como final — ver ressalva)
+CHECKPOINT 1 — APROVADO ✅ (D017-D021)
    ↓
-CONFIGURAÇÃO TÉCNICA — próxima etapa (MCP Server + Rojo + Roblox Studio)
+FASE 1.5 — Validação Visual (obrigatória, critérios expandidos D023) + CONFIGURAÇÃO TÉCNICA (em paralelo, escopo restrito a infra/arquitetura — D022)
    ↓
-PROTÓTIPO (Fase 2)
+PROTÓTIPO (Fase 2) — inclui validar o Core Gameplay como hipótese (D024, seção 4b)
 ```
 
-Decisões do Checkpoint 1: modelo cooperativo confirmado (D016 fechada); Mimo elevado a personagem/marca do jogo com critérios de art direction (D017); regra de design "momento compartilhável" adotada como filtro de decisão para toda feature futura (D018); MVP reconfirmado enxuto, Toy World descartada definitivamente, arquitetura da Configuração Técnica deve ser preparada para expansão sem construir sistemas que o MVP ainda não precisa (D019).
+Decisões do Checkpoint 1: modelo cooperativo confirmado (D016 fechada); Mimo elevado a personagem/marca do jogo com critérios de art direction (D017); regra de design "momento compartilhável" (D018); MVP reconfirmado enxuto, Toy World descartada definitivamente (D019); salvaguardas éticas de monetização infantil (D020); Fase 1.5 de validação visual criada (D021).
 
-Nenhum código foi escrito, Roblox Studio não foi aberto ainda — a Configuração Técnica é a próxima etapa, não mais bloqueada por D009.
+**Ressalva ativa do usuário, não resolvida por este GDD**: o Core Gameplay (interação minuto-a-minuto) é tratado como **hipótese**, não como sistema fechado — ver seção 4b. O GDD está aprovado como base para avançar, mas o usuário deixou explícito que não considera o gameplay "fechado" até essa hipótese ser testada no Protótipo. A Configuração Técnica está liberada, mas **escopada só para infraestrutura/arquitetura** (D022) — não para construir economia/monetização/conteúdo completos, que dependem da validação do Core Gameplay ainda pendente.
 
-**Perguntas para o Checkpoint 1** (v5):
-
-1. Este GDD (mundo mágico + Mimos, síntese de 5 franquias Nintendo, estrutura viral inspirada em Grow a Garden/Steal a Brainrot/Adopt Me/Dig, sem cópia de IP) está aprovado para avançarmos à Configuração Técnica (MCP Server + Rojo + Roblox Studio) e depois ao Protótipo (Fase 2)?
-2. **Decisão em aberto (seção 2d)**: confirma o modelo **cooperativo** (clima/eventos/sorte, ao estilo Grow a Garden) em vez do modelo **adversarial** (roubo entre jogadores, ao estilo Steal a Brainrot)? A recomendação é cooperativo, por coerência com os pilares já estabelecidos (sem pressão/manipulação) e por menor risco de moderação para um solo dev — mas os dados mostram que ambos os modelos atingem CCU recorde, então a escolha é legítima nos dois sentidos.
-3. Algo mais a ajustar — nome do jogo/dos "Mimos", ou revisitar a Direção 5 (Toy World)?
+Nenhum código foi escrito, Roblox Studio não foi aberto ainda.

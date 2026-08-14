@@ -14,18 +14,20 @@
 - **Tarefas**: escolher nicho/tema (pesquisa de gaps fora do Roblox), esboçar GDD inicial (core loop, primeira sessão, primeira recompensa), decidir escopo do MVP (Épico → Feature).
 - **Critério de sucesso**: GDD curto (1-2 páginas) capaz de responder "por que o jogador volta amanhã?" de forma concreta.
 
-## FASE 1.5 — Validação Visual (D021, nova)
-- **Objetivo**: testar 5-10 conceitos visuais de Mimo (esboços/silhuetas) antes de comprometer arte final, para descobrir qual design gera desejo imediato ("EU QUERO ESSE"), não só qual mecânica funciona.
+## FASE 1.5 — Validação Visual (D021, critérios expandidos D023)
+- **Objetivo**: testar 5-10 conceitos visuais de Mimo (esboços/silhuetas) antes de comprometer arte final. Pergunta-teste: "qual deles faria uma criança parar o scroll e dizer: EU QUERO ESSE?" — não "qual é mais bonito?".
 - **Dependências**: Checkpoint 1 aprovado (GDD `10-gdd.md`, seção 1b/1d).
-- **Tarefas**: gerar/esboçar conceitos variados; avaliar por silhueta/fofura/legibilidade em thumbnail; coletar reação informal de pessoas fora do projeto se possível.
+- **Tarefas**: gerar/esboçar conceitos variados; avaliar por silhueta, fofura, expressão, personalidade, potencial de animação, potencial de meme, potencial de skin, legibilidade em thumbnail pequena, potencial de família de variantes, diferenciação de outros jogos Roblox; coletar reação informal de pessoas fora do projeto (idealmente incluindo crianças do público-alvo) se possível.
 - **Critério de sucesso**: uma direção visual vencedora escolhida, com justificativa registrada em `06-decisoes.md`.
-- **Nota**: não bloqueia a Configuração Técnica/Protótipo (Fase 2), que pode rodar em paralelo com placeholders — só bloqueia produção de arte final (Fase 8).
+- **Nota**: roda em paralelo com a Configuração Técnica (Fase 2), que pode usar placeholders — só bloqueia produção de arte final (Fase 8).
 
-## FASE 2 — Protótipo (aprendizado técnico)
-- **Objetivo**: aprender o mínimo de Luau/Studio construindo um protótipo descartável (pode ser um Obby simples ou mecânica isolada), não o jogo final.
-- **Dependências**: Fase 1.
-- **Tarefas**: configurar Rojo + Claude Code + MCP Studio oficial (ver `05-ferramentas-github.md`); implementar 1 mecânica isolada; testar localmente.
-- **Critério de sucesso**: usuário consegue rodar Studio, ver código sincronizado via Rojo, e usar Claude Code para gerar/depurar um script simples.
+## FASE 2 — Configuração Técnica + Protótipo (D022: escopo restrito a infraestrutura)
+- **Objetivo**: preparar infraestrutura e arquitetura, e validar o Core Gameplay como hipótese (D024, GDD seção 4b) — **não** construir economia, monetização ou conteúdo completos ainda, que dependem da validação do Core Gameplay.
+- **Dependências**: Fase 1 (Checkpoint 1 aprovado).
+- **Tarefas permitidas nesta fase** (D022): configurar Rojo + Claude Code + MCP Studio oficial; estrutura de pastas do projeto; esquema de dados de criaturas (Mimos); esquema de sistema de raridade; esquema de sistema de variantes/skins (estrutura de dados, não catálogo completo); estrutura de dados de eventos (hooks, não eventos implementados); estrutura de dados de progressão; configuração de persistência (ProfileService); configuração de ambiente de desenvolvimento; Git/branches; placeholders visuais/de dados.
+- **Tarefas explicitamente fora desta fase**: sistemas completos de economia, monetização, conteúdo final (dezenas de Mimos reais, catálogo de skins) — ficam para Fases 3/5/7, só depois do Core Gameplay validado.
+- **Tarefas de validação de gameplay (paralelas, D024)**: implementar 2-4 protótipos isolados dos candidatos de interação central listados no GDD (seção 4b: toque físico, coaxar por ritmo, escavar/limpar, empurrar/rolar); testar repetição de 15-20 vezes sem recompensa rara para checar se a interação sozinha é agradável.
+- **Critério de sucesso**: usuário consegue rodar Studio, ver código sincronizado via Rojo, usar Claude Code para gerar/depurar um script simples — **e** uma interação central validada como divertida por si só, escolhida entre os candidatos testados.
 
 ## FASE 3 — Core Gameplay
 - **Objetivo**: implementar o loop central do conceito escolhido (ex: coletar → progressão → mostrar resultado).

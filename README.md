@@ -9,15 +9,17 @@ Projeto de desenvolvimento de um jogo Roblox tratado como Game Studio + Startup 
 ```
 FASE 0 — Pesquisa Estratégica ✅
 CHECKPOINT 0 — aprovado ✅
-FASE 1 — Conceito + nicho/tema + GDD ✅
-CHECKPOINT 1 — APROVADO ✅ (D017-D019)
+FASE 1 — Conceito + nicho/tema + GDD ✅ (aprovado como BASE — Core Gameplay ainda é hipótese)
+CHECKPOINT 1 — APROVADO ✅ (D017-D021)
    ↓
-CONFIGURAÇÃO TÉCNICA — próxima etapa ⏳ (MCP Server + Rojo + Roblox Studio)
+FASE 1.5 — Validação Visual ⏳ + CONFIGURAÇÃO TÉCNICA ⏳ (em paralelo, escopo restrito a infra — D022)
 ```
 
-**Conceito aprovado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos") — Mimo é o personagem/marca do jogo, não só um pet colecionável. Modelo de viralização cooperativo (estilo Grow a Garden), regra de design "momento compartilhável" aplicada a toda feature futura. Inspirado em 5 franquias Nintendo (Pokémon, Animal Crossing, Mario Odyssey, Kirby, Pikmin) sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v6).
+**Conceito aprovado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos") — Mimo é o personagem/marca do jogo, não só um pet colecionável. Modelo de viralização cooperativo (estilo Grow a Garden), regra de design "momento compartilhável", monetização ética (sem loot box/FOMO/pressão — D020). Inspirado em 5 franquias Nintendo sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v8).
 
-Nenhum código foi escrito, Roblox Studio ainda não foi aberto — a Configuração Técnica é a próxima etapa aprovada pelo usuário (ver `docs/06-decisoes.md`, D019).
+**Ressalva ativa**: o Core Gameplay (a interação minuto-a-minuto) ainda é tratado como hipótese não validada, não como sistema fechado — ver GDD seção 4b e D024. A Configuração Técnica está liberada, mas escopada só para infraestrutura/arquitetura (D022), sem construir economia/monetização/conteúdo completos antes de validar se a ação central do jogo é divertida por si só.
+
+Nenhum código foi escrito, Roblox Studio ainda não foi aberto.
 
 ## Estrutura da documentação
 
@@ -34,6 +36,6 @@ Nenhum código foi escrito, Roblox Studio ainda não foi aberto — a Configura�
 | [`docs/08-analise-retencao-generos.md`](docs/08-analise-retencao-generos.md) | Análise profunda de retenção por estrutura de gênero (loops, score ponderado) |
 | [`docs/09-temas-nichos.md`](docs/09-temas-nichos.md) | Pesquisa comparativa de temas/nichos (v1, tema mineração) |
 | [`docs/11-pivot-fofura-colecao-skins.md`](docs/11-pivot-fofura-colecao-skins.md) | Avaliação do pivot para fofura+coleção+skins vs. concorrentes reais (Adopt Me, Evomon, Knockout) |
-| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v2, tema Mundo Mágico)** |
+| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v8, Core Gameplay em validação)** |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.

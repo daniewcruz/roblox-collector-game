@@ -213,3 +213,33 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: adiciona uma etapa antes da produção de arte final, mas é rápida/barata (esboços, não arte definitiva) — não atrasa a Configuração Técnica nem o Protótipo funcional (Fase 2), que podem rodar em paralelo com placeholders visuais.
 - **IMPACTO**: `10-gdd.md` v7, nova seção 1d. Roadmap (`04-roadmap.md`) deve refletir esta etapa entre Fase 1 e a produção de arte da Fase 8 (ou antes, como validação antecipada).
 - **DATA**: 2026-08-13
+
+---
+
+## D022 — Configuração Técnica escopada só para infraestrutura/arquitetura, não sistemas completos
+- **DECISÃO**: a Fase 2 (Configuração Técnica + Protótipo) cobre apenas: setup de Rojo/MCP/ambiente, estrutura de pastas, esquemas de dados (criaturas, raridade, variantes/skins, eventos, progressão como estrutura, não conteúdo final), configuração de persistência (ProfileService), Git/branches, placeholders. Sistemas completos de economia, monetização e conteúdo final ficam explicitamente fora desta fase.
+- **MOTIVO**: usuário aprovou avançar para a Configuração Técnica, mas não quer que ela transforme uma ideia ainda não validada (o Core Gameplay, ver D024) em um jogo já comprometido com dezenas de sistemas — evita investir esforço de implementação em cima de uma hipótese de diversão ainda não testada.
+- **ALTERNATIVAS**: construir sistemas completos de economia/monetização junto com a infraestrutura (rejeitado pelo usuário — risco de comprometer trabalho em cima de gameplay não validado).
+- **TRADE-OFFS**: nenhum negativo — é sequenciamento deliberado, coerente com a regra de simplicidade e MVP enxuto já estabelecidas (D011, D019).
+- **IMPACTO**: `04-roadmap.md` Fase 2 reescrita com escopo explícito de tarefas permitidas vs. fora de escopo.
+- **DATA**: 2026-08-13
+
+---
+
+## D023 — Critérios de Validação Visual expandidos (Fase 1.5)
+- **DECISÃO**: a pergunta-teste da Fase 1.5 passa de "qual Mimo é mais bonito?" para "qual deles faria uma criança parar o scroll e dizer: EU QUERO ESSE?", avaliada por: silhueta, fofura, expressão, personalidade, potencial de animação, potencial de meme, potencial de skin, reconhecimento em thumbnail pequena, potencial de família de variantes, diferenciação de outros jogos Roblox.
+- **MOTIVO**: usuário considerou o critério original (D021) bom mas incompleto — quer avaliação mais próxima do comportamento real do público-alvo (crianças decidindo em segundos se querem algo), não só uma nota estética abstrata.
+- **ALTERNATIVAS**: manter critério original mais simples (insuficiente segundo o usuário).
+- **TRADE-OFFS**: nenhum — mesmo custo de execução (esboços), critério de avaliação mais completo.
+- **IMPACTO**: `10-gdd.md` seção 1d atualizada; `04-roadmap.md` Fase 1.5 atualizada.
+- **DATA**: 2026-08-13
+
+---
+
+## D024 — Core Gameplay (interação minuto-a-minuto) marcado como hipótese não validada
+- **DECISÃO**: o GDD é aprovado como base para avançar, mas a ação central do jogo ("tocar/despertar" um casulo) é tratada explicitamente como **hipótese**, não como sistema fechado. Adicionados 4 candidatos de interação a testar no protótipo (toque físico com reação, coaxar por ritmo, escavar/limpar, empurrar/rolar), todos mantendo o verbo único já definido (D014) mas variando a execução física. Critério de validação: a interação precisa ser agradável repetida 15-20 vezes **sem** recompensa rara — se só a expectativa de raridade sustenta o interesse, a interação precisa mudar antes da Fase 3 (Core Gameplay completo).
+- **MOTIVO**: usuário identificou que toda a estrutura ao redor do jogo (retenção, coleção, skins, eventos, social, monetização) está bem resolvida, mas falta responder "o que é divertido de fazer minuto a minuto?" — risco real de o jogo virar "andar → encontrar Mimo → clicar → ganhou Mimo → repetir", um pet simulator disfarçado em que a coleção mascara uma interação vazia em vez de amplificar uma interação boa. Pesquisa de "game feel"/"juice" confirma que uma ação central precisa ser satisfatória por si só (resposta instantânea, feedback legível, polimento tátil), independente de recompensa.
+- **ALTERNATIVAS**: considerar o GDD como fechado em gameplay e seguir direto para implementação completa (rejeitado pelo usuário); escolher uma única interação sem comparação (rejeitado — mesmo risco que motivou D021 para a arte, agora aplicado à mecânica).
+- **TRADE-OFFS**: adiciona uma etapa de comparação de protótipos de interação dentro da Fase 2, mas evita o risco maior de construir Fases 3-7 inteiras em cima de uma ação central que não é divertida sozinha.
+- **IMPACTO**: `10-gdd.md` v8, nova seção 4b. `04-roadmap.md` Fase 2 inclui tarefas de validação de gameplay em paralelo à infraestrutura.
+- **DATA**: 2026-08-13
