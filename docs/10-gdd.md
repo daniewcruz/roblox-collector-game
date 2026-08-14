@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v6 — CHECKPOINT 1 APROVADO)
+# Game Design Document (GDD) — Fase 1 (revisado, v7 — CHECKPOINT 1 APROVADO)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. Modelo de viralização: cooperativo (Grow a Garden), não adversarial (Steal a Brainrot) — ver 2d. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
-**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019).
+**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d).
 
 ---
 
@@ -48,6 +48,19 @@ Regra adicionada pelo usuário, para ser aplicada **antes** de qualquer mecânic
 | Coleção | "FINALMENTE COMPLETEI A FLORESTA!" |
 
 **Como aplicar na prática**: antes de qualquer feature entrar no roadmap (mesmo pós-MVP), passar pelo teste "isso gera um momento de alguma das 5 categorias acima?" — se não gerar, ou a feature precisa de ajuste, ou não vale a pena priorizar. Isso já filtra a favor de sistemas com forte componente visual/emocional (reveal, raridade, clima, coleção) sobre sistemas puramente numéricos (ex: só "mais um upgrade de +5%"), reforçando decisões já tomadas em `08-analise-retencao-generos.md` e `10-gdd.md` 2d.
+
+## 1d. Nova etapa antes do protótipo: teste visual de conceitos de Mimo (D021)
+
+O usuário identificou que a maior decisão do projeto pode não ser a mecânica — pode ser **qual criatura faz alguém olhar para a tela e pensar "EU QUERO ESSE"**. Isso é coerente com o critério "Kirby"/personagem-marca (1b): se o Mimo não gerar desejo visual instantâneo, nenhuma mecânica por trás dele compensa.
+
+**Nova etapa no roadmap, antes de comprometer arte final ou entrar na Fase 2 (Protótipo) de verdade**:
+
+1. Gerar/esboçar **5-10 conceitos visuais diferentes** de Mimo (podem ser silhuetas simples, rascunhos, ou gerados com apoio de IA como material de estudo — ver `04-roadmap.md` e regra 17 do escopo original sobre uso de IA em arte).
+2. Avaliar cada conceito pelos critérios da seção 1b (silhueta reconhecível, fofura/impacto visual, potencial de variação, legibilidade em thumbnail).
+3. Se possível, coletar reação de algumas pessoas fora do projeto (mesmo informalmente) — a pergunta-teste é literalmente "você quer esse bichinho?", não "você entende a mecânica?".
+4. Só depois de escolher a direção visual vencedora, seguir para produção de arte do MVP.
+
+Esta etapa é **barata e rápida** (esboços, não arte final) e reduz o risco de investir semanas de desenvolvimento técnico em cima de um personagem que não gera desejo visual — o oposto do erro de "programar primeiro, descobrir se é atraente depois". Fica posicionada entre o Checkpoint 1 (aprovado) e o início efetivo da Configuração Técnica/Protótipo — não bloqueia a configuração técnica em si (que é infraestrutura, independente da arte), mas bloqueia a produção de arte final e o polish (Fase 8).
 
 ## 2. Princípios de design (filosofia Nintendo aplicada, não copiada)
 
@@ -218,17 +231,36 @@ Diferença deliberada em relação a um sistema de decoração completo:
 - **Social Loop** (leve no MVP): mostrar Mimos raros/variações no espaço de exibição pessoal — sem sistema de troca no MVP.
 - **Collection Loop**: Bestiary com raridades e variações visuais — coração do jogo, reforçado pela filosofia Pokémon.
 - **Update Loop**: nova região = novo lote de materiais/Mimos (adição de dados, sustentável por solo dev).
-- **Monetization Loop**: candidatos para Fase 7 — variações cosméticas extras (não afetam progresso, só aparência), "sorte extra" temporária sem garantir raridade (evita pay-to-win), eventos sazonais com Mimos exclusivos por tempo limitado (mencionado pelo usuário como estratégia de monetização — ver `09-temas-nichos.md` e mensagem do usuário sobre divisão "obtidas jogando / premium / eventos").
+- **Monetization Loop**: candidatos para Fase 7 — variações cosméticas de **preço fixo, sem aleatoriedade** (não afetam progresso, só aparência, resultado visível antes da compra), eventos sazonais com Mimos exclusivos por tempo limitado sem pressão de urgência artificial (ver seção 8 para as regras éticas completas, D020 — a antiga ideia de "sorte extra" paga foi removida por ser mecânica adjacente a loot box).
 
-## 8. Divisão de monetização (confirmada pelo usuário, aplicada ao tema)
+## 8. Divisão de monetização (confirmada pelo usuário, aplicada ao tema, com salvaguardas éticas — D020)
+
+### Contexto que motiva as salvaguardas (não é só preferência, é risco real e atual)
+
+O usuário pediu para evitar mecânicas predatórias por ser um jogo mirando crianças. A pesquisa confirma que isso não é excesso de cautela — é o centro de uma crise regulatória acontecendo **agora mesmo, na própria Roblox**:
+
+- **Roblox está sob investigação em múltiplas frentes em 2026** por monetização voltada a crianças: a Procuradoria-Geral da Flórida abriu investigação criminal (out/2025) chamando a plataforma de "terreno fértil para predadores" que lucra com crianças; organizações de defesa infantil (Fairplay, NCOSE) apresentaram queixa formal à FTC americana (mai/2026) alegando design manipulativo, mecânicas viciantes e monetização exploratória; a autoridade de concorrência da Itália abriu investigação (jan/2026) especificamente sobre escolhas de design que empurram menores a gastar muito. [Fortune](https://fortune.com/2026/05/20/exclusive-advocacy-groups-file-complaint-roblox-manipulative-design/), [ingamenews.com](https://www.ingamenews.com/2026/05/roblox-platform-safety-and-monetization.html)
+- **Loot boxes (mecânica de pagar por chance, sem garantia) são proibidas ou fortemente restritas** em vários países: Bélgica criminaliza loot boxes pagas (multas de até €800.000, possível prisão); Holanda tem projeto de lei em tramitação para enquadrá-las como jogo de azar independente do jogo em si. [Programming Insider](https://programminginsider.com/loot-boxes-regulation-and-where-the-line-sits-in-2026/), [egamersworld.com](https://egamersworld.com/blog/lootboxes-law-in-the-netherlands-GvdW3zreJ5)
+- **Pesquisa acadêmica (CHI 2025)** documenta que design predatório funciona combinando várias táticas ao mesmo tempo (FOMO + aversão à perda + saliência de UI) especificamente porque crianças são mais vulneráveis cognitiva e emocionalmente a isso — não é força bruta de uma mecânica isolada, é a combinação. [ACM CHI 2025](https://dl.acm.org/doi/10.1145/3706598.3713170)
+- **Padrão ético/de mercado já estabelecido**: microtransações cosméticas de **preço fixo, sem aleatoriedade**, são consideradas a alternativa aceitável — o jogador sabe exatamente o que está comprando antes de pagar. [daydreamsoft.com](https://www.daydreamsoft.com/blog/ethical-monetization-system-design-earning-revenue-without-losing-player-trust)
+
+### Regras de monetização deste projeto (não-negociáveis, D020)
+
+- ❌ **Proibido**: loot boxes pagas ou qualquer mecânica de "pagar por chance" sem garantia do item (isso inclui a ideia anterior de "sorte extra" temporária mencionada em versões antigas deste GDD e em `01-pesquisa-mercado.md`/`09-temas-nichos.md` — **removida/substituída**, ver abaixo).
+- ❌ **Proibido**: pressão de urgência artificial ("só hoje!", contadores regressivos agressivos, notificações insistentes).
+- ❌ **Proibido**: qualquer mecânica que gere medo de perder dinheiro/progresso já obtido.
+- ❌ **Proibido**: manipulação de FOMO agressiva (diferente de exclusividade sazonal simples, ver abaixo — a diferença é ausência de pressão de urgência artificial).
+- ✅ **Permitido**: item cosmético de **preço fixo, comprado diretamente, com resultado garantido e visível antes da compra**.
+- ✅ **Permitido**: exclusividade sazonal simples (item de evento não volta tão cedo) **sem** contagem regressiva agressiva ou linguagem de pressão — o jogador vê o item, decide se quer, compra se quiser.
+- ✅ **Sempre opcional**: o core loop completo (descoberta, coleção, progressão) precisa ser jogável e satisfatório sem nenhuma compra.
 
 | Categoria | Exemplos aplicados a este tema |
 |---|---|
-| Obtidas jogando | Mimos base, variações comuns/raras naturais, itens de Bestiary, alguns acessórios de exibição |
-| Premium (cosmético, não afeta progresso) | Efeitos visuais especiais de descoberta, variações cosméticas extras, acessórios de exibição exclusivos |
-| Eventos sazonais | Mimos/variações exclusivas por tempo limitado (ex: tema de inverno, tema lunar) — alguns deixam de estar disponíveis depois, criando valor de colecionador (efeito documentado em `01-pesquisa-mercado.md` e reforçado pela filosofia Pokémon de exclusividade) |
+| Obtidas jogando | Mimos base, variações comuns/raras naturais, itens de Bestiary, acessórios de exibição conquistados por marco (1b/6b) |
+| Premium (cosmético, preço fixo, sem aleatoriedade) | Efeitos visuais especiais de descoberta, variações cosméticas extras **compradas diretamente** (não por chance), acessórios de exibição exclusivos — jogador vê exatamente o que está comprando |
+| Eventos sazonais (exclusividade simples, sem pressão) | Mimos/variações exclusivas por tempo limitado, sem contadores regressivos agressivos nem notificações insistentes — a exclusividade em si já é suficiente como gancho (efeito documentado em `01-pesquisa-mercado.md`, filosofia Pokémon) |
 
-Regra mantida de D009/roadmap: nada disso é implementado agora — fica para a Fase 7, depois da economia balanceada.
+Regra mantida de D009/roadmap: nada disso é implementado agora — fica para a Fase 7, depois da economia balanceada, e **toda decisão de monetização da Fase 7 deve ser checada contra as regras desta seção antes de implementar**.
 
 ## 9. Riscos de design já mitigados por este GDD
 

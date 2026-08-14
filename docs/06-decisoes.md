@@ -193,3 +193,23 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum negativo — é a aplicação direta do MVP já definido, com reforço explícito para não ser inflado durante a implementação técnica.
 - **IMPACTO**: encerra a Fase 1. Próxima etapa é a Configuração Técnica (D009 deixa de bloquear instalação de ferramentas). `10-gdd.md` marcado como v6/Checkpoint 1 aprovado.
 - **DATA**: 2026-08-13
+
+---
+
+## D020 — Salvaguardas éticas de monetização: proibição explícita de mecânicas predatórias (público infantil)
+- **DECISÃO**: proibir explicitamente, para este projeto: loot boxes pagas ou qualquer mecânica de "pagar por chance" sem garantia do item (inclusive a antiga ideia de "sorte extra" temporária, removida); pressão de urgência artificial (contadores agressivos, notificações insistentes); qualquer mecânica que gere medo de perder dinheiro/progresso; manipulação de FOMO agressiva. Permitido: cosméticos de preço fixo com resultado garantido e visível antes da compra; exclusividade sazonal simples sem pressão de urgência; core loop sempre jogável sem gastar.
+- **MOTIVO**: usuário levantou preocupação ética por o público-alvo ser majoritariamente infantil. Pesquisa confirmou que isso é também um risco regulatório real e atual, não só uma preferência: a própria Roblox está sob investigação criminal da Procuradoria da Flórida (out/2025), queixa formal à FTC por organizações de defesa infantil (mai/2026) e investigação da autoridade de concorrência italiana (jan/2026), todas alegando monetização manipulativa voltada a menores. Loot boxes pagas são criminalizadas na Bélgica (multas até €800.000) e têm projeto de lei em tramitação na Holanda. Pesquisa acadêmica (CHI 2025) documenta que crianças são especialmente vulneráveis a táticas combinadas de FOMO + aversão à perda + saliência de UI.
+- **ALTERNATIVAS**: manter a mecânica de "sorte extra" paga considerada em versões anteriores do GDD (removida por ser mecânica adjacente a loot box); ignorar o contexto regulatório (rejeitado — risco real de banimento/multa/dano reputacional, não hipotético).
+- **TRADE-OFFS**: potencial de receita por transação pode ser menor que com mecânicas de chance (loot boxes geralmente maximizam gasto via compulsão), mas o padrão de mercado ético (cosméticos de preço fixo) ainda é uma via de monetização comprovada e sustentável, com menor risco legal/reputacional — trade-off aceito.
+- **IMPACTO**: `10-gdd.md` v7, seção 8 reescrita com regras explícitas e fontes. Referência em `01-pesquisa-mercado.md`/`09-temas-nichos.md` sobre "sorte extra" fica superada por esta decisão.
+- **DATA**: 2026-08-13
+
+---
+
+## D021 — Nova etapa: teste visual de 5-10 conceitos de Mimo antes da arte final/protótipo
+- **DECISÃO**: adicionar uma etapa de validação visual (esboços/silhuetas de 5-10 conceitos de Mimo, avaliados pelos critérios de personagem-marca da seção 1b) entre o Checkpoint 1 aprovado e a produção de arte final/polish (Fase 8). Não bloqueia a Configuração Técnica em si (infraestrutura independe da arte), mas bloqueia investir em arte final antes de validar a direção visual.
+- **MOTIVO**: usuário identificou que a maior decisão do projeto pode não ser mecânica, e sim qual criatura gera desejo visual imediato ("EU QUERO ESSE") — testar isso barato (esboços) antes de comprometer tempo de produção de arte final reduz risco de investir semanas na direção errada.
+- **ALTERNATIVAS**: seguir direto para produção de arte definitiva de um único conceito sem comparação (rejeitado — maior risco de escolher a direção errada sem dado nenhum).
+- **TRADE-OFFS**: adiciona uma etapa antes da produção de arte final, mas é rápida/barata (esboços, não arte definitiva) — não atrasa a Configuração Técnica nem o Protótipo funcional (Fase 2), que podem rodar em paralelo com placeholders visuais.
+- **IMPACTO**: `10-gdd.md` v7, nova seção 1d. Roadmap (`04-roadmap.md`) deve refletir esta etapa entre Fase 1 e a produção de arte da Fase 8 (ou antes, como validação antecipada).
+- **DATA**: 2026-08-13

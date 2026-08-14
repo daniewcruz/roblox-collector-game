@@ -14,6 +14,13 @@
 - **Tarefas**: escolher nicho/tema (pesquisa de gaps fora do Roblox), esboçar GDD inicial (core loop, primeira sessão, primeira recompensa), decidir escopo do MVP (Épico → Feature).
 - **Critério de sucesso**: GDD curto (1-2 páginas) capaz de responder "por que o jogador volta amanhã?" de forma concreta.
 
+## FASE 1.5 — Validação Visual (D021, nova)
+- **Objetivo**: testar 5-10 conceitos visuais de Mimo (esboços/silhuetas) antes de comprometer arte final, para descobrir qual design gera desejo imediato ("EU QUERO ESSE"), não só qual mecânica funciona.
+- **Dependências**: Checkpoint 1 aprovado (GDD `10-gdd.md`, seção 1b/1d).
+- **Tarefas**: gerar/esboçar conceitos variados; avaliar por silhueta/fofura/legibilidade em thumbnail; coletar reação informal de pessoas fora do projeto se possível.
+- **Critério de sucesso**: uma direção visual vencedora escolhida, com justificativa registrada em `06-decisoes.md`.
+- **Nota**: não bloqueia a Configuração Técnica/Protótipo (Fase 2), que pode rodar em paralelo com placeholders — só bloqueia produção de arte final (Fase 8).
+
 ## FASE 2 — Protótipo (aprendizado técnico)
 - **Objetivo**: aprender o mínimo de Luau/Studio construindo um protótipo descartável (pode ser um Obby simples ou mecânica isolada), não o jogo final.
 - **Dependências**: Fase 1.
@@ -42,9 +49,9 @@
 - **Critério de sucesso**: funcionalidade social não quebra a performance nem a economia.
 
 ## FASE 7 — Monetização
-- **Objetivo**: implementar Game Passes + Developer Products de forma não agressiva.
+- **Objetivo**: implementar Game Passes + Developer Products de forma não agressiva, seguindo estritamente as regras éticas de `10-gdd.md` seção 8 (D020) — sem loot boxes/pagar-por-chance, sem pressão de urgência artificial, core loop sempre jogável sem gastar.
 - **Dependências**: Fase 6 (economia e progressão já equilibradas).
-- **Critério de sucesso**: monetização não reduz retenção observável em teste com jogadores reais (ver Fase 9).
+- **Critério de sucesso**: monetização não reduz retenção observável em teste com jogadores reais (ver Fase 9); nenhuma mecânica viola as regras da seção 8 do GDD.
 
 ## FASE 8 — Polish
 - **Objetivo**: UX/UI, mobile responsivo, feedback visual/sonoro, performance.
