@@ -38,6 +38,7 @@ Nenhum código foi escrito, Roblox Studio ainda não foi aberto.
 | [`docs/11-pivot-fofura-colecao-skins.md`](docs/11-pivot-fofura-colecao-skins.md) | Avaliação do pivot para fofura+coleção+skins vs. concorrentes reais (Adopt Me, Evomon, Knockout) |
 | [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v12, dosagem tonal + PvP leve como visão futura)** |
 | [`docs/13-backlog-ideias-futuras.md`](docs/13-backlog-ideias-futuras.md) | Backlog de ideias irreverentes/grandes (bosses, narrativa, gravidade) — não faz parte do MVP ativo |
+| [`docs/14-mecanicas-roblox-oficial.md`](docs/14-mecanicas-roblox-oficial.md) | Documentação oficial da Roblox sobre core loop, prototipagem e onboarding — validação cruzada do GDD |
 | [`docs/12-conceitos-mimo.md`](docs/12-conceitos-mimo.md) | Fase 1.5 — 21 esboços de conceito de Mimo em 5 rodadas, avaliação e recomendação |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.

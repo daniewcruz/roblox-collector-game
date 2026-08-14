@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v16 — CHECKPOINT 1 APROVADO, visão fechada, avançando à Configuração Técnica)
+# Game Design Document (GDD) — Fase 1 (revisado, v17 — CHECKPOINT 1 APROVADO, validado contra documentação oficial da Roblox, avançando à Configuração Técnica)
 
 **Nome provisório**: *Mimo World* (placeholder — "Mimo" pode virar nome da categoria de criaturas, não do jogo — decisão em aberto, D040)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -287,6 +287,8 @@ O usuário observou corretamente que "situações que geram vídeo" muitas vezes
 - **Primeiros 15 minutos**: entende o Bestiary (coleção com % de completude), percebe que existem variações raras do mesmo Mimo (dourado, cristal, neon...).
 - **Amanhã**: falta pouco para completar uma seção do Bestiary da região; moeda/recursos acumulados o suficiente para o próximo item de progressão.
 - **Semanas depois**: perseguir variações raras específicas, desbloquear novas regiões, eventualmente eventos sazonais com Mimos exclusivos por tempo limitado (fora do MVP, mas already compatível com a estrutura).
+
+**Reforços da documentação oficial da Roblox (D052, `14-mecanicas-roblox-oficial.md`)**: (1) o Bestiary deve mostrar sua % de completude **desde a primeira descoberta**, não só depois de várias — visibilidade de meta desde cedo é recomendação oficial de onboarding; (2) o primeiro marco de progressão (ex: primeira melhoria de ferramenta) deve exigir pouco esforço — limiar inicial baixo, para o jogador "sentir a diversão da progressão imediatamente", ajustando a curva depois com dados reais de playtest.
 
 ## 4. Core Loop
 
