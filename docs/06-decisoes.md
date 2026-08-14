@@ -243,3 +243,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: adiciona uma etapa de comparação de protótipos de interação dentro da Fase 2, mas evita o risco maior de construir Fases 3-7 inteiras em cima de uma ação central que não é divertida sozinha.
 - **IMPACTO**: `10-gdd.md` v8, nova seção 4b. `04-roadmap.md` Fase 2 inclui tarefas de validação de gameplay em paralelo à infraestrutura.
 - **DATA**: 2026-08-13
+
+---
+
+## D025 — 8 esboços de conceito de Mimo gerados e avaliados (Fase 1.5, primeira rodada)
+- **DECISÃO**: gerados 8 esboços deliberadamente diferentes entre si (não variações do mesmo bichinho): Bounch (animal fofo clássico), Emberwick (espírito de chama), Potling (vaso vivo), Glimmerslug (lesma cristalina), Nibnut (bolota andante), Puffdrift (nuvem fofa), Kettling (bule vivo), Mosshoof (cervo musgoso) — cobrindo as 5 categorias pedidas pelo usuário (animal fofo, criatura fantástica, objeto vivo, forma estranha, combinação inesperada). Avaliados pelos 10 critérios de D023. Resultado: Emberwick e Kettling empatam em 1º (42/50); Bounch e Mosshoof em seguida (37-38) com fofura alta mas menor diferenciação. Nenhuma escolha final travada — decisão fica com o usuário.
+- **MOTIVO**: usuário pediu para começar pela Fase 1.5 antes da Configuração Técnica, por a maior incerteza do projeto ser identidade visual, não infraestrutura.
+- **ALTERNATIVAS**: gerar variações do mesmo arquétipo (rejeitado pelo usuário — pediu diversidade real entre conceitos).
+- **TRADE-OFFS**: nenhum — são esboços rápidos (SVG simples), não arte final, coerente com D021.
+- **IMPACTO**: novo documento `12-conceitos-mimo.md` com tabela de avaliação completa; esboços salvos em `assets/mimo-concepts-sketch.svg`. Observação de design registrada: a estrutura de "mundo mágico" já estabelecida permite uma família heterogênea de Mimos (unidos por serem "criaturas de magia", não por parentesco biológico), reabrindo a possibilidade de combinar os conceitos de maior pontuação em vez de escolher um único arquétipo puro.
+- **DATA**: 2026-08-13

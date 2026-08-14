@@ -12,7 +12,7 @@ CHECKPOINT 0 — aprovado ✅
 FASE 1 — Conceito + nicho/tema + GDD ✅ (aprovado como BASE — Core Gameplay ainda é hipótese)
 CHECKPOINT 1 — APROVADO ✅ (D017-D021)
    ↓
-FASE 1.5 — Validação Visual ⏳ + CONFIGURAÇÃO TÉCNICA ⏳ (em paralelo, escopo restrito a infra — D022)
+FASE 1.5 — Validação Visual 🔄 (8 conceitos gerados, aguardando escolha do usuário — ver docs/12) + CONFIGURAÇÃO TÉCNICA ⏳ (em paralelo, escopo restrito a infra — D022)
 ```
 
 **Conceito aprovado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos") — Mimo é o personagem/marca do jogo, não só um pet colecionável. Modelo de viralização cooperativo (estilo Grow a Garden), regra de design "momento compartilhável", monetização ética (sem loot box/FOMO/pressão — D020). Inspirado em 5 franquias Nintendo sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v8).
@@ -37,5 +37,6 @@ Nenhum código foi escrito, Roblox Studio ainda não foi aberto.
 | [`docs/09-temas-nichos.md`](docs/09-temas-nichos.md) | Pesquisa comparativa de temas/nichos (v1, tema mineração) |
 | [`docs/11-pivot-fofura-colecao-skins.md`](docs/11-pivot-fofura-colecao-skins.md) | Avaliação do pivot para fofura+coleção+skins vs. concorrentes reais (Adopt Me, Evomon, Knockout) |
 | [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v8, Core Gameplay em validação)** |
+| [`docs/12-conceitos-mimo.md`](docs/12-conceitos-mimo.md) | Fase 1.5 — 8 esboços de conceito de Mimo, avaliação e recomendação |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.

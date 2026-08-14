@@ -1,0 +1,97 @@
+<svg width="680" height="440" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Oito esboços de conceito de Mimo</title>
+<desc>Grade com oito silhuetas de personagem bem diferentes entre si: fofo tradicional, espírito de fogo, vaso vivo, lesma cristalina, bolota andante, nuvem fofa, bule vivo e cervo musgoso.</desc>
+<rect width="680" height="440" fill="#FFFFFF"/>
+<rect x="45" y="30" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="195" y="30" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="345" y="30" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="495" y="30" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="45" y="250" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="195" y="250" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="345" y="250" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="495" y="250" width="140" height="175" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<ellipse cx="115" cy="115" rx="40" ry="36" fill="#F3B6C6"/>
+<ellipse cx="97" cy="72" rx="11" ry="21" fill="#F3B6C6"/>
+<ellipse cx="133" cy="72" rx="11" ry="21" fill="#F3B6C6"/>
+<ellipse cx="97" cy="74" rx="5" ry="12" fill="#FFD9E4"/>
+<ellipse cx="133" cy="74" rx="5" ry="12" fill="#FFD9E4"/>
+<circle cx="103" cy="112" r="3.5" fill="#3A2E2E"/>
+<circle cx="127" cy="112" r="3.5" fill="#3A2E2E"/>
+<ellipse cx="96" cy="123" rx="7" ry="4" fill="#FF9EB5" opacity="0.7"/>
+<ellipse cx="134" cy="123" rx="7" ry="4" fill="#FF9EB5" opacity="0.7"/>
+<path d="M265 70 C285 90 281 130 265 146 C249 130 245 90 265 70 Z" fill="#FF7A45"/>
+<path d="M265 92 C275 104 272 124 265 132 C258 124 255 104 265 92 Z" fill="#FFC24B"/>
+<circle cx="265" cy="66" r="4" fill="#4A3325"/>
+<circle cx="257" cy="112" r="3.5" fill="#4A2A12"/>
+<circle cx="273" cy="112" r="3.5" fill="#4A2A12"/>
+<path d="M394 92 L436 92 L428 146 L402 146 Z" fill="#C97B4A"/>
+<rect x="391" y="86" width="48" height="10" rx="4" fill="#A85E33"/>
+<line x1="415" y1="86" x2="415" y2="60" stroke="#4C8C3F" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="405" cy="58" rx="10" ry="6" fill="#5FA84A" transform="rotate(-25 405 58)"/>
+<ellipse cx="425" cy="58" rx="10" ry="6" fill="#5FA84A" transform="rotate(25 425 58)"/>
+<circle cx="407" cy="116" r="3.5" fill="#3A2416"/>
+<circle cx="423" cy="116" r="3.5" fill="#3A2416"/>
+<line x1="403" y1="146" x2="398" y2="157" stroke="#A85E33" stroke-width="3" stroke-linecap="round"/>
+<line x1="427" y1="146" x2="432" y2="157" stroke="#A85E33" stroke-width="3" stroke-linecap="round"/>
+<path d="M536 131 C534 106 555 90 576 95 C597 100 601 126 585 141 C570 154 538 152 536 131 Z" fill="#9FD8E0"/>
+<circle cx="575" cy="100" r="16" fill="#6FB8C9"/>
+<circle cx="575" cy="100" r="10" fill="none" stroke="#4A93A6" stroke-width="1.5"/>
+<circle cx="575" cy="100" r="5" fill="none" stroke="#4A93A6" stroke-width="1.5"/>
+<line x1="548" y1="102" x2="542" y2="87" stroke="#6FB8C9" stroke-width="2" stroke-linecap="round"/>
+<circle cx="542" cy="87" r="3" fill="#6FB8C9"/>
+<circle cx="549" cy="120" r="3" fill="#2B4A50"/>
+<circle cx="561" cy="120" r="3" fill="#2B4A50"/>
+<ellipse cx="115" cy="338" rx="25" ry="31" fill="#C98B4E"/>
+<path d="M90 318 C90 298 140 298 140 318 C140 324 90 324 90 318 Z" fill="#7A4B2A"/>
+<line x1="98" y1="306" x2="102" y2="316" stroke="#5E3A1F" stroke-width="1.5"/>
+<line x1="115" y1="303" x2="115" y2="316" stroke="#5E3A1F" stroke-width="1.5"/>
+<line x1="132" y1="306" x2="128" y2="316" stroke="#5E3A1F" stroke-width="1.5"/>
+<circle cx="107" cy="338" r="3.5" fill="#3A2416"/>
+<circle cx="123" cy="338" r="3.5" fill="#3A2416"/>
+<line x1="106" y1="367" x2="101" y2="379" stroke="#7A4B2A" stroke-width="3" stroke-linecap="round"/>
+<line x1="124" y1="367" x2="129" y2="379" stroke="#7A4B2A" stroke-width="3" stroke-linecap="round"/>
+<circle cx="245" cy="332" r="20" fill="#E6E1F5"/>
+<circle cx="270" cy="319" r="26" fill="#E6E1F5"/>
+<circle cx="295" cy="332" r="18" fill="#E6E1F5"/>
+<circle cx="270" cy="342" r="22" fill="#E6E1F5"/>
+<circle cx="260" cy="330" r="3" fill="#5B4E8C"/>
+<circle cx="280" cy="330" r="3" fill="#5B4E8C"/>
+<circle cx="228" cy="302" r="2" fill="#C9BEF0"/>
+<circle cx="307" cy="308" r="2" fill="#C9BEF0"/>
+<circle cx="250" cy="362" r="2" fill="#C9BEF0"/>
+<ellipse cx="413" cy="338" rx="32" ry="25" fill="#6FA8DC"/>
+<path d="M443 322 L463 313 L449 331 Z" fill="#6FA8DC"/>
+<path d="M386 322 C373 322 373 352 388 354" fill="none" stroke="#6FA8DC" stroke-width="5" stroke-linecap="round"/>
+<rect x="403" y="303" width="20" height="6" rx="3" fill="#4E86BE"/>
+<circle cx="413" cy="301" r="5" fill="#4E86BE"/>
+<path d="M405 292 C408 287 402 283 405 278" fill="none" stroke="#CFE3F5" stroke-width="2" stroke-linecap="round"/>
+<path d="M420 292 C423 287 417 283 420 278" fill="none" stroke="#CFE3F5" stroke-width="2" stroke-linecap="round"/>
+<circle cx="405" cy="336" r="3.5" fill="#274160"/>
+<circle cx="421" cy="336" r="3.5" fill="#274160"/>
+<ellipse cx="565" cy="342" rx="29" ry="23" fill="#C9A97E"/>
+<ellipse cx="565" cy="313" rx="16" ry="14" fill="#C9A97E"/>
+<path d="M555 300 L548 284 L543 278" fill="none" stroke="#8A6F4E" stroke-width="3" stroke-linecap="round"/>
+<path d="M575 300 L582 284 L587 278" fill="none" stroke="#8A6F4E" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="582" cy="337" rx="8" ry="6" fill="#6FA84A" opacity="0.8"/>
+<ellipse cx="548" cy="348" rx="7" ry="5" fill="#6FA84A" opacity="0.8"/>
+<circle cx="559" cy="311" r="3" fill="#3A2E1C"/>
+<circle cx="571" cy="311" r="3" fill="#3A2E1C"/>
+<line x1="545" y1="358" x2="540" y2="372" stroke="#C9A97E" stroke-width="3" stroke-linecap="round"/>
+<line x1="585" y1="358" x2="590" y2="372" stroke="#C9A97E" stroke-width="3" stroke-linecap="round"/>
+<text x="115" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Bounch</text>
+<text x="115" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Animal fofo classico</text>
+<text x="265" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Emberwick</text>
+<text x="265" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Espirito de chama</text>
+<text x="415" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Potling</text>
+<text x="415" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Objeto vivo (vaso)</text>
+<text x="565" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Glimmerslug</text>
+<text x="565" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Forma estranha</text>
+<text x="115" y="408" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Nibnut</text>
+<text x="115" y="423" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Objeto vivo (bolota)</text>
+<text x="265" y="408" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Puffdrift</text>
+<text x="265" y="423" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Criatura fantastica</text>
+<text x="415" y="408" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Kettling</text>
+<text x="415" y="423" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Combinacao inesperada</text>
+<text x="565" y="408" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Mosshoof</text>
+<text x="565" y="423" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Animal + planta</text>
+</svg>
