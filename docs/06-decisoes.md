@@ -460,3 +460,23 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: a versão MVP-compatível (poucos NPCs com personalidade leve, 1-2 falas/animações cada) é barata; a versão completa (classes jogáveis, progressão de habilidade por papel, puzzles cooperativos) exigiria muito mais tempo de solo dev — não cabe no MVP enxuto.
 - **IMPACTO**: `10-gdd.md` v11, nova seção sobre NPCs e pilar de humor. Roadmap ganha nota de "sistema de papéis/classes jogáveis" como visão de Fase 6+.
 - **DATA**: 2026-08-14
+
+---
+
+## D046 — Grande leva de ideias irreverentes tratada como backlog separado, não incorporada ao GDD ativo
+- **DECISÃO**: usuário trouxe um volume grande de ideias adicionais (personagens irreverentes extras, modo "caos", missões nonsense, dimensão de gravidade invertida, fusão de personagens, mapas-meme, bosses, clímax narrativo). Avaliado como um todo: descreve um jogo estruturalmente diferente (action-adventure com campanha/chefes) do que foi validado nas Fases 0-1. Criado `13-backlog-ideias-futuras.md` para preservar tudo sem misturar ao GDD ativo. Extraído e **adotado** apenas o princípio de dosagem tonal (sério vs. irreverente, eventos programados não constantes) por ser barato e já compatível com sistemas existentes.
+- **MOTIVO**: usuário pediu para perguntar antes de decidir (AskUserQuestion), e a resposta confirmou o caminho recomendado — backlog separado, sem mexer no MVP ativo — para o grosso das ideias, com uma exceção tratada à parte (combate/PvP, ver D047).
+- **ALTERNATIVAS**: incorporar tudo ao GDD ativo (rejeitado — contradiz o MVP enxuto já validado repetidamente); descartar as ideias (rejeitado — são material criativo válido para o futuro, só não para agora).
+- **TRADE-OFFS**: nenhum — nada se perde, só fica organizado por prioridade temporal.
+- **IMPACTO**: novo documento `13-backlog-ideias-futuras.md`. `10-gdd.md` 1g ganha o princípio de dosagem tonal.
+- **DATA**: 2026-08-14
+
+---
+
+## D047 — PvP leve opcional em arena separada, fora do loop principal (visão de Fase 6+)
+- **DECISÃO**: usuário defendeu que combate/PvP é o que mais atrai jogadores, reabrindo parcialmente D016 (que havia escolhido modelo 100% cooperativo). Após esclarecer o nível pretendido (pergunta dedicada), confirmado: **PvP leve opcional, em modo de arena separado** do loop principal de exploração/coleção — não integrado à progressão central, não obrigatório. Ainda exige sistema de dano/vida/hit detection (trabalho técnico real, maior que qualquer coisa no MVP atual).
+- **MOTIVO**: dados já levantados (`01-pesquisa-mercado.md`, `08-analise-retencao-generos.md`) confirmam que jogos com forte componente competitivo (MM2, Rivals) têm alto CCU — o usuário tem razão que existe apelo real. Mas D016 já demonstrou, com dados igualmente reais (Grow a Garden vs. Steal a Brainrot), que é possível atingir CCU recorde **sem** PvP. A solução de compromisso — arena separada e opcional — preserva o núcleo cooperativo/sem-pressão já validado (D013, D020) enquanto abre espaço para competição para quem quiser, sem forçar todo o jogo a virar combate.
+- **ALTERNATIVAS**: combate integrado à exploração/progressão principal (rejeitado pelo usuário na pergunta de esclarecimento — reconhecido como custo técnico e de risco de toxicidade/moderação maior demais para um solo dev iniciante); manter só cooperativo sem nenhuma forma de PvP (D016 original — revisado por esta decisão, mas não descartado: o núcleo continua cooperativo, só a arena é nova).
+- **TRADE-OFFS**: sistema de arena exige dano/vida/hit detection/balanceamento — **fora do MVP**, fica como visão de Fase 6+ (Social/Multiplayer) ou mais tarde. Recomendação de tom: manter a arena no mesmo registro "brinquedo"/não-violento já estabelecido (1f/1g) — ex: contestos de empurrar/derrubar, não combate realista com sangue/armas — para não contradizer a identidade "toy world" nem as salvaguardas éticas de público infantil (D020).
+- **IMPACTO**: `10-gdd.md` ganha nota de visão em Fase 6/roadmap. `04-roadmap.md` Fase 6 atualizada com a menção de arena PvP opcional ao lado do sistema de papéis/classes já registrado (D045).
+- **DATA**: 2026-08-14

@@ -50,6 +50,7 @@
 - **Dependências**: Fase 5.
 - **Critério de sucesso**: funcionalidade social não quebra a performance nem a economia.
 - **Visão de longo prazo (D045, não obrigatório desta fase)**: sistema completo de papéis/classes jogáveis (jogador escolhe um papel, ganha árvore de habilidades própria, desafios cooperativos que exigem 2+ papéis diferentes) — avaliar só depois do Core Gameplay pequeno já validado e do jogo ter alguma tração.
+- **Visão de longo prazo (D047, não obrigatório desta fase)**: arena de PvP leve e opcional, separada do loop principal de exploração/coleção — exige sistema de dano/vida/hit detection. Manter tom "brinquedo" (contestos de empurrar/derrubar), não combate realista, para preservar a identidade do jogo e as salvaguardas éticas de público infantil (D020).
 
 ## FASE 7 — Monetização
 - **Objetivo**: implementar Game Passes + Developer Products de forma não agressiva, seguindo estritamente as regras éticas de `10-gdd.md` seção 8 (D020) — sem loot boxes/pagar-por-chance, sem pressão de urgência artificial, core loop sempre jogável sem gastar.
