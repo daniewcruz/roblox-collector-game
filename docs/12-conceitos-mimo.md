@@ -56,11 +56,24 @@ O usuário pediu um segundo eixo de variedade, inspirado (como filosofia, não c
 
 **Nota de escopo (reforça D011/D019)**: arquétipos tipo elfo/humanoide são naturalmente mais trabalhosos de desenhar/animar que blobs simples. Para não contradizer o MVP enxuto, esses 3 ficam registrados como **candidatos de expansão pós-MVP** (elenco de lançamento pode ser só blobs/animais/objetos mais simples; arquétipos tipo Draconyx/Sylvae/Grimlet entram quando o jogo já tiver alguma tração, adicionando profundidade ao "reino" sem arriscar o cronograma do MVP).
 
+## Rodada 4 — ferramentas/armas estilizadas (D030)
+
+Categoria nova, separada dos Mimos: skins visuais para a ferramenta evolutiva (seção 6 do GDD), inspiradas em objetos estilizados tipo anime de ação (kunai, cajado, pincel) — filosofia de design, não cópia de nenhuma obra específica.
+
+| Conceito | Descrição | Conecta com |
+|---|---|---|
+| **Kunai mágico** | Pequena lâmina estilizada com runa brilhante no centro | Novo candidato de Core Gameplay: arremesso preciso (4b) |
+| **Cajado curto** | Vara de madeira com cristal aquático na ponta | Ferramenta "clássica de mago", visual imponente |
+| **Pincel encantado** | Cerdas que soltam brilho ao tocar | Conecta com o candidato "escovar/limpar" já em 4b |
+
+Essas ferramentas não substituem o verbo único do jogo (1b/2b) — são **skins** de como a mesma ação é executada visualmente, e uma delas (kunai) sugeriu um 5º candidato de interação central a testar no protótipo.
+
 ## Pergunta ao usuário
 
 Ainda nenhuma escolha travada:
 
-1. Dos 13 conceitos agora (8 + Voidling + Coronox + Draconyx + Sylvae + Grimlet), quais 3-4 formariam o "elenco de lançamento" ideal do MVP — cobrindo pelo menos 2-3 famílias diferentes, conforme a nota de escopo em `10-gdd.md` 1e?
+1. Dos 13 conceitos de Mimo (8 + Voidling + Coronox + Draconyx + Sylvae + Grimlet), quais 3-4 formariam o "elenco de lançamento" ideal do MVP — cobrindo pelo menos 2-3 famílias diferentes, conforme a nota de escopo em `10-gdd.md` 1e?
 2. Confirma manter os arquétipos de fantasia (dragão/elfo/vilão) como expansão pós-MVP, ou algum deles é simples o suficiente para você querer incluir já no elenco de lançamento?
 3. Voidling e Coronox confirmam a direção certa para Mystic/Majestic, ou preferem outra interpretação dessas famílias?
-4. Falta algum arquétipo ou família ainda fraca que valha a pena esboçar numa próxima rodada?
+4. Das 3 ferramentas, alguma te chama mais atenção como candidata a testar o arremesso preciso no protótipo?
+5. Falta algum arquétipo ou família ainda fraca que valha a pena esboçar numa próxima rodada?

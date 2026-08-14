@@ -293,3 +293,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: arquétipos tipo elfo/humanoide são naturalmente mais complexos de desenhar/animar que blobs simples — mitigado ao manter todos em escala/silhueta miniatura e simplificada (não personagens humanoides detalhados), preservando o critério de silhueta simples (1b) e o MVP enxuto (D011/D019). Nenhum arquétipo entra no MVP ainda — ficam como candidatos para expandir o elenco pós-MVP.
 - **IMPACTO**: `12-conceitos-mimo.md` ganha os 3 novos esboços e uma nota sobre o eixo de arquétipos. `10-gdd.md` seção 1e referencia este eixo como complementar às 6 famílias.
 - **DATA**: 2026-08-14
+
+---
+
+## D030 — Ferramentas/armas estilizadas como categoria colecionável + novo candidato de Core Gameplay (arremesso)
+- **DECISÃO**: adicionar "ferramentas mágicas estilizadas" (ex: kunai encantado, cajado, pincel mágico) como skins visuais da ferramenta evolutiva já definida (seção 6/1e), tratadas como categoria cosmética colecionável (compatível com D020 — sem afetar progresso). 3 esboços gerados: Kunai mágico (runa brilhante, sugere arremesso/precisão), Cajado curto (cristal aquático), Pincel encantado (cerdas brilhantes, conecta com o candidato "escovar/limpar" já em 4b). Adicionado um 5º candidato de interação central ao Core Gameplay (4b): **Arremesso preciso** — jogador mira e arremessa a ferramenta no casulo, com feedback de acerto (whoosh + impacto), testando se a precisão/timing de mira já é satisfatória sozinha.
+- **MOTIVO**: usuário pediu inspiração de "armas estilo kunai" (filosofia de design de ferramentas estilizadas tipo anime de ação, não cópia de nenhuma obra específica) — isso tanto abre uma nova categoria de personalização (skins de ferramenta, além de skins de Mimo) quanto sugere uma mecânica de interação ainda não testada (arremesso com mira), relevante para a hipótese de Core Gameplay ainda aberta (D024).
+- **ALTERNATIVAS**: tratar ferramentas só como progressão numérica sem skin visual (era o padrão implícito das versões anteriores) — perdia oportunidade de personalização e de uma mecânica de interação potencialmente mais divertida que toque simples.
+- **TRADE-OFFS**: nenhum trade-off técnico relevante — skins de ferramenta reaproveitam a mesma arquitetura de cosméticos já prevista (6b/8); o candidato de arremesso é só mais uma opção a testar no protótipo, não uma escolha travada.
+- **IMPACTO**: `10-gdd.md` seção 4b ganha o 5º candidato de interação; seção 6b/8 passam a mencionar skins de ferramenta como categoria cosmética. `12-conceitos-mimo.md` ganha nova seção com os 3 esboços de ferramenta.
+- **DATA**: 2026-08-14

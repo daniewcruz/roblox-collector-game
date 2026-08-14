@@ -245,6 +245,7 @@ Estas são hipóteses concretas para comparar no protótipo, não uma escolha fe
 2. **Coaxar por ritmo/tempo**: uma pequena sequência de toque no tempo certo "convence" o Mimo a sair (parecido com o timing de pesca do Fisch, mas aplicado à revelação, não à captura). Adiciona uma pequena habilidade sem virar minigame complexo.
 3. **Escavar/limpar**: o jogador precisa "escovar" ou remover camadas mágicas (poeira, vinhas, cristal fino) até o casulo se abrir sozinho — interação repetitiva mas com feedback progressivo (cada camada removida muda visualmente o objeto).
 4. **Empurrar/rolar**: casulos podem ser fisicamente empurrados/rolados pelo cenário antes de abrir (inspirado em manipulação física tipo Katamari) — testa se a manipulação do objeto no mundo, não só o toque final, já é agradável.
+5. **Arremesso preciso** (D030): o jogador mira e arremessa a ferramenta (ex: um kunai mágico) no casulo, com feedback de acerto (whoosh + impacto visual/sonoro) — testa se a mira/timing do arremesso já é satisfatória sozinha, independente do que é revelado.
 
 **Critério de validação no protótipo**: pedir para alguém repetir a ação 15-20 vezes seguidas **sem receber nada raro** e observar se ainda parece agradável, ou se só a expectativa de raridade estava carregando a diversão. Se for a segunda opção, a interação escolhida precisa mudar antes de seguir para o Core Gameplay (Fase 3) completo.
 
@@ -295,6 +296,7 @@ Diferença deliberada em relação a um sistema de decoração completo:
 - **O que entra no MVP**: 1-2 slots de acessório cosmético no personagem (ex: um chapéu, uma auréola) desbloqueados por marcos do Bestiary — não comprados, **conquistados** pela coleção (reforça "obtidas jogando" da divisão de monetização, seção 8); um "cartão de perfil" simples mostrando os Mimos mais raros.
 - **O que fica para depois** (Fase 4+ do roadmap, fora do MVP): decoração de um espaço pessoal completo, visita ao espaço de amigos, catálogo grande de roupas/móveis — isso é essencialmente o produto central do Adopt Me (`11-pivot-fofura-colecao-skins.md`), e replicá-lo cedo demais either estoura o escopo do solo dev either garante comparação direta com o maior jogo do gênero.
 - **Por que isso ainda entrega a emoção de Animal Crossing** mesmo pequeno: a motivação "quero deixar meu personagem mais bonito" já funciona com poucos itens bem desenhados, desde que sejam **visíveis a outros jogadores** — é a visibilidade social que gera o efeito, não o tamanho do catálogo.
+- **Skins de ferramenta (D030)**: além de cosméticos de personagem, a ferramenta evolutiva (seção 6) pode ter skins visuais (ex: kunai mágico, cajado, pincel encantado — ver `12-conceitos-mimo.md`) — mesma regra ética (cosmético, preço fixo ou conquistado, sem afetar progresso).
 
 ## 7. Loops completos (framework de `08-analise-retencao-generos.md`, aplicado à nova ambientação)
 
