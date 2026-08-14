@@ -90,6 +90,10 @@ Uma criatura pode transformar visualmente (ex: Emberwick → Blazing Emberwick �
 - **Voidling** (Mystic, aura-first): pequena, flutuante, sem rosto, com distorção ao redor — não é assustadora, é misteriosa e bonita. Variantes: Void, Galaxy, Celestial, Corrupted.
 - **Meme Mimos** (Chaotic): um Mimo pode ter uma skin deliberadamente engraçada (ex: Kettling de óculos escuros) — gera reação de humor, não só de fofura, e amplia o alcance de conteúdo (vídeos "WHY DOES THIS THING EXIST 😂" ao lado de "LOOK AT MY NEW MIMO 🥺").
 
+### Eixo adicional: arquétipos de fantasia (D029)
+
+Além das 6 famílias visuais (estilo), o "reino" de Mimos pode conter **arquétipos de fantasia clássicos** (tipo dragão, tipo elfo/fada, tipo vilão/trapaceiro), sempre em versão miniatura/simplificada — mantendo o critério de silhueta simples (1b), não personagens humanoides detalhados. Este eixo cruza com o de família (ex: um dragão pode ser Majestic ou Cool dependendo do design). Registrado em `12-conceitos-mimo.md` (Rodada 3) como candidatos de **expansão pós-MVP** — o elenco de lançamento do MVP pode continuar simples (blobs/animais/objetos), com arquétipos mais elaborados entrando depois de alguma tração do jogo.
+
 ## 1d. Nova etapa antes do protótipo: teste visual de conceitos de Mimo (D021)
 
 O usuário identificou que a maior decisão do projeto pode não ser a mecânica — pode ser **qual criatura faz alguém olhar para a tela e pensar "EU QUERO ESSE"**. Isso é coerente com o critério "Kirby"/personagem-marca (1b): se o Mimo não gerar desejo visual instantâneo, nenhuma mecânica por trás dele compensa.

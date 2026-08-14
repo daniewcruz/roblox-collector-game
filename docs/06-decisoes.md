@@ -283,3 +283,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: exige desenhar múltiplos estágios visuais por criatura evoluível — fica **fora do MVP**, mas reaproveita o mesmo princípio de "segredo da região" já no MVP (seção 6, Super Mario 2b) como semente da mecânica.
 - **IMPACTO**: `10-gdd.md` v9, seção 1e e nota em 4b/Meta Loop. Fase 4/6 do roadmap passam a incluir esta mecânica como candidata.
 - **DATA**: 2026-08-13
+
+---
+
+## D029 — Eixo de arquétipos de fantasia (dragão, elfo/fada, vilão...) além das 6 famílias visuais
+- **DECISÃO**: adicionar um segundo eixo de variedade ao mundo de Mimos, cruzando com as 6 famílias visuais (D026): arquétipos clássicos de fantasia (tipo dragão, tipo elfo/fada, tipo vilão/travesso, e outros a explorar), cada um em versão miniatura/simplificada compatível com a escala e simplicidade de silhueta já exigidas (1b). 3 esboços gerados: Draconyx (mini dragão, Majestic/Cool), Sylvae (fada-elfo em miniatura, Mystic/Cute), Grimlet (criatura travessa/vilã, Chaotic).
+- **MOTIVO**: usuário quis reforçar que a inspiração de "um reino com vários tipos de criatura" (dragões, elfos, fadas, vilões) não é sobre copiar nenhuma obra específica, e sim sobre ter uma variedade real de **arquétipos de fantasia** povoando o mundo, não só variações de um único tipo de bichinho.
+- **ALTERNATIVAS**: manter só as 6 famílias visuais como eixo único de variedade (D026) — insuficiente segundo o usuário, que quer arquétipos de criatura reconhecíveis (dragão, fada, vilão) além de só "estilo visual".
+- **TRADE-OFFS**: arquétipos tipo elfo/humanoide são naturalmente mais complexos de desenhar/animar que blobs simples — mitigado ao manter todos em escala/silhueta miniatura e simplificada (não personagens humanoides detalhados), preservando o critério de silhueta simples (1b) e o MVP enxuto (D011/D019). Nenhum arquétipo entra no MVP ainda — ficam como candidatos para expandir o elenco pós-MVP.
+- **IMPACTO**: `12-conceitos-mimo.md` ganha os 3 novos esboços e uma nota sobre o eixo de arquétipos. `10-gdd.md` seção 1e referencia este eixo como complementar às 6 famílias.
+- **DATA**: 2026-08-14

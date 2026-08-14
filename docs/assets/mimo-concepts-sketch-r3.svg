@@ -1,0 +1,46 @@
+<svg width="680" height="260" viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Três arquétipos de fantasia em miniatura: Draconyx, Sylvae e Grimlet</title>
+<desc>Draconyx é um mini dragão verde-azulado com asas pequenas. Sylvae é uma criatura élfica/fada em miniatura com orelhas pontudas e asas translúcidas. Grimlet é uma criatura travessa tipo vilão, roxo escuro, com chifres e sorriso de canto.</desc>
+<rect width="680" height="260" fill="#FFFFFF"/>
+<rect x="40" y="20" width="190" height="215" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="245" y="20" width="190" height="215" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="450" y="20" width="190" height="215" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<path d="M105 110 C90 95 90 132 110 126 Z" fill="#7FC2A4"/>
+<path d="M165 110 C180 95 180 132 160 126 Z" fill="#7FC2A4"/>
+<ellipse cx="135" cy="125" rx="32" ry="28" fill="#5FA88A"/>
+<ellipse cx="135" cy="132" rx="17" ry="15" fill="#BFE3D4"/>
+<circle cx="135" cy="95" r="20" fill="#5FA88A"/>
+<ellipse cx="135" cy="105" rx="8" ry="5" fill="#BFE3D4"/>
+<path d="M125 78 L122 63 L131 80 Z" fill="#3F7860"/>
+<path d="M145 78 L148 63 L139 80 Z" fill="#3F7860"/>
+<circle cx="128" cy="93" r="3" fill="#1F3A30"/>
+<circle cx="142" cy="93" r="3" fill="#1F3A30"/>
+<path d="M160 145 C180 150 190 165 184 176" fill="none" stroke="#5FA88A" stroke-width="9" stroke-linecap="round"/>
+<path d="M180 170 L188 174 L182 180 Z" fill="#3F7860"/>
+<ellipse cx="318" cy="112" rx="10" ry="20" fill="#D9F0FF" opacity="0.6" transform="rotate(-20 318 112)"/>
+<ellipse cx="362" cy="112" rx="10" ry="20" fill="#D9F0FF" opacity="0.6" transform="rotate(20 362 112)"/>
+<path d="M340 100 C324 100 321 141 340 146 C359 141 356 100 340 100 Z" fill="#C9E4A5"/>
+<circle cx="340" cy="80" r="18" fill="#F6D8B8"/>
+<path d="M324 76 L311 69 L322 85 Z" fill="#F6D8B8"/>
+<path d="M356 76 L369 69 L358 85 Z" fill="#F6D8B8"/>
+<path d="M330 66 C324 54 336 49 339 62 Z" fill="#7FAE4A"/>
+<path d="M350 66 C356 54 344 49 341 62 Z" fill="#7FAE4A"/>
+<circle cx="334" cy="80" r="2.5" fill="#3A2E1C"/>
+<circle cx="346" cy="80" r="2.5" fill="#3A2E1C"/>
+<circle cx="360" cy="128" r="2.5" fill="#FFD9A0"/>
+<circle cx="366" cy="120" r="1.5" fill="#FFD9A0"/>
+<circle cx="545" cy="103" r="24" fill="#7A4A8C"/>
+<path d="M533 84 L528 66 L539 86 Z" fill="#4A2A5C"/>
+<path d="M557 84 L562 66 L551 86 Z" fill="#4A2A5C"/>
+<path d="M528 96 L538 91" stroke="#2A1638" stroke-width="2" stroke-linecap="round"/>
+<path d="M562 96 L552 91" stroke="#2A1638" stroke-width="2" stroke-linecap="round"/>
+<path d="M533 110 C540 118 552 116 558 106" fill="none" stroke="#2A1638" stroke-width="2" stroke-linecap="round"/>
+<path d="M545 145 C562 150 572 165 566 176" fill="none" stroke="#7A4A8C" stroke-width="8" stroke-linecap="round"/>
+<path d="M562 172 L570 176 L564 182 Z" fill="#4A2A5C"/>
+<text x="135" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Draconyx</text>
+<text x="135" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Mini dragao, Majestic/Cool</text>
+<text x="340" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Sylvae</text>
+<text x="340" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Fada-elfo, Mystic/Cute</text>
+<text x="545" y="188" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Grimlet</text>
+<text x="545" y="203" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Travesso/vilao, Chaotic</text>
+</svg>
