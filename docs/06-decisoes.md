@@ -253,3 +253,33 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — são esboços rápidos (SVG simples), não arte final, coerente com D021.
 - **IMPACTO**: novo documento `12-conceitos-mimo.md` com tabela de avaliação completa; esboços salvos em `assets/mimo-concepts-sketch.svg`. Observação de design registrada: a estrutura de "mundo mágico" já estabelecida permite uma família heterogênea de Mimos (unidos por serem "criaturas de magia", não por parentesco biológico), reabrindo a possibilidade de combinar os conceitos de maior pontuação em vez de escolher um único arquétipo puro.
 - **DATA**: 2026-08-13
+
+---
+
+## D026 — Identidade do Mimo ampliada: 6 famílias visuais, não só "fofo"
+- **DECISÃO**: "Mimo" deixa de significar apenas fofo/adorável — passa a significar "criatura/personagem que você quer ter", cobrindo 6 famílias visuais: Cute (fofo, adorável), Cool (poderoso, estiloso), Majestic (raro, imponente), Mystic (estranho/misterioso), Chaotic (engraçado/travesso), Legendary (reação de espanto). Cada família atrai um segmento de público diferente (criança pequena → Cute; adolescente → Cool; colecionador → completar; jogador social → status/Majestic; criador de conteúdo → descobertas/Mystic/Legendary).
+- **MOTIVO**: usuário identificou que um jogo só com criaturas fofas é infantil demais e perde potencial de skins/status/desejo — quer que diferentes perfis de jogador tenham motivo próprio para jogar, todos dentro do mesmo mundo.
+- **ALTERNATIVAS**: manter só o registro "fofo" das v1-v8 do GDD (rejeitado — limitava o público e o potencial de status social).
+- **TRADE-OFFS**: mais variedade de estilo de arte a produzir a longo prazo, mas o MVP pode continuar pequeno (poucos Mimos, cobrindo só 2-3 famílias inicialmente) sem contradizer D011/D019 — a amplitude é uma diretriz de identidade de marca, não uma obrigação de conteúdo imediato.
+- **IMPACTO**: `10-gdd.md` v9, seção 1b revisada e nova seção 1e. `12-conceitos-mimo.md` ganha coluna de família e 2 novos esboços (Voidling, Coronox) para preencher famílias Mystic/Majestic que faltavam nos 8 originais.
+- **DATA**: 2026-08-13
+
+---
+
+## D027 — Sistema de Aura: camada visual de status, separada da criatura
+- **DECISÃO**: adicionar "Aura" como um sistema cosmético futuro — efeito visual ao redor do personagem (partículas, brilho, distorção) independente do Mimo equipado, combinável com criatura + roupa para formar uma identidade visual completa. Exemplos: Celestial (estrelas orbitando), Void (distorção escura), Storm (raios), Inferno (fogo), Frozen (flocos de neve), Prism (reflexos), Phantom (névoa), Nature (folhas/flores).
+- **MOTIVO**: usuário quer uma camada de status social visível a distância no mundo (efeito "QUE AURA É ESSA?" ao ver outro jogador), mais rica que só a criatura em si — e observou corretamente que isso não precisa ser pay-to-win, encaixa nas regras éticas já definidas (D020): cosmético, sem afetar progresso.
+- **ALTERNATIVAS**: tratar aura como parte do Mimo em vez de camada separada (rejeitado — separar permite combinações múltiplas Mimo × Aura × Roupa, ampliando muito o espaço de personalização sem multiplicar o número de criaturas a desenhar).
+- **TRADE-OFFS**: sistema de VFX de aura é mais complexo tecnicamente que os cosméticos simples já no MVP (seção 6b) — fica explicitamente **fora do MVP**, candidato para Fase 4 (Progressão)/7 (Monetização), reaproveitando a mesma arquitetura de dados (raridade, coleção) já definida.
+- **IMPACTO**: `10-gdd.md` v9, nova seção 1e. Registrado como sistema pós-MVP compatível com a arquitetura, seguindo o mesmo padrão de D016/D019 (compatível, não construído agora).
+- **DATA**: 2026-08-13
+
+---
+
+## D028 — Evolução visual por descoberta (não por nível) como mecânica futura
+- **DECISÃO**: uma criatura pode ter uma transformação visual (ex: Emberwick → Blazing Emberwick → Astral Emberwick) desbloqueada por **descoberta/interação específica** (achar um lugar secreto, fazer uma ação especial), não só por acumular nível/XP. Gera conteúdo de vídeo do tipo "HOW TO GET ASTRAL EMBERWICK".
+- **MOTIVO**: usuário quer que a evolução seja parte da estrutura viral (2d) e da regra de "momento compartilhável" (1c), reforçando descoberta como motor central em vez de progressão puramente numérica.
+- **ALTERNATIVAS**: evolução só por nível/XP acumulado (mais simples, mas menos "descoberta", menos compartilhável).
+- **TRADE-OFFS**: exige desenhar múltiplos estágios visuais por criatura evoluível — fica **fora do MVP**, mas reaproveita o mesmo princípio de "segredo da região" já no MVP (seção 6, Super Mario 2b) como semente da mecânica.
+- **IMPACTO**: `10-gdd.md` v9, seção 1e e nota em 4b/Meta Loop. Fase 4/6 do roadmap passam a incluir esta mecânica como candidata.
+- **DATA**: 2026-08-13

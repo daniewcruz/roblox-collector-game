@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v8 — CHECKPOINT 1 APROVADO, Core Gameplay em validação)
+# Game Design Document (GDD) — Fase 1 (revisado, v9 — CHECKPOINT 1 APROVADO, Core Gameplay + identidade visual em validação)
 
 **Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. Modelo de viralização: cooperativo (Grow a Garden), não adversarial (Steal a Brainrot) — ver 2d. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
-**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d); v8 marca o Core Gameplay (interação minuto-a-minuto) como **hipótese ainda não validada** — a coleção/skins/retenção já estão bem definidas, mas falta provar que a ação central é divertida por si só, não só como veículo de recompensa (D022-D024, nova seção 4b).
+**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d); v8 marca o Core Gameplay (interação minuto-a-minuto) como **hipótese ainda não validada** — a coleção/skins/retenção já estão bem definidas, mas falta provar que a ação central é divertida por si só, não só como veículo de recompensa (D022-D024, nova seção 4b); v9 amplia a identidade do Mimo além de "fofo" para 6 famílias visuais (Cute/Cool/Majestic/Mystic/Chaotic/Legendary), adiciona sistema de Aura (camada de status cosmética) e evolução visual por descoberta (D026-D028, nova seção 1e).
 
 ---
 
@@ -20,9 +20,15 @@ Ajuste conceitual pedido pelo usuário: o Mimo não é só um item de coleção 
 
 > Não é "jogo de coletar criaturas". É **"EU QUERO AQUELE BICHINHO."**
 
+### Ajuste (D026): Mimo não significa "fofo" — significa desejável
+
+> Mimo não significa fofo. Mimo significa uma criatura/personagem que você quer ter.
+
+A fofura é **uma** das portas de entrada, não a única. Ver seção 1e para as 6 famílias visuais que ampliam essa definição (Cute, Cool, Majestic, Mystic, Chaotic, Legendary).
+
 ### Critérios de design que todo Mimo precisa atender (diretriz para a Fase de arte, não implementável no código ainda)
 
-- Extremamente fofo **ou** visualmente impressionante (pelo menos um dos dois, com clareza).
+- Extremamente fofo, poderoso, imponente, misterioso, engraçado **ou** simplesmente lindo — pelo menos um apelo forte e claro, não necessariamente fofura.
 - Reconhecível pela silhueta (critério "Kirby" de 2c, reforçado aqui como requisito central, não só desejável).
 - Funciona bem como skin/variante (silhueta simples permite recolorir/ornamentar sem perder legibilidade).
 - Tem potencial de virar meme (algo levemente exagerado, expressivo, ou com um trejeito único).
@@ -48,6 +54,41 @@ Regra adicionada pelo usuário, para ser aplicada **antes** de qualquer mecânic
 | Coleção | "FINALMENTE COMPLETEI A FLORESTA!" |
 
 **Como aplicar na prática**: antes de qualquer feature entrar no roadmap (mesmo pós-MVP), passar pelo teste "isso gera um momento de alguma das 5 categorias acima?" — se não gerar, ou a feature precisa de ajuste, ou não vale a pena priorizar. Isso já filtra a favor de sistemas com forte componente visual/emocional (reveal, raridade, clima, coleção) sobre sistemas puramente numéricos (ex: só "mais um upgrade de +5%"), reforçando decisões já tomadas em `08-analise-retencao-generos.md` e `10-gdd.md` 2d.
+
+## 1e. Seis famílias visuais + Aura + evolução por descoberta (D026-D028)
+
+### Seis famílias visuais
+
+Cada família ativa um motivo de jogar diferente — todas convivendo no mesmo mundo:
+
+| Família | Sensação | Exemplo dos esboços (`12-conceitos-mimo.md`) | Público que atrai |
+|---|---|---|---|
+| 🥺 Cute | Fofo, adorável | Mosshoof, Bounch | Crianças pequenas |
+| 🔥 Cool | Poderoso, estiloso | Emberwick | Adolescentes |
+| 👑 Majestic | Raro, imponente | Coronox (novo) | Jogadores de status |
+| 👻 Mystic | Estranho, misterioso, bonito | Glimmerslug, Voidling (novo) | Criadores de conteúdo, exploradores |
+| 😈 Chaotic | Engraçado, travesso | Kettling (potencial de skin cômica) | Público de meme/humor |
+| 🌌 Legendary | Reação de espanto ("CARALHO") | Reservado para os Mimos mais raros de cada família, não uma família à parte visualmente — é um nível de raridade que qualquer família pode atingir | Colecionadores extremos |
+
+**Nota de escopo**: o MVP (seção 6) não precisa cobrir as 6 famílias no lançamento — 2-3 famílias bem executadas entre os 10-15 Mimos do MVP já cumprem a diretriz (evita contradizer o MVP enxuto de D011/D019). A amplitude de família é uma diretriz de identidade de marca de longo prazo, não uma lista de tarefas do MVP.
+
+### Sistema de Aura (D027) — pós-MVP, arquitetura compatível
+
+Camada visual de status **separada da criatura**: efeito ao redor do personagem (partículas, brilho, distorção) — combinável com Mimo + roupa, formando uma identidade visual completa sem multiplicar o número de criaturas a desenhar. Exemplos: Celestial (estrelas orbitando), Void (distorção escura), Storm (raios), Inferno (fogo), Frozen (flocos de neve), Prism (reflexos), Phantom (névoa), Nature (folhas/flores).
+
+- **Compatível com as regras éticas (D020)**: é cosmético, não afeta progresso — pode ser conquistado (marco de coleção) ou comprado a preço fixo, nunca por chance.
+- **Fora do MVP** — candidato para Fase 4 (Progressão)/7 (Monetização), reaproveitando a mesma arquitetura de raridade/coleção já definida no MVP.
+
+### Evolução visual por descoberta, não por nível (D028)
+
+Uma criatura pode transformar visualmente (ex: Emberwick → Blazing Emberwick → Astral Emberwick) desbloqueada por **descoberta/interação específica** (achar um lugar secreto, fazer uma ação especial) em vez de só acumular XP — gera vídeos do tipo "HOW TO GET ASTRAL EMBERWICK", reforçando a regra de "momento compartilhável" (1c) e a estrutura viral (2d).
+
+- **Fora do MVP**, mas reaproveita o mesmo princípio de "segredo da região" já no escopo do MVU (seção 6, Super Mario 2b) como semente da mecânica — não exige sistema novo, só estender o que já existe.
+
+### Por que isso não é fofura genérica: exemplos concretos do usuário
+
+- **Voidling** (Mystic, aura-first): pequena, flutuante, sem rosto, com distorção ao redor — não é assustadora, é misteriosa e bonita. Variantes: Void, Galaxy, Celestial, Corrupted.
+- **Meme Mimos** (Chaotic): um Mimo pode ter uma skin deliberadamente engraçada (ex: Kettling de óculos escuros) — gera reação de humor, não só de fofura, e amplia o alcance de conteúdo (vídeos "WHY DOES THIS THING EXIST 😂" ao lado de "LOOK AT MY NEW MIMO 🥺").
 
 ## 1d. Nova etapa antes do protótipo: teste visual de conceitos de Mimo (D021)
 

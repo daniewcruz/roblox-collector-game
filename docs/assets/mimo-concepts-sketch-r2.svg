@@ -1,0 +1,30 @@
+<svg width="680" height="260" viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Dois esboços adicionais: Voidling (místico) e Coronox (majestoso)</title>
+<desc>Voidling é uma criatura pequena, flutuante, sem rosto, envolta por uma distorção roxo-escura. Coronox é uma criatura com uma coroa de chifres radiantes e uma auréola de luz dourada, com postura ereta e imponente.</desc>
+<rect width="680" height="260" fill="#FFFFFF"/>
+<rect x="120" y="20" width="200" height="215" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="360" y="20" width="200" height="215" rx="12" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<circle cx="220" cy="115" r="55" fill="#2A1B3D" opacity="0.35"/>
+<circle cx="220" cy="115" r="38" fill="#3B2757" opacity="0.5"/>
+<ellipse cx="220" cy="120" rx="26" ry="30" fill="#120A1F"/>
+<ellipse cx="220" cy="95" rx="9" ry="5" fill="#B98CFF" opacity="0.9"/>
+<circle cx="196" cy="80" r="2.5" fill="#B98CFF"/>
+<circle cx="248" cy="70" r="2" fill="#B98CFF"/>
+<circle cx="252" cy="140" r="2.5" fill="#B98CFF"/>
+<circle cx="190" cy="145" r="2" fill="#B98CFF"/>
+<circle cx="230" cy="60" r="1.5" fill="#B98CFF"/>
+<ellipse cx="220" cy="182" rx="30" ry="6" fill="#120A1F" opacity="0.3"/>
+<circle cx="460" cy="115" r="46" fill="#FCE8B5" opacity="0.5"/>
+<ellipse cx="460" cy="130" rx="24" ry="28" fill="#F4C24B"/>
+<path d="M442 108 L436 82 L448 100 Z" fill="#E0A93A"/>
+<path d="M478 108 L484 82 L472 100 Z" fill="#E0A93A"/>
+<path d="M451 100 L448 74 L458 96 Z" fill="#E0A93A"/>
+<path d="M469 100 L472 74 L462 96 Z" fill="#E0A93A"/>
+<circle cx="452" cy="127" r="3.5" fill="#5C3A12"/>
+<circle cx="468" cy="127" r="3.5" fill="#5C3A12"/>
+<ellipse cx="460" cy="186" rx="26" ry="6" fill="#E0A93A" opacity="0.35"/>
+<text x="220" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Voidling</text>
+<text x="220" y="215" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Mistico, aura primeiro</text>
+<text x="460" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Coronox</text>
+<text x="460" y="215" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Majestoso, aura dourada</text>
+</svg>
