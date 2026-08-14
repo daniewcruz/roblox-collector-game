@@ -51,6 +51,7 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: dependência de uma lib de terceiros madura, porém pequena e estável — risco de abandono baixo dado uso amplo pela comunidade.
 - **IMPACTO**: define parte da arquitetura de persistência em `04-roadmap.md` Fase 3.
 - **DATA**: 2026-08-13
+- **STATUS**: **revisada por D032** — ProfileService substituído por ProfileStore (mesmo autor, sucessor ativamente mantido).
 
 ---
 
@@ -312,4 +313,20 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **ALTERNATIVAS**: manter o estilo atual e só ajustar na produção de arte final (rejeitado — melhor calibrar a referência agora, barato em esboço, do que descobrir o problema só na Fase 8).
 - **TRADE-OFFS**: nenhum — esboços em SVG continuam rápidos/baratos mesmo com poses mais dinâmicas; não muda o cronograma.
 - **IMPACTO**: gerado um exemplo comparativo (Draconyx v1 vs. v2, pose dinâmica + contorno forte) mostrado ao usuário nesta sessão. Nota importante de limitação: esboços em SVG simples têm teto de acabamento — a elevação real a "nível Mario Bros" acontece na produção de arte de verdade (Fase 8, com ilustrador/ferramenta de arte apropriada), os esboços servem só para testar silhueta/pose/conceito, não para prever o resultado final.
+- **DATA**: 2026-08-14
+
+---
+
+## D032 — Verificação de ferramentas sugeridas pelo usuário: correções, confirmações e ferramentas não verificadas
+- **DECISÃO**: usuário colou uma lista grande de repositórios GitHub, parte digitada diretamente (11 links reais) e parte copiada de outra IA (blob de texto com links "embrulhados" em `google.com/search?q=...`, sinal de possível alucinação). Verificação individual de todos os 11 links diretos + 5 adicionais de maior impacto:
+  - **Confirmados e úteis**: Wally (489★, ativo), Luau LSP (523★, muito ativo, maduro), Selene (805★, linter maduro), StyLua (2.300★, formatador maduro), Fusion (791★, UI declarativa, candidato Fase 3+), Reflex (107★, mas é para roblox-ts, decisão de arquitetura ainda não tomada).
+  - **Correção importante de persistência**: ProfileService está em modo manutenção — sucessor ativo é **ProfileStore** (mesmo autor, MadStudioRoblox), recomendado no lugar (substitui parte de D005).
+  - **Confirmação importante de risco**: **Knit está oficialmente arquivado desde 31/07/2024** — a decisão anterior de não adotar (por complexidade prematura) está reforçada por um motivo mais forte agora (projeto abandonado). Não adotar em hipótese nenhuma.
+  - **Links quebrados no material do usuário**: `Loleris/ProfileService` e `Sleitnick/rbxts-signal` retornaram HTTP 404 — nomes/caminhos corretos identificados e corrigidos (`MadStudioRoblox/ProfileService`; Signal vive dentro de `Sleitnick/RbxUtil`).
+  - **MCPs de terceiros para Roblox Studio** (Claudeblox, Point58/Claude-code-roblox-mcp, madebyshaurya/stud): todos verificados como reais, mas em estágio muito inicial (4-12 estrelas) — não substituem o MCP oficial da Roblox já adotado.
+  - **Não verificados** (vieram só no blob de texto de outra IA, vários com links de busca do Google em vez de URL direta): `CoderDayton/roblox-bridge-mcp`, `108264/ReplicaService`, `EtienneS1/FastCastRedux`, `TeamSwordFin/raycast-hitbox-v4`, `Sleitnick/rbxts-camera-plus`, `1337DataGuy/ZonePlus`, `Evaera/cmdr`, `Sleitnick/rbxts-network-signal`, `ffDevs/ByteNet` — nenhum adicionado ao inventário sem verificação individual futura.
+- **MOTIVO**: aplicar a regra do prompt mestre (Pesquisar → Comparar → Validar → Escolher → Integrar, item 10) diante de uma lista de ferramentas sugeridas por fonte externa (outra IA) cuja confiabilidade não podia ser presumida — vários sinais no próprio texto (links de busca em vez de URLs diretas) indicavam risco de alucinação.
+- **ALTERNATIVAS**: incorporar a lista inteira sem verificar (rejeitado — violaria a regra 47 do prompt mestre, "existe solução existente?" exige checar, não presumir); ignorar a lista inteira por vir de fonte externa (rejeitado — vários itens eram reais e úteis, descartar tudo seria desperdiçar informação boa).
+- **TRADE-OFFS**: nenhum — o custo de verificação (WebFetch em cada link) foi baixo comparado ao risco de adotar uma dependência inexistente ou abandonada.
+- **IMPACTO**: `05-ferramentas-github.md` reescrito com todas as entradas verificadas, corrigidas ou marcadas como não verificadas. `06-decisoes.md` D005 marcada como revisada.
 - **DATA**: 2026-08-14
