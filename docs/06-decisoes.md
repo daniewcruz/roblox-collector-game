@@ -132,3 +132,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum trade-off estrutural novo — é uma re-ambientação (reskin temático), não uma mudança de sistemas. O trabalho de análise de retenção e escopo de MVP (D011) permanece válido.
 - **IMPACTO**: `10-gdd.md` é revisado com a nova ambientação e uma seção de princípios de design inspirados em Nintendo (Miyamoto: ação principal, foco emocional, ensinar jogando, simplicidade; Pokémon: alegria da completude, descoberta; Animal Crossing: liberdade sem pressão, charme, decoração leve).
 - **DATA**: 2026-08-13
+
+---
+
+## D014 — Referência de design restrita especificamente a jogos Super Mario
+- **DECISÃO**: usar jogos da franquia Super Mario (Super Mario Bros. World 1-1, Super Mario World, Super Mario Odyssey) como referência direta de design, além da filosofia geral de Nintendo já registrada em D013. Princípios extraídos: verbo/ação primária única, ensinar jogando via posicionamento (não texto), estrutura kishōtenketsu por região, variedade de métodos de obtenção da mesma recompensa (Power Moons), variedade de habilidade por progressão (não só força numérica, referência Cappy/possessão), segredos/saídas escondidas de baixo custo e alto impacto, mundos tematicamente distintos. Sem copiar personagens, nomes ou assets — só estrutura de design.
+- **MOTIVO**: pedido explícito do usuário para aprofundar a referência de "filosofia Nintendo" (D013) especificamente nos jogos Mario, provavelmente por serem o exemplo mais reconhecível de "ensinar jogando" e "variedade dentro de escopo pequeno" — que são exatamente os dois maiores desafios de design deste projeto (onboarding sem texto; evitar repetição num MVP pequeno, ver D011).
+- **ALTERNATIVAS**: manter só os princípios gerais de Nintendo já registrados em D013 (rejeitado — usuário pediu especificamente Mario).
+- **TRADE-OFFS**: nenhum negativo — os princípios extraídos são estruturais/pedagógicos, aplicáveis sem risco de violação de propriedade intelectual (nenhum personagem, nome ou asset é reutilizado).
+- **IMPACTO**: `10-gdd.md` seção 2b, mais ajustes no Core Loop (verbo único, variedade de métodos de descoberta) e no escopo do MVP (segredo por região, mínimo de métodos de descoberta variados).
+- **DATA**: 2026-08-13

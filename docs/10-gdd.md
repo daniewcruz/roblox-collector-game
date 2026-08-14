@@ -6,7 +6,7 @@
 **Referências de filosofia de design**: jogos Nintendo — Pokémon (descoberta, coleção, "alegria da completude"), Animal Crossing (charme, liberdade sem pressão, decoração leve), princípios gerais de Miyamoto (ver seção 2). **Sem copiar personagens, nomes ou propriedade intelectual.**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: Fase 1 (Conceito) — sem código, sem Roblox Studio aberto (D009)
-**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 mantém a mesma estrutura validada e troca a ambientação por pedido do usuário (D013) — ver `11-pivot-fofura-colecao-skins.md` para a análise que motivou a troca.
+**Histórico**: v1 usava tema "Mineração + Criaturas de Cristal" (D012); v2 mantém a mesma estrutura validada e troca a ambientação por pedido do usuário (D013) — ver `11-pivot-fofura-colecao-skins.md`; v3 incorpora princípios específicos do design do Super Mario (verbo primário, ensinar jogando, kishōtenketsu, variedade de métodos de coleta, variedade de habilidade, segredos) por pedido direto do usuário (D014, seção 2b).
 
 ---
 
@@ -28,6 +28,20 @@ Extraídos de pesquisa sobre o processo de design de Miyamoto/Nintendo e aplicad
 | **Animal Crossing: liberdade sem pressão, charme, decoração** — sem "chefe final", jogador escolhe o que fazer, decoração é expressão pessoal. [NUS PPE Club](https://nusppeclub.squarespace.com/animal-crossing-philosophy) | Nenhum timer/energia artificial (já era regra do usuário desde `07-hipoteses.md` H4/H2 e reforçada aqui). Sistema leve de "mostrar a coleção" (prateleira/jardim de Mimos descobertos) como expressão pessoal, sem virar sistema central de decoração (evita colidir com Adopt Me — `11-pivot-fofura-colecao-skins.md`). |
 | **Ensinar jogando, não com texto** — onboarding via ação, não tutorial explicado. [NUS PPE Club](https://nusppeclub.squarespace.com/animal-crossing-philosophy) | Primeira descoberta deve acontecer por interação natural (o jogador vê um casulo brilhando e toca nele), não por um tutorial com setas e texto — reforça a meta de retenção nos primeiros 5 minutos (`00-fase0-relatorio.md` seção 7). |
 
+## 2b. Princípios específicos do Super Mario (pedido do usuário: usar como referência direta)
+
+Mario é o exemplo mais estudado de design "ensinar jogando" e de variedade dentro de um escopo pequeno — exatamente os dois problemas que este projeto precisa resolver (onboarding sem texto, e evitar repetição num MVP pequeno). Princípios extraídos e aplicados:
+
+| Princípio Mario | Fonte | Como se aplica a *Mimo World* |
+|---|---|---|
+| **Verbo/ação primária clara** — o herói de *Donkey Kong* se chamava literalmente "Jumpman"; pular é praticamente tudo que Mario faz, e o jogo inteiro é construído em cima dessa única ação. [gamedeveloper.com](https://www.gamedeveloper.com/design/how-the-creator-of-mario-designs-games-shigeru-miyamoto-game-designer-spotlight) | O jogo precisa de **um verbo central e só um**: "tocar/despertar" objetos mágicos (não "minerar", não "capturar em batalha"). Toda mecânica nova (ferramenta, habilidade) deve ser uma variação desse mesmo verbo, não um verbo novo — evita inchar o escopo do MVP e mantém a identidade do jogo legível em segundos. |
+| **World 1-1 como tutorial invisível** — a fase 1-1 de *Super Mario Bros.* ensina pular, cogumelo, inimigo e cano só pelo posicionamento dos elementos, sem nenhum texto; validado formalmente como estrutura pedagógica, não coincidência. [University XP](https://www.universityxp.com/news/2026/5/7/why-super-mario-bros-is-still-an-essential-lesson-in-game-design), [gamedeveloper.com](https://www.gamedeveloper.com/design/the-secret-to-i-mario-i-level-design) | A região inicial ("Vale das Primeiras Luzes") deve ser desenhada com o mesmo cuidado: o primeiro casulo fica no caminho óbvio, impossível de não ver; o segundo já exige um pequeno desvio (ensina que vale a pena sair do caminho); só o terceiro introduz variação de raridade. Nada disso é dito em texto — é ensinado pelo posicionamento. |
+| **Kishōtenketsu (introduzir → desenvolver → virada → concluir)** — Miyamoto usa essa estrutura de narrativa em 4 atos (de sua origem como desenhista de mangá) para estruturar fases e mundos. [Medium — Chris Norman](https://openedsource.medium.com/kish%C5%8Dtenketsu-hakoniwa-dd5a568da169) | Cada região segue o mesmo arco: **introduz** 1 mecânica/tipo de Mimo novo → **desenvolve** (mais casulos, mais variações) → **virada** (um evento surpresa, tipo "chuva de estrelas" ou um Mimo raro fora do padrão) → **conclui** (Bestiary da região perto de 100%, sinalizando "hora de seguir para a próxima"). |
+| **Power Moons: mesma recompensa, métodos de obtenção variados** — em *Super Mario Odyssey*, luas são conseguidas de dezenas de formas diferentes (quebra-cabeça, sequência, plantar semente, minigame, conversar com NPC) em vez de sempre da mesma ação repetida. [mariowiki.com](https://www.mariowiki.com/Power_Moon) | **Este é o antídoto mais direto contra o "grind" que o usuário quer evitar.** Em vez de todo Mimo vir só de "abrir casulo", variar o *método* de descoberta por região: às vezes é achar um casulo escondido, às vezes seguir um rastro de brilho, às vezes uma pequena sequência de toques no ritmo certo, às vezes esperar um Mimo tímido se aproximar sozinho. Mesma recompensa (entrada no Bestiary), forma de chegar lá sempre variando. |
+| **Cappy/possessão: variedade de habilidade, não só de número** — em vez de power-ups tradicionais, Mario "possui" inimigos e ganha habilidades novas e temáticas por área. [t3.com](https://www.t3.com/features/super-mario-odyssey-review) | Cada tier de ferramenta/habilidade não deve só ser "mais forte" — deve **desbloquear uma nova forma de interagir** com aquela região específica (ex: tier 2 permite sentir vibração de casulos escondidos; tier 3 permite acalmar Mimos tímidos que fogem). Reforça a progressão como "novas possibilidades", não só "número maior" — mitiga o mesmo risco de grind raso identificado em `08-analise-retencao-generos.md`. |
+| **Saídas secretas e áreas escondidas** — *Super Mario World* tem 96 saídas (contando as secretas), recompensando quem explora fora do caminho óbvio com atalhos e áreas bônus. [mariowiki.com](https://www.mariowiki.com/Secret_exit), [Gamerant](https://gamerant.com/super-mario-world-hidden-areas/) | Cada região do MVP deve ter **pelo menos 1 segredo não sinalizado** (um Mimo raro escondido fora do caminho principal, um atalho para a próxima região). Não é conteúdo extra caro de produzir — é reposicionar o mesmo tipo de objeto (casulo) num lugar menos óbvio. Alto retorno de "uau" por baixíssimo custo de desenvolvimento. |
+| **Mundos tematicamente distintos** (floresta, deserto, gelo...) — cada mundo de Mario tem identidade visual e regras próprias. [mariowiki.com](https://www.mariowiki.com/Secret_exit) | Já estava implícito no MVP (regiões desbloqueadas por progresso); fica explícito agora como regra de design: cada região futura (pós-MVP) deve ter identidade visual e um pequeno "twist" de mecânica próprio, não ser uma repintura da região anterior. |
+
 ## 3. Por que o jogador continua jogando
 
 - **Primeiros 5 minutos**: entra num pequeno vale/clareira mágica, vê algo brilhando (casulo), toca — sem tutorial de texto, a ação ensina. Primeira descoberta de Mimo em minutos.
@@ -42,9 +56,9 @@ JOGADOR ENTRA num pequeno vale/clareira mágica
    ↓
 EXPLORA a região atual (visual rico, tipo diorama — princípio "Hakoniwa")
    ↓
-ENCONTRA um casulo/semente/bolha mágica (brilho sutil, sem UI explicando antes)
+ENCONTRA um casulo/rastro/Mimo tímido (método varia — princípio "Power Moons", ver 2b)
    ↓
-TOCA/INTERAGE (ação simples, ensinada pela própria interação)
+TOCA/DESPERTA (verbo único do jogo, ensinado pela própria interação — princípio "verbo primário")
    ↓
 CASULO COMUM → revela recurso simples (moeda/material)
    OU
@@ -83,6 +97,8 @@ Estrutura já validada em `08-analise-retencao-generos.md` (score 4.55/5); ambie
 | Regiões | Bloqueadas por tier de ferramenta/habilidade (progressão espacial visível) |
 | Coleção | Bestiary com % de completude por região |
 | Expressão pessoal (leve) | Pequeno espaço para exibir 3-5 Mimos descobertos (não é sistema de decoração completo — fica simples de propósito) |
+| Métodos de descoberta (variedade) | Mínimo 2-3 métodos diferentes de encontrar um Mimo na região (casulo escondido, rastro de brilho para seguir, Mimo tímido que se aproxima) — princípio Power Moons (2b), antídoto direto ao grind |
+| Segredo da região | 1 Mimo raro ou atalho escondido fora do caminho óbvio (princípio de saídas secretas de *Super Mario World*, 2b) |
 | Eventos ambientais | Eventos simples (ex: "chuva de estrelas" temporária que aumenta chance de casulo especial) |
 
 **Explicitamente fora do MVP**: 2ª região, sistema de troca entre jogadores, sistema de decoração completo (tipo Adopt Me), eventos sazonais com itens exclusivos permanentemente removidos, PvP.
