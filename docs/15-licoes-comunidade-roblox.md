@@ -45,6 +45,27 @@ Uma thread com 8 anos de experiência acumulada de um desenvolvedor Roblox ([Dev
 - Priorizam construir comunidade fiel sobre perseguir picos virais.
 - Atualizam continuamente com base em feedback real e dados de retenção — não em suposição.
 
+## Por que lançamentos não conseguem público (rodada 2, D056)
+
+### O problema do "ovo e a galinha" em jogos multiplayer
+- Achado recorrente em múltiplas threads do DevForum ([exemplo](https://devforum.roblox.com/t/how-to-build-an-initial-fanbase-for-a-multiplayer-dependent-game-stuck-at-zero-players/4779143)): novos visitantes entram num servidor vazio e saem imediatamente, mantendo o jogo travado em zero jogadores ativos — especialmente grave em jogos que **exigem** um número mínimo de jogadores para funcionar.
+- **Relevância direta para este projeto**: o núcleo do nosso MVP (explorar sozinho, descobrir Mimos) **não depende de outros jogadores para funcionar** — isso é uma vantagem estrutural real contra esse problema específico. Mas os sistemas de visão futura (arena PvP leve, mini-jogos cooperativos, D047-D051) **herdam esse risco** quando forem implementados — precisarão de uma base de jogadores mínima antes de fazer sentido, não podem ser a única razão de alguém ficar.
+- Outras causas citadas: falta de Robux para patrocinar anúncios; saturação de gênero (jogos de terror, por exemplo, competem com dezenas de títulos estabelecidos).
+
+### Mudança importante no algoritmo de Discovery em 2026
+- A Roblox está testando (e migrando para) um algoritmo de Discovery que **otimiza para retenção de 28 dias**, priorizando experiências de alta qualidade com engajamento de longo prazo — e não jogos que geram picos curtos de gasto. [BLOXG](https://bloxg.com/guides/roblox-algorithm), [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/rblxs-discovery-shift-targets-retention-142600721.html)
+- **Sinais de retenção dominam tudo**: D1/D7/D30 são os maiores preditores de se o algoritmo vai promover um jogo — mesmo jogos pequenos podem ganhar distribuição massiva se as métricas de retenção por usuário forem fortes.
+- **Confirma diretamente toda a estratégia de retenção já definida na Fase 0** (`01-pesquisa-mercado.md`, `08-analise-retencao-generos.md`) — não é só "bom para o jogador", é literalmente o mecanismo que decide se o jogo aparece pra alguém.
+
+### "Design amigável a conteúdo" — reforça a regra de "momento compartilhável" já adotada
+- A estratégia de maior sucesso combina fundamentos de design sólidos com **momentos desenhados para serem cortados/compartilhados/reagidos**. TikTok é a plataforma de crescimento mais rápido para conteúdo Roblox — até criadores pequenos podem gerar um momento viral que manda milhares de jogadores pro jogo da noite pro dia.
+- **Confirma diretamente D018** (regra de "momento compartilhável" já formalizada no GDD desde a v6) — não era só intuição, é reconhecido pela comunidade como fator real de crescimento.
+
+### Estratégias práticas de entrada para jogos pequenos
+- **Atualizações frequentes** sinalizam desenvolvimento ativo e melhoram posicionamento em ordenações tipo "Recém-atualizado".
+- **A categoria "Up and Coming" é a mais fácil de entrar** — mesmo jogos pequenos com boa velocidade de crescimento aparecem ali, sem precisar competir direto com os gigantes estabelecidos.
+- Construir comunidade no Discord + usar atualizações semanais para dar aos criadores de conteúdo (influenciadores) motivos recorrentes de postar sobre o jogo.
+
 ## Ação recomendada incorporada ao roadmap
 
 **Nova prática (D055)**: buscar feedback externo real (mesmo informal — amigos, familiares, comunidade) já durante o Protótipo (Fase 2/3), não só esperar até o Beta (Fase 9). Isso ataca diretamente o risco de "câmara de eco" que a comunidade identifica como causa comum de projetos solo travarem.

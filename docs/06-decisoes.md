@@ -561,3 +561,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — feedback externo cedo é barato (mostrar protótipo simples a 2-3 pessoas), alto valor de redução de risco.
 - **IMPACTO**: novo documento `15-licoes-comunidade-roblox.md`. `04-roadmap.md` Fase 2/3 ganha a prática de buscar feedback externo antecipado.
 - **DATA**: 2026-08-14
+
+---
+
+## D056 — Rodada 2: por que lançamentos falham (problema do ovo-e-galinha, algoritmo de Discovery 2026)
+- **DECISÃO**: pesquisa adicional sobre por que lançamentos ficam sem público. Achados: (1) **"problema do ovo e a galinha"** em jogos multiplayer — visitantes entram em servidor vazio e saem, mantendo o jogo travado em zero — **nosso MVP não sofre disso** porque o núcleo (explorar sozinho, descobrir Mimos) não exige outros jogadores para funcionar; mas os sistemas de visão futura (arena PvP, mini-jogos cooperativos) herdam esse risco quando implementados, precisando de base de jogadores mínima antes de fazer sentido. (2) **Mudança de algoritmo de Discovery em 2026**: passou a otimizar para **retenção de 28 dias**, não picos curtos de gasto — D1/D7/D30 são os maiores preditores de promoção algorítmica, mesmo para jogos pequenos — confirma que toda a estratégia de retenção da Fase 0 não é só "bom para o jogador", é o mecanismo real de distribuição. (3) **"Design amigável a conteúdo"** (momentos para cortar/compartilhar) confirmado pela comunidade como fator real de crescimento — valida D018 (regra de "momento compartilhável") com evidência externa. (4) Estratégias táticas: atualizações frequentes, categoria "Up and Coming" mais fácil de entrar para jogos pequenos, comunidade no Discord.
+- **MOTIVO**: usuário pediu mais pesquisa especificamente sobre por que lançamentos não conseguem público/falham, continuando D055.
+- **ALTERNATIVAS**: nenhuma — pesquisa complementar.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `15-licoes-comunidade-roblox.md` expandido. `04-roadmap.md` Fase 10/11 ganha notas sobre algoritmo de Discovery 2026 e risco de "ovo-e-galinha" para sistemas cooperativos futuros.
+- **DATA**: 2026-08-14

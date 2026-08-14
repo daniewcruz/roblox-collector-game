@@ -1,4 +1,4 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v20 — CHECKPOINT 1 APROVADO, validado contra documentação oficial + comunidade Roblox, avançando à Configuração Técnica)
+# Game Design Document (GDD) — Fase 1 (revisado, v21 — CHECKPOINT 1 APROVADO, validado contra documentação oficial + comunidade Roblox, avançando à Configuração Técnica)
 
 **Nome provisório**: *Mimo World* (placeholder — "Mimo" pode virar nome da categoria de criaturas, não do jogo — decisão em aberto, D040)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)

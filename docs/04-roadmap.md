@@ -75,11 +75,14 @@
 ## FASE 10 — Lançamento
 - **Objetivo**: publicar oficialmente, com ícone/thumbnail/descrição otimizados para Discovery.
 - **Dependências**: Fase 9 com resultado aceitável.
+- **Achado da comunidade (D056)**: o algoritmo de Discovery 2026 otimiza para **retenção de 28 dias**, não picos curtos — D1/D7/D30 fortes são o maior preditor de promoção algorítmica, mesmo para jogos pequenos. Confirma que a estratégia de retenção da Fase 0 é o mecanismo real de distribuição, não só "boa prática".
+- **Risco a monitorar (D056)**: jogos multiplayer sofrem do "problema do ovo-e-galinha" (servidor vazio → visitante sai → fica vazio) — nosso MVP evita isso por ser jogável solo, mas fique atento se algum sistema cooperativo futuro (arena, D047) for lançado sem uma base mínima de jogadores já ativa.
 - **Critério de sucesso**: jogo público, analytics básicos funcionando, sem erros críticos nas primeiras 48h.
 
 ## FASE 11 — Crescimento
 - **Objetivo**: aquisição de jogadores além do orgânico do Discovery (conteúdo social, atualizações regulares).
 - **Dependências**: Fase 10.
+- **Tática recomendada pela comunidade (D056)**: atualizações frequentes melhoram posicionamento em "Recém-atualizado"; categoria "Up and Coming" é a mais fácil de entrar para jogos pequenos com boa velocidade de crescimento; construir comunidade no Discord com atualizações semanais dá aos criadores de conteúdo motivo recorrente de postar.
 - **Critério de sucesso**: crescimento sustentado de DAU/retenção por 2+ atualizações consecutivas.
 
 ## FASE 12 — Escala
