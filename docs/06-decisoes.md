@@ -591,3 +591,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum. Nota técnica: o comando `aftman install` exigiu um passo extra de confiança (`aftman trust`) antes de funcionar — não documentado explicitamente antes, registrado aqui para referência futura.
 - **IMPACTO**: ambiente de desenvolvimento local pronto para o próximo passo (habilitar o MCP Server no Studio e sincronizar via Rojo pela primeira vez).
 - **DATA**: 2026-08-14
+
+---
+
+## D059 — Plugin do Rojo instalado via download direto (contorna instalação pela Toolbox que não funcionou)
+- **DECISÃO**: instalação do plugin do Rojo pela busca do Toolbox/Loja do Criador dentro do Studio não funcionou para o usuário. Com permissão explícita (AskUserQuestion), baixado o `Rojo.rbxm` oficial diretamente do release `v7.7.0` do GitHub (`rojo-rbx/rojo`, mesma versão do CLI já instalado via Aftman) e colocado em `%LOCALAPPDATA%\Roblox\Plugins\` — pasta que o Studio carrega automaticamente. Primeira tentativa de nome de arquivo (`Plugin.rbxm`) retornou 404; nome correto confirmado via consulta à página do release: `Rojo.rbxm` (567KB, tamanho consistente com um plugin real).
+- **MOTIVO**: usuário pediu ajuda direta porque a instalação pela interface do Studio não deu certo, e eu não tenho ferramenta para clicar dentro do aplicativo Studio (só terminal/browser) — baixar o `.rbxm` oficial e colocar na pasta de plugins é o caminho alternativo padrão da comunidade Rojo para quando a instalação via Toolbox falha ou não está disponível.
+- **ALTERNATIVAS**: insistir na instalação via Toolbox (não estava funcionando, usuário optou pelo download direto); usar outra fonte não-oficial do plugin (rejeitado — só a fonte oficial do GitHub é confiável).
+- **TRADE-OFFS**: nenhum — mesmo plugin, mesma versão, só método de instalação diferente. Usuário precisa reabrir o Studio para o plugin aparecer.
+- **IMPACTO**: plugin do Rojo instalado localmente. Próximo passo: usuário reabre o Studio, confirma que o botão do Rojo aparece na aba Plugins, e testamos a conexão com `rojo serve`.
+- **DATA**: 2026-08-14
