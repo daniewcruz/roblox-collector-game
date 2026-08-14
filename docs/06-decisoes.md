@@ -500,3 +500,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — tudo fica na visão de Fase 6+, sem custo de implementação agora.
 - **IMPACTO**: `10-gdd.md` lista de mini-jogos de exemplo expandida.
 - **DATA**: 2026-08-14
+
+---
+
+## D050 — 5 mini-jogos de fuga coletiva adotados na visão de arena + princípios de tom infantil formalizados
+- **DECISÃO**: adotados 5 modos de fuga coletiva (bloco gigante rolando, fuga caótica em equipe cooperativa, fuga musical com chão sumindo, fuga de patos gigantes, fuga invertida perseguindo um NPC) na mesma visão de arena/eventos (D047-D049). "Fuga invertida" é notável por já mapear quase exatamente no evento cooperativo "Mimo Lendário avistado" já registrado em 2d — não é ideia nova, é reforço. Também formalizados os princípios de tom infantil que o usuário descreveu (obstáculos engraçados, recompensa para todos mesmo quem não vence, partidas rápidas, humor sempre cartunesco/nunca violento) como **regra geral** para qualquer mini-jogo/arena futuro, não só estes 5.
+- **MOTIVO**: usuário continuou expandindo a lista de mini-jogos; mesma régua de avaliação já aplicada em D048-D049.
+- **ALTERNATIVAS**: nenhuma — itens se encaixam no padrão já aceito.
+- **TRADE-OFFS**: nenhum — visão de Fase 6+, sem custo agora.
+- **IMPACTO**: `10-gdd.md` lista de mini-jogos expandida + regra de tom infantil formalizada para toda a visão de arena.
+- **DATA**: 2026-08-14
