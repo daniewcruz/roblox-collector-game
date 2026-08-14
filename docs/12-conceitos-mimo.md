@@ -68,6 +68,29 @@ Categoria nova, separada dos Mimos: skins visuais para a ferramenta evolutiva (s
 
 Essas ferramentas não substituem o verbo único do jogo (1b/2b) — são **skins** de como a mesma ação é executada visualmente, e uma delas (kunai) sugeriu um 5º candidato de interação central a testar no protótipo.
 
+## Rodada 5 — teste visual "mundo de brinquedos" (D040-D043)
+
+10 personagens em linguagem visual de brinquedo original (contorno grosso, brilho glossy, juntas articuladas visíveis — **sem** studs/peças LEGO, **sem** proporções de minifigura, ver checklist de segurança de IP em `10-gdd.md` 1f), cobrindo deliberadamente os 4 registros pedidos pelo usuário: fofo, épico, engraçado, estranho. Salvos em [`assets/mimo-toy-world-concepts.svg`](assets/mimo-toy-world-concepts.svg).
+
+| Conceito | Registro | Descrição rápida |
+|---|---|---|
+| **Toyfoo** | Fofo | Urso-coelho redondo, bochechas coradas — mesma família de Bounch, mas com contorno de brinquedo |
+| **Drakelet** | Épico | Mini dragão com peitoral de "armadura de brinquedo" e juntas visíveis nos braços |
+| **Wobblegoof** | Engraçado | Blob amarelo com olhos desiguais e língua de fora — puramente cômico |
+| **Orbnit** | Estranho | Esfera flutuante com pernas mecânicas finas e uma lente/olho central |
+| **Starlum** | Fofo | Estrela de pelúcia simplificada, expressão doce |
+| **Pyrion** | Épico | Ave de fogo com asas em camadas glossy, silhueta de destaque |
+| **Chuggle** | Engraçado | Bule de chá com olho arregalado e sorriso bobo |
+| **Driftjelly** | Estranho | Blob tipo água-viva com tentáculos-fio ondulados |
+| **Crystalor** | Épico | Guardião cristalino de formas geométricas robustas, gema no peito |
+| **Puffbot** | Fofo/Engraçado | Robozinho redondo com chapéu-hélice e antena |
+
+**Teste-alvo (pergunta do usuário)**: olhando os 10 juntos, alguém pensa "eu quero entrar nesse mundo para descobrir o que existe nele"? Isso não é avaliado por pontuação numérica — é uma leitura de conjunto, cabe ao usuário decidir.
+
+### Referência adicional trazida pelo usuário: dragão épico + jogabilidade de mundo aberto (D044)
+
+O usuário trouxe uma imagem de um dragão LEGO montável (grande, imponente, com condutor) e uma cena de perseguição em mundo aberto com coleta de moedas voando até o jogador. A vibe do dragão reforça a direção de **Drakelet/Pyrion/Crystalor** (registro épico desta rodada) e os conceitos anteriores Draconyx/Coronox — não foi feito um esboço novo específico do dragão porque os já existentes já cobrem esse território. A jogabilidade de mundo aberto/montaria fica registrada como visão de longo prazo em `10-gdd.md` (seção 4b, D044), não como algo a esboçar/implementar agora.
+
 ## Pergunta ao usuário
 
 Ainda nenhuma escolha travada:

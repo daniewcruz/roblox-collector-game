@@ -15,7 +15,7 @@ CHECKPOINT 1 — APROVADO ✅ (D017-D021)
 FASE 1.5 — Validação Visual 🔄 (8 conceitos gerados, aguardando escolha do usuário — ver docs/12) + CONFIGURAÇÃO TÉCNICA ⏳ (em paralelo, escopo restrito a infra — D022)
 ```
 
-**Conceito aprovado**: Híbrido Coleta + Exploração, tema Mundo Mágico com Criaturas ("Mimos") — Mimo é o personagem/marca do jogo, não só um pet colecionável. Modelo de viralização cooperativo (estilo Grow a Garden), regra de design "momento compartilhável", monetização ética (sem loot box/FOMO/pressão — D020). Inspirado em 5 franquias Nintendo sem copiar IP. Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v8).
+**Conceito aprovado**: Híbrido Coleta + Exploração, "um mundo de brinquedos vivos" com criaturas ("Mimos") — Mimo é personagem/marca do jogo E um brinquedo com valor contínuo (não só recompensa colecionável). Modelo de viralização cooperativo, regra de design "momento compartilhável", monetização ética (sem loot box/FOMO/pressão — D020), 6 famílias visuais + skins temáticas + combinação. Inspirado em Nintendo, LEGO, Grow a Garden, Adopt Me, Dress to Impress — filosofia de design, nunca cópia de IP (checklist completo em D040/GDD 1f). Ver [`docs/10-gdd.md`](docs/10-gdd.md) para o GDD completo (v10).
 
 **Ressalva ativa**: o Core Gameplay (a interação minuto-a-minuto) ainda é tratado como hipótese não validada, não como sistema fechado — ver GDD seção 4b e D024. A Configuração Técnica está liberada, mas escopada só para infraestrutura/arquitetura (D022), sem construir economia/monetização/conteúdo completos antes de validar se a ação central do jogo é divertida por si só.
 
@@ -36,7 +36,7 @@ Nenhum código foi escrito, Roblox Studio ainda não foi aberto.
 | [`docs/08-analise-retencao-generos.md`](docs/08-analise-retencao-generos.md) | Análise profunda de retenção por estrutura de gênero (loops, score ponderado) |
 | [`docs/09-temas-nichos.md`](docs/09-temas-nichos.md) | Pesquisa comparativa de temas/nichos (v1, tema mineração) |
 | [`docs/11-pivot-fofura-colecao-skins.md`](docs/11-pivot-fofura-colecao-skins.md) | Avaliação do pivot para fofura+coleção+skins vs. concorrentes reais (Adopt Me, Evomon, Knockout) |
-| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v8, Core Gameplay em validação)** |
-| [`docs/12-conceitos-mimo.md`](docs/12-conceitos-mimo.md) | Fase 1.5 — 8 esboços de conceito de Mimo, avaliação e recomendação |
+| [`docs/10-gdd.md`](docs/10-gdd.md) | **GDD — Game Design Document da Fase 1 (v10, filosofia "mundo de brinquedos")** |
+| [`docs/12-conceitos-mimo.md`](docs/12-conceitos-mimo.md) | Fase 1.5 — 21 esboços de conceito de Mimo em 5 rodadas, avaliação e recomendação |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.

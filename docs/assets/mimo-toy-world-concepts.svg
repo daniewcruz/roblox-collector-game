@@ -1,0 +1,124 @@
+<svg width="680" height="480" viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Dez personagens em linguagem visual de brinquedo, todos diferentes entre si</title>
+<desc>Grade de dez personagens com material de brinquedo (contorno grosso, brilho glossy, juntas articuladas) cobrindo estilos fofo, épico, engraçado e estranho: Toyfoo, Drakelet, Wobblegoof, Orbnit, Starlum, Pyrion, Chuggle, Driftjelly, Crystalor e Puffbot.</desc>
+<rect width="680" height="480" fill="#FFFFFF"/>
+<rect x="40" y="28" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="164" y="28" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="288" y="28" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="412" y="28" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="536" y="28" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="40" y="248" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="164" y="248" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="288" y="248" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="412" y="248" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<rect x="536" y="248" width="104" height="180" rx="14" fill="#F7F7F8" stroke="#E3E3E6" stroke-width="0.5"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<ellipse cx="92" cy="108" rx="28" ry="26" fill="#F5B9C8"/>
+<circle cx="76" cy="80" r="12" fill="#F5B9C8"/>
+<circle cx="108" cy="80" r="12" fill="#F5B9C8"/>
+</g>
+<ellipse cx="83" cy="98" rx="7" ry="4" fill="#FFFFFF" opacity="0.7"/>
+<circle cx="72" cy="130" r="4" fill="#1A1A1A"/>
+<circle cx="72" cy="88" r="4" fill="#1A1A1A"/>
+<circle cx="86" cy="108" r="3" fill="#3A2E2E"/>
+<circle cx="98" cy="108" r="3" fill="#3A2E2E"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<ellipse cx="216" cy="112" rx="26" ry="24" fill="#5FA88A"/>
+<rect x="200" y="95" width="32" height="26" rx="6" fill="#8FA0AE"/>
+<path d="M198 88 L192 70 L204 84 Z" fill="#3F7860"/>
+<path d="M234 88 L240 70 L228 84 Z" fill="#3F7860"/>
+</g>
+<circle cx="216" cy="86" r="5" fill="#D9B84E"/>
+<circle cx="207" cy="106" r="3" fill="#1F3A30"/>
+<circle cx="225" cy="106" r="3" fill="#1F3A30"/>
+<circle cx="200" cy="128" r="4" fill="#8FA0AE" stroke="#1A1A1A" stroke-width="2"/>
+<circle cx="232" cy="128" r="4" fill="#8FA0AE" stroke="#1A1A1A" stroke-width="2"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<ellipse cx="340" cy="115" rx="30" ry="26" fill="#F4C24B"/>
+</g>
+<circle cx="330" cy="108" r="7" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<circle cx="330" cy="108" r="3" fill="#1A1A1A"/>
+<circle cx="352" cy="110" r="3.5" fill="#1A1A1A"/>
+<path d="M328 128 C336 140 348 138 352 128" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+<ellipse cx="340" cy="140" rx="6" ry="9" fill="#E0637A" stroke="#1A1A1A" stroke-width="2"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<circle cx="464" cy="105" r="24" fill="#9FD8E0"/>
+<line x1="464" y1="129" x2="450" y2="150" stroke="#6FB8C9" stroke-width="4"/>
+<line x1="464" y1="129" x2="464" y2="154" stroke="#6FB8C9" stroke-width="4"/>
+<line x1="464" y1="129" x2="478" y2="150" stroke="#6FB8C9" stroke-width="4"/>
+</g>
+<circle cx="450" cy="152" r="3" fill="#4A93A6"/>
+<circle cx="464" cy="156" r="3" fill="#4A93A6"/>
+<circle cx="478" cy="152" r="3" fill="#4A93A6"/>
+<circle cx="464" cy="103" r="12" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5"/>
+<circle cx="464" cy="103" r="5" fill="#2B4A50"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<path d="M588 82 L603 112 L596 138 L580 138 L573 112 Z" fill="#D9B8F0"/>
+</g>
+<ellipse cx="582" cy="100" rx="5" ry="8" fill="#FFFFFF" opacity="0.7"/>
+<circle cx="583" cy="115" r="3" fill="#5B4E8C"/>
+<circle cx="595" cy="115" r="3" fill="#5B4E8C"/>
+<path d="M584 123 C588 127 592 127 596 123" fill="none" stroke="#5B4E8C" stroke-width="2" stroke-linecap="round"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<path d="M92 300 C75 315 78 340 92 350 C106 340 109 315 92 300 Z" fill="#FF7A45"/>
+<path d="M68 325 C58 315 60 340 72 342 Z" fill="#FFC24B"/>
+<path d="M116 325 C126 315 124 340 112 342 Z" fill="#FFC24B"/>
+</g>
+<circle cx="86" cy="322" r="3" fill="#4A2A12"/>
+<circle cx="98" cy="322" r="3" fill="#4A2A12"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<ellipse cx="216" cy="335" rx="30" ry="24" fill="#6FA8DC"/>
+<path d="M244 320 L262 312 L250 328 Z" fill="#6FA8DC"/>
+<path d="M190 320 C178 320 178 348 192 350" fill="none" stroke="#6FA8DC" stroke-width="5"/>
+<rect x="206" y="303" width="20" height="8" rx="4" fill="#4E86BE"/>
+</g>
+<circle cx="207" cy="333" r="7" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<circle cx="207" cy="333" r="3" fill="#1A1A1A"/>
+<circle cx="225" cy="335" r="3.5" fill="#1A1A1A"/>
+<path d="M206 344 C212 352 220 350 224 344" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<ellipse cx="340" cy="325" rx="26" ry="22" fill="#C9BEF0"/>
+<path d="M320 344 C316 356 320 364 316 372" fill="none" stroke="#C9BEF0" stroke-width="4"/>
+<path d="M332 348 C330 360 334 368 330 376" fill="none" stroke="#C9BEF0" stroke-width="4"/>
+<path d="M348 348 C350 360 346 368 350 376" fill="none" stroke="#C9BEF0" stroke-width="4"/>
+<path d="M360 344 C364 356 360 364 364 372" fill="none" stroke="#C9BEF0" stroke-width="4"/>
+</g>
+<circle cx="332" cy="320" r="3" fill="#5B4E8C"/>
+<circle cx="348" cy="320" r="3" fill="#5B4E8C"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<path d="M444 310 L464 296 L484 310 L484 344 L464 358 L444 344 Z" fill="#8FD0C4"/>
+<circle cx="464" cy="326" r="10" fill="#3FAF95"/>
+</g>
+<circle cx="456" cy="318" r="2.5" fill="#1A1A1A"/>
+<circle cx="472" cy="318" r="2.5" fill="#1A1A1A"/>
+<g stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round">
+<circle cx="588" cy="330" r="26" fill="#E0637A"/>
+<rect x="580" y="298" width="16" height="8" rx="3" fill="#B8465F"/>
+<line x1="588" y1="298" x2="588" y2="288" stroke="#B8465F" stroke-width="3"/>
+<circle cx="588" cy="284" r="4" fill="#B8465F"/>
+</g>
+<circle cx="580" cy="328" r="9" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+<circle cx="580" cy="328" r="4" fill="#1A1A1A"/>
+<circle cx="600" cy="330" r="3.5" fill="#FFFFFF"/>
+<path d="M578 342 C584 348 592 348 596 342" fill="none" stroke="#B8465F" stroke-width="2" stroke-linecap="round"/>
+<text x="92" y="222" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Toyfoo</text>
+<text x="92" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Fofo</text>
+<text x="216" y="222" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Drakelet</text>
+<text x="216" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Epico</text>
+<text x="340" y="222" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Wobblegoof</text>
+<text x="340" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Engracado</text>
+<text x="464" y="222" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Orbnit</text>
+<text x="464" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Estranho</text>
+<text x="588" y="222" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Starlum</text>
+<text x="588" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Fofo</text>
+<text x="92" y="442" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Pyrion</text>
+<text x="92" y="457" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Epico</text>
+<text x="216" y="442" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Chuggle</text>
+<text x="216" y="457" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Engracado</text>
+<text x="340" y="442" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Driftjelly</text>
+<text x="340" y="457" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Estranho</text>
+<text x="464" y="442" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Crystalor</text>
+<text x="464" y="457" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Epico</text>
+<text x="588" y="442" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Puffbot</text>
+<text x="588" y="457" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B6B70">Fofo/Engracado</text>
+</svg>

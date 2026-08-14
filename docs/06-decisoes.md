@@ -400,3 +400,53 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — só reduz risco.
 - **IMPACTO**: `05-ferramentas-github.md` seções de ReplicaService, Rojo e testes atualizadas com dados reais. Lista de pendências reescrita para refletir o que genuinamente ainda falta (não mais Rojo).
 - **DATA**: 2026-08-14
+
+---
+
+## D040 — Jogos LEGO como referência de filosofia de design (não cópia de IP); Mimo redefinido como "brinquedo vivo"
+- **DECISÃO**: adotar jogos LEGO (LEGO Fortnite, LEGO Worlds, LEGO City Undercover, LEGO Star Wars, LEGO Harry Potter) como referência de **filosofia** de design — mundo de brinquedo, humor físico, personagens com personalidade forte, customização, exploração, coleção — nunca como cópia de elementos protegidos (nome LEGO, peças/studs idênticos, minifiguras, personagens licenciados como Star Wars/Harry Potter/Marvel, ou visual "indistinguível" de um jogo LEGO). O Mimo deixa de ser só "criatura que se coleciona como recompensa" e passa a ser **um brinquedo vivo com valor mesmo depois da descoberta**: pode ser exibido, animado, vestido com skins, levado para explorar, usado em atividades, mostrado a outros jogadores.
+- **MOTIVO**: usuário identificou que LEGO combina exatamente os elementos que o projeto busca (fofo + engraçado + épico + coleção + personalização + aventura, sem escolher entre "infantil" e "cool") e propôs a mudança de "criatura-recompensa" para "brinquedo com valor contínuo" — mas também apontou corretamente, por conta própria, o risco de propriedade intelectual/trade dress da LEGO, definindo uma lista explícita do que evitar.
+- **ALTERNATIVAS**: usar a estética LEGO diretamente (studs, minifiguras) — **rejeitado explicitamente pelo próprio usuário** por risco de propriedade intelectual; manter Mimo só como recompensa colecionável (padrão das versões v1-v9) — substituído por esta decisão.
+- **TRADE-OFFS**: nenhum negativo — é uma expansão de filosofia sobre a base já validada (retenção, coleção, monetização ética continuam intactas), só muda como o Mimo é tratado depois de descoberto.
+- **IMPACTO**: `10-gdd.md` v10 — pitch e critérios de personagem-marca (1b) revisados; nova seção sobre "brinquedo vivo com valor pós-descoberta".
+- **DATA**: 2026-08-14
+
+---
+
+## D041 — Mecânica de combinação (não só evolução linear)
+- **DECISÃO**: adicionar combinação como mecânica de progressão/personalização — dois itens (ex: Emberwick + Storm Core = Storm Emberwick) geram uma variação temática nova. Complementa (não substitui) a evolução por descoberta já registrada (D028).
+- **MOTIVO**: usuário identificou que combinação gera conteúdo de vídeo naturalmente ("I COMBINED 100 ITEMS AND GOT THIS...") e dá ao jogador um motivo de experimentação contínua, alinhado à regra de "momento compartilhável" (1c) já estabelecida.
+- **ALTERNATIVAS**: manter só evolução linear por descoberta (D028) — mais simples, mas gera menos variedade de conteúdo e menos incentivo de experimentação.
+- **TRADE-OFFS**: mais uma camada de sistema de dados (receitas de combinação) — fica **fora do MVP** (mesma régua de D011/D019), candidato pós-MVP (Fase 4/6), mas compatível com a arquitetura de dados já definida.
+- **IMPACTO**: `10-gdd.md` v10, nova seção. Roadmap ganha nota de sistema de combinação como candidato pós-MVP.
+- **DATA**: 2026-08-14
+
+---
+
+## D042 — Lógica de "mundo de brinquedos": regiões não precisam de coerência realista
+- **DECISÃO**: adotar a lógica de que, sendo um "mundo de brinquedos" (não um mundo realista), as regiões futuras podem ser tematicamente ecléticas (floresta → terra de doces → espaço → ilha pirata → castelo → vulcão → reino das nuvens) sem quebrar a identidade do jogo — a inconsistência realista não importa quando o enquadramento já é "playground mágico".
+- **MOTIVO**: usuário observou que jogos LEGO (e o próprio Roblox de forma geral) sustentam saltos temáticos grandes entre mundos sem parecer estranho, porque a premissa já é "brinquedo", não "simulação de um lugar real". Isso libera criatividade de conteúdo futuro sem exigir justificativa de worldbuilding realista.
+- **ALTERNATIVAS**: manter regiões futuras tematicamente conectadas/coerentes (ex: todas biomas naturais) — mais "seguro" narrativamente, mas mais restritivo para conteúdo futuro variado.
+- **TRADE-OFFS**: nenhum imediato — só afeta o design de regiões pós-MVP (Fase 6+), o MVP continua com 1 única região (D011).
+- **IMPACTO**: `10-gdd.md` v10, nota adicionada à seção de regiões/roadmap futuro.
+- **DATA**: 2026-08-14
+
+---
+
+## D043 — Skins como "temas" completos (aura+animação+aparência) + fórmula de escala de conteúdo
+- **DECISÃO**: skins deixam de ser só variação de cor — passam a ser **temas completos** por Mimo (ex: Emberwick Infernal, Cosmic, Royal, Mecha, Pirate, Candy, Phantom), cada um combinando aparência + aura + pequena diferença de animação. Fórmula de escala de conteúdo registrada: **N criaturas-base × M variantes temáticas = N×M colecionáveis visuais**, sem precisar desenhar uma criatura nova do zero a cada atualização — reforça a eficiência de conteúdo já valorizada em `08-analise-retencao-generos.md` (Update Loop sustentável para solo dev).
+- **MOTIVO**: usuário quer que skins gerem identidade tão forte quanto a criatura em si, e que o volume de conteúdo cresça multiplicativamente (criatura × tema) em vez de aditivamente (uma criatura nova por vez) — mais sustentável para um solo dev de longo prazo.
+- **ALTERNATIVAS**: manter skins como variação de cor simples (padrão anterior, D017/1e) — mais simples de produzir mas gera menos identidade/conteúdo por unidade de esforço.
+- **TRADE-OFFS**: cada "tema" precisa de aura + pequena variação de animação, não só recolorir — mais trabalho por skin que uma variação de cor simples, mas compensado pela reutilização da base (mesma criatura) e pelo sistema de Aura já existente (D027).
+- **IMPACTO**: `10-gdd.md` v10 — seção de monetização (8) e personalização (1e/6b) atualizadas para refletir skins temáticas. Referência de filosofia de design ampliada para incluir LEGO (mundo de brinquedos), Dress to Impress (skins/identidade) e Grow a Garden (eventos/retorno) na lista já existente de Pokémon/Animal Crossing/Mario/Adopt Me.
+- **DATA**: 2026-08-14
+
+---
+
+## D044 — Referência visual/jogabilidade LEGO (dragão épico + mundo aberto): coleta magnética agora, montaria como visão de longo prazo
+- **DECISÃO**: usuário trouxe duas imagens LEGO como referência — um dragão montável épico/imponente, e uma cena de perseguição em mundo aberto com coleta de moedas que "voam" até o jogador, marcadores de objetivo e minimapa. Extraído: (1) **coleta magnética** (itens próximos voam até o jogador ao coletar) — técnica de "juice" barata, adicionada como 6º candidato de interação central no protótipo (seção 4b), compatível com o MVP; (2) **montaria/condução em mundo aberto** — registrada como **visão de longo prazo** (Fase 11+), não compatível com o MVP enxuto atual (1 região pequena). A vibe visual do dragão reforça a família Majestic/Epic (1e) já em desenvolvimento via Draconyx/Coronox, sem copiar o design específico (regras de 1f continuam valendo).
+- **MOTIVO**: usuário quer calibrar tanto a arte (mais imponente/épica) quanto explorar jogabilidade de mundo aberto — mas montaria/condução é um sistema de escopo muito maior que o MVP, e adotá-lo agora repetiria o erro que o processo já evitou de comprometer o projeto a sistemas grandes antes de validar o núcleo pequeno.
+- **ALTERNATIVAS**: tentar incorporar montaria/mundo aberto ao MVP agora (rejeitado — contradiz D011/D019/D022 e o próprio raciocínio já validado com o usuário em decisões anteriores sobre escopo).
+- **TRADE-OFFS**: nenhum — a parte aproveitável agora (coleta magnética) é barata; a parte ambiciosa (montaria) fica anotada sem custo de implementação até ser priorizada.
+- **IMPACTO**: `10-gdd.md` v10, seção 4b ganha candidato 6 e uma nota de "visão de longo prazo" citando a referência do usuário.
+- **DATA**: 2026-08-14

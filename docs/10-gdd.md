@@ -1,18 +1,18 @@
-# Game Design Document (GDD) — Fase 1 (revisado, v9 — CHECKPOINT 1 APROVADO, Core Gameplay + identidade visual em validação)
+# Game Design Document (GDD) — Fase 1 (revisado, v10 — CHECKPOINT 1 APROVADO, Core Gameplay + identidade visual em validação)
 
-**Nome provisório**: *Mimo World* (placeholder — não decidido, trocar livremente)
+**Nome provisório**: *Mimo World* (placeholder — "Mimo" pode virar nome da categoria de criaturas, não do jogo — decisão em aberto, D040)
 **Gênero/estrutura**: Híbrido Coleta + Exploração (referência estrutural: Fisch — não cópia temática)
-**Tema**: "Um pequeno mundo cheio de criaturas que você ainda não descobriu" — o Mimo é o **personagem/marca do jogo** (não só um pet colecionável), revelado a partir de casulos/sementes/bolhas mágicas encontradas explorando
-**Referências de filosofia de design**: 5 franquias Nintendo estudadas por sistema — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento/exploração em mundo pequeno) — ver seções 2, 2b, 2c. Modelo de viralização: cooperativo (Grow a Garden), não adversarial (Steal a Brainrot) — ver 2d. **Sem copiar personagens, nomes, assets ou propriedade intelectual — só estrutura/filosofia de design.**
+**Tema**: "Um mundo de brinquedos vivos que você ainda não descobriu" — o Mimo é o **personagem/marca do jogo E um brinquedo com valor contínuo** (não só um pet colecionável nem só uma recompensa), revelado a partir de casulos/sementes/bolhas mágicas encontradas explorando
+**Referências de filosofia de design**: LEGO — mundo de brinquedos, humor físico, personagens com personalidade forte (LEGO Fortnite, LEGO Worlds, LEGO City Undercover, LEGO Star Wars, LEGO Harry Potter — filosofia, não cópia) — Pokémon (coleção/raridade/descoberta), Animal Crossing (personalização/decoração leve/social), Mario Odyssey (curiosidade/exploração), Kirby (fofura/legibilidade visual/personagem-marca), Pikmin (criaturas com comportamento), Grow a Garden (eventos/retorno), Adopt Me (criaturas/social), Dress to Impress (skins/identidade) — ver seções 1e, 2, 2b, 2c, 2d. Modelo de viralização: cooperativo, não adversarial — ver 2d. **Sem copiar personagens, nomes, assets, peças/studs, minifiguras ou propriedade intelectual de nenhuma obra — só estrutura/filosofia de design (D040).**
 **Plataforma primária**: Mobile-first (80% das sessões Roblox são mobile — D004)
 **Status**: **Fase 1 aprovada (Checkpoint 1 ✅, D017-D019)** — avançando para Configuração Técnica (MCP Server + Rojo + Roblox Studio). Ainda sem código escrito.
-**Histórico**: v1 mineração+cristal (D012); v2 mundo mágico (D013); v3 princípios Super Mario (D014); v4 síntese de 5 franquias Nintendo (D015); v5 estrutura viral, modelo cooperativo (D016); v6 eleva Mimo a personagem/marca do jogo, adiciona regra de design "momento compartilhável", reconfirma MVP enxuto e fecha o Checkpoint 1 (D017-D019); v7 adiciona salvaguardas éticas de monetização infantil (D020, seção 8) e etapa de teste visual de conceitos de criatura antes do protótipo (D021, seção 1d); v8 marca o Core Gameplay (interação minuto-a-minuto) como **hipótese ainda não validada** — a coleção/skins/retenção já estão bem definidas, mas falta provar que a ação central é divertida por si só, não só como veículo de recompensa (D022-D024, nova seção 4b); v9 amplia a identidade do Mimo além de "fofo" para 6 famílias visuais (Cute/Cool/Majestic/Mystic/Chaotic/Legendary), adiciona sistema de Aura (camada de status cosmética) e evolução visual por descoberta (D026-D028, nova seção 1e).
+**Histórico**: v1-v9 — ver versões anteriores (mineração→mundo mágico→princípios Mario→5 franquias Nintendo→estrutura viral→personagem-marca→monetização ética→Core Gameplay como hipótese→6 famílias visuais/Aura). **v10** incorpora a filosofia LEGO (mundo de brinquedos): Mimo redefinido como brinquedo vivo com valor pós-descoberta, mecânica de combinação, lógica de mundo eclético (regiões não precisam de coerência realista), e skins como temas completos com fórmula de escala de conteúdo N×M (D040-D043).
 
 ---
 
 ## 1. Pitch em uma frase
 
-**Um pequeno mundo cheio de criaturas que você ainda não descobriu.** O jogador explora regiões encantadoras, encontra casulos/sementes mágicas escondidas, e ao abri-los descobre pequenas criaturas ("Mimos") com raridades e variações visuais únicas (dourada, cristal, neon, arco-íris...) — colecionando-as em um Bestiary, personalizando seu personagem/espaço pessoal com o que descobre, e desbloqueando novas regiões com ferramentas/habilidades melhores. (Reformulação de pitch pedida pelo usuário — D015, abandona de vez o enquadramento "jogo de mineração".)
+**Um mundo de brinquedos vivos que você ainda não descobriu.** O jogador explora regiões encantadoras, encontra casulos/sementes mágicas escondidas, e ao abri-los descobre pequenos personagens ("Mimos") com raridades e variações visuais únicas — mas diferente de um pet simulator comum, o Mimo continua tendo valor depois de descoberto: pode ser exibido, animado, vestido com temas completos, combinado com outros itens para criar variações novas, e levado para explorar. O jogador coleciona em um Bestiary, personaliza seu personagem/espaço pessoal, e desbloqueia novas regiões com ferramentas/habilidades melhores. (Pitch revisado — D015 removeu "mineração"; D040 adiciona a dimensão de "brinquedo com valor contínuo".)
 
 ## 1b. Mimo como personagem/marca do jogo (não apenas um pet colecionável)
 
@@ -114,6 +114,38 @@ O usuário identificou que a maior decisão do projeto pode não ser a mecânica
 4. Só depois de escolher a direção visual vencedora, seguir para produção de arte do MVP.
 
 Esta etapa é **barata e rápida** (esboços, não arte final) e reduz o risco de investir semanas de desenvolvimento técnico em cima de um personagem que não gera desejo visual — o oposto do erro de "programar primeiro, descobrir se é atraente depois". Fica posicionada entre o Checkpoint 1 (aprovado) e o início efetivo da Configuração Técnica/Protótipo — não bloqueia a configuração técnica em si (que é infraestrutura, independente da arte), mas bloqueia a produção de arte final e o polish (Fase 8).
+
+## 1f. Filosofia LEGO: mundo de brinquedos vivos (D040-D043)
+
+### Checklist de segurança de IP (definido pelo próprio usuário, tratado como regra permanente)
+
+Jogos LEGO (LEGO Fortnite, LEGO Worlds, LEGO City Undercover, LEGO Star Wars, LEGO Harry Potter) são usados **só como referência de filosofia de design** — nunca como fonte de assets ou identidade visual copiável. LEGO é marca/propriedade intelectual protegida.
+
+**Nunca fazer**: usar o nome LEGO no jogo; peças/studs idênticos aos blocos LEGO; minifiguras LEGO (proporções/anatomia características); personagens de franquias licenciadas (Star Wars, Marvel, DC, Harry Potter etc.); copiar mundos/veículos específicos de jogos LEGO; visual "indistinguível" de um jogo LEGO; usar "LEGO-like" como identidade comercial do projeto.
+
+**Pode estudar como inspiração de alto nível**: estética de brinquedo/material glossy, humor físico, mundo de aventura, personagens com personalidades fortes, customização, exploração, coleção, situações caóticas, efeitos/transformações.
+
+**Por que isso importa além do risco legal**: se o jogo fizer sucesso, o objetivo é que jogadores reconheçam **nosso** personagem e universo — não pensem "é um jogo de LEGO no Roblox". Identidade própria é estrategicamente melhor, não só mais seguro.
+
+### Mimo como brinquedo vivo, não só recompensa (D040)
+
+Mudança de enquadramento: o Mimo não é só um item que se ganha e guarda numa lista — é um **brinquedo com valor contínuo** depois de descoberto. O jogador pode: exibir o Mimo (espaço de exibição pessoal, 6b), vê-lo animar/reagir, vesti-lo com um tema completo (ver skins abaixo), levá-lo para explorar, mostrá-lo a outros jogadores (cartão de perfil, 2c), usá-lo em atividades futuras (pós-MVP). Isso não troca nenhum sistema já definido — é uma lente que reforça por que a personalização (6b) e o Aura (1e) importam: não são extras, são o que dá "vida contínua" ao brinquedo depois do momento de descoberta.
+
+### Mecânica de combinação (D041) — pós-MVP
+
+Além da evolução por descoberta (D028), dois itens podem se combinar para gerar uma variação temática nova — ex: Emberwick + Storm Core = Storm Emberwick. Gera o tipo de conteúdo "eu combinei isso e ganhei aquilo", reforçando a regra de momento compartilhável (1c). **Fora do MVP** (D011/D019), candidato para Fase 4/6, usando a mesma arquitetura de dados de raridade/coleção já definida.
+
+### Mundo de brinquedos: regiões futuras não precisam de coerência realista (D042)
+
+Sendo um "mundo de brinquedos" e não uma simulação realista, regiões futuras (pós-MVP) podem saltar tematicamente sem quebrar a identidade do jogo: floresta encantada → terra de doces → espaço → ilha pirata → castelo → vulcão → reino das nuvens. A premissa de "playground mágico" já licencia essa liberdade — não é preciso justificativa de worldbuilding realista para cada região nova. O MVP continua com **1 única região** (D011) — isso só orienta o design de conteúdo pós-lançamento.
+
+### Skins como temas completos + fórmula de escala de conteúdo (D043)
+
+Skins deixam de ser só variação de cor — cada uma é um **tema completo**: aparência + Aura (1e) + pequena diferença de animação, combinados. Exemplo: Emberwick Infernal, Cosmic, Royal, Mecha, Pirate, Candy, Phantom — cada um muda a sensação inteira da criatura, não só a cor.
+
+**Fórmula de escala de conteúdo**: N criaturas-base × M variantes temáticas = N×M colecionáveis visuais, sem precisar desenhar uma criatura nova do zero a cada atualização. Ex: 30 criaturas × 10 temas = 300 colecionáveis visuais — multiplica o conteúdo percebido sem multiplicar o esforço de design de silhueta, reforçando a sustentabilidade de Update Loop já valorizada em `08-analise-retencao-generos.md`.
+
+**Escopo no MVP**: poucos temas simples (ver seção 8, monetização ética — sempre preço fixo/conquistado, nunca por chance); o catálogo completo de temas por criatura é trabalho pós-MVP.
 
 ## 2. Princípios de design (filosofia Nintendo aplicada, não copiada)
 
@@ -250,8 +282,17 @@ Estas são hipóteses concretas para comparar no protótipo, não uma escolha fe
 3. **Escavar/limpar**: o jogador precisa "escovar" ou remover camadas mágicas (poeira, vinhas, cristal fino) até o casulo se abrir sozinho — interação repetitiva mas com feedback progressivo (cada camada removida muda visualmente o objeto).
 4. **Empurrar/rolar**: casulos podem ser fisicamente empurrados/rolados pelo cenário antes de abrir (inspirado em manipulação física tipo Katamari) — testa se a manipulação do objeto no mundo, não só o toque final, já é agradável.
 5. **Arremesso preciso** (D030): o jogador mira e arremessa a ferramenta (ex: um kunai mágico) no casulo, com feedback de acerto (whoosh + impacto visual/sonoro) — testa se a mira/timing do arremesso já é satisfatória sozinha, independente do que é revelado.
+6. **Coleta magnética** (D044, inspirado pela referência de jogabilidade LEGO trazida pelo usuário): recursos/moedas próximos "voam" até o jogador ao serem coletados, em vez de simplesmente desaparecer — é uma técnica de "juice" barata (mesma família de princípios da seção 4b) usada em jogos LEGO e em praticamente todo jogo de coleta de mundo aberto, porque o feedback físico do item se movendo até o jogador é satisfatório por si só. Baixa complexidade de implementação, alto retorno de sensação de polimento — bom candidato para testar cedo.
 
 **Critério de validação no protótipo**: pedir para alguém repetir a ação 15-20 vezes seguidas **sem receber nada raro** e observar se ainda parece agradável, ou se só a expectativa de raridade estava carregando a diversão. Se for a segunda opção, a interação escolhida precisa mudar antes de seguir para o Core Gameplay (Fase 3) completo.
+
+### Referência trazida pelo usuário: vibe LEGO (dragão épico + jogabilidade de mundo aberto)
+
+O usuário trouxe duas imagens de jogos LEGO como referência: um dragão vermelho montável com asas grandes e presença visual imponente (jogado por cima, estilo "mount"), e uma cena de perseguição em mundo aberto em terceira pessoa com moedas/gemas voando em direção ao jogador, marcadores de objetivo e minimapa.
+
+- **Vibe visual do dragão**: reforça a família **Majestic/Epic** (1e) e a calibração "impressionante, não infantil" (D031) — um Mimo de tier alto (Legendary) pode mirar essa mesma sensação de escala/imponência, sem copiar o design específico do dragão LEGO (mantém as regras de 1f). Conecta diretamente com os conceitos já esboçados Draconyx e Coronox (`12-conceitos-mimo.md`).
+- **Jogabilidade de mundo aberto/montaria**: isso é uma ambição de escopo bem maior que o MVP atual (1 região pequena, D011) — monta em criatura, condução, perseguição em mundo aberto com câmera de terceira pessoa dinâmica são sistemas substanciais. **Não é compatível com o MVP enxuto agora**, mas fica registrado como **visão de longo prazo** (Fase 11+, Crescimento/Escala) — depois que o Core Gameplay pequeno estiver validado e o jogo já tiver tração. A "coleta magnética" (candidato 6 acima) é a parte dessa referência que **é** aproveitável já no MVP, por ser barata e de baixo risco.
+- **Por que não adiantar a montaria agora**: seria repetir o erro que o próprio processo já evitou várias vezes (D019, D022) — comprometer meses de trabalho em sistemas grandes antes de validar se o núcleo pequeno do jogo já é divertido.
 
 ## 5. O momento de descoberta (mantido do GDD v1, só muda o material)
 
