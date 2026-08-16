@@ -9,7 +9,8 @@ local TweenService = game:GetService("TweenService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
-local RARE_CHANCE = 0.2 -- 20% de chance de ser "especial" (ajustável para teste)
+local MimoData = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("MimoData"))
+
 local RESPAWN_DELAY = 1.0 -- segundos até o casulo poder reagir de novo
 local HORIZONTAL_RADIUS = 3 -- distância lateral (studs) para contar como "encostou"
 local VERTICAL_RANGE = 6 -- diferença de altura tolerada (cobre ficar em pé em cima do casulo)
@@ -28,8 +29,14 @@ if not revealEvent then
 	revealEvent.Parent = remoteFolder
 end
 
-local commonColor = Color3.fromRGB(255, 140, 60)
-local specialColor = Color3.fromRGB(255, 215, 60)
+-- Cor por família visual (D026), só para o protótipo distinguir visualmente o resultado do sorteio
+local familyColors: { [string]: Color3 } = {
+	Cute = Color3.fromRGB(255, 140, 190),
+	Cool = Color3.fromRGB(255, 140, 60),
+	Mystic = Color3.fromRGB(150, 100, 220),
+	Majestic = Color3.fromRGB(255, 215, 60),
+}
+local defaultColor = Color3.fromRGB(255, 140, 60)
 
 local function burstParticles(part: Part)
 	local emitter = Instance.new("ParticleEmitter")
@@ -74,9 +81,9 @@ local function createCasulo(position: Vector3)
 	part.Position = position
 	part.Anchored = true
 	part.Material = Enum.Material.Neon
-	part.Color = commonColor
+	part.Color = defaultColor
 	part.CastShadow = false -- evita sombra "piscando" durante a animação de squash rápida
-	part.CanCollide = false -- evita empurrar/prender o personagem quando o tamanho estica rápido
+	part.CanCollide = true -- sólido: dá pra pisar/pular em cima como plataforma
 	part.Parent = Workspace
 
 	local onCooldown = false
@@ -105,18 +112,19 @@ local function createCasulo(position: Vector3)
 			-- dispara sempre que estiver perto e fora de cooldown, mesmo que o jogador
 			-- fique parado ali (não exige sair e voltar a entrar no raio)
 			onCooldown = true
+			part.CanCollide = false -- some por baixo do personagem no instante da explosão, ele cai
 
-			local isSpecial = math.random() < RARE_CHANCE
-			part.Color = if isSpecial then specialColor else commonColor
+			local mimo = MimoData.rollMimo("ValeDasPrimeirasLuzes")
+			part.Color = if mimo then (familyColors[mimo.family] or defaultColor) else defaultColor
 			squash(part)
 
-			if isSpecial then
-				revealEvent:FireClient(closestPlayer, "special", "Mimo Teste")
-			else
-				revealEvent:FireClient(closestPlayer, "common", nil)
+			if mimo then
+				local isRare = mimo.family == "Mystic" or mimo.family == "Majestic"
+				revealEvent:FireClient(closestPlayer, if isRare then "special" else "common", mimo.name)
 			end
 
 			task.delay(RESPAWN_DELAY, function()
+				part.CanCollide = true -- volta a ser sólida para o próximo ciclo
 				onCooldown = false
 			end)
 		end

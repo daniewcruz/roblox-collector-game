@@ -683,3 +683,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — o casulo nunca precisou ser um obstáculo físico.
 - **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Regra geral para a Fase 3: objetos interativos por proximidade (não por colisão física real) devem ter `CanCollide = false` por padrão.
 - **DATA**: 2026-08-14
+
+---
+
+## D068 — Esquema de dados de Mimo + raridade cumulativa (pendência de D022 resolvida)
+- **DECISÃO**: usuário compartilhou um tutorial extenso de terceiros sobre sistema de pets no Roblox (ovos, hatch, inventário, game passes, DataStore) e pediu para usar como **referência de arquitetura**, não copiar literalmente. Extraído o padrão mais valioso e reutilizável: **tabela de raridade cumulativa** — cada Mimo tem um valor de raridade que é a soma acumulada das chances anteriores (ex: Comum 60→60, Raro 25→85, Épico 12→97, Lendário 3→100), sorteado com `math.random(1, rarityMax)` e percorrendo a lista até achar o primeiro cujo valor acumulado seja ≥ ao número sorteado — muito mais robusto que o sorteio binário (`math.random() < 0.2`) usado até agora no protótipo. Criado `src/Shared/MimoData.luau` com esse esquema, mapeado às 6 famílias visuais (D026), e uma região placeholder do MVP (`ValeDasPrimeirasLuzes`) com 4 tiers de raridade. Protótipo (`PrototypeCasulos.server.luau`) atualizado para usar `MimoData.rollMimo()` em vez do sorteio binário — testado via MCP: 30 ciclos consecutivos produziram resultados variados entre Cute/Cool/Mystic, com Majestic (3% de chance) corretamente raro o suficiente para não aparecer nessa amostra.
+- **MOTIVO**: resolve uma pendência real desde a Configuração Técnica (D022 listava "esquema de dados de criaturas" e "esquema de sistema de raridade" como escopo permitido, mas nunca tinham sido criados). O padrão do tutorial de terceiros era genuinamente melhor do que o sorteio binário improvisado no protótipo.
+- **ALTERNATIVAS**: copiar a estrutura completa do tutorial (rejeitado explicitamente pelo usuário — só arquitetura, não conteúdo/nomes); manter o sorteio binário simples (insuficiente para os 4-6 tiers de raridade já definidos no GDD).
+- **TRADE-OFFS**: nenhum — é estritamente uma melhoria sobre o sorteio anterior, mesma complexidade de uso.
+- **IMPACTO**: `src/Shared/MimoData.luau` criado — primeiro módulo de dados real do jogo (antes só havia scripts de protótipo). `PrototypeCasulos.server.luau` atualizado para consumir esse módulo. Base para a Fase 3 (Core Gameplay completo) já commitada.
+- **DATA**: 2026-08-16
