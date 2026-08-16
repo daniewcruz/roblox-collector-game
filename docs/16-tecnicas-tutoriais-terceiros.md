@@ -38,6 +38,22 @@ Tutorial sobre um sistema de "zona de teleporte": jogador entra numa área, form
 ### ⚠️ Alerta de segurança encontrado no próprio tutorial
 O tutorial instrui baixar um "modelo gratuito" de um servidor Discord de terceiros e importar direto no jogo sem inspecionar o conteúdo. Isso é exatamente o tipo de prática que a pesquisa da comunidade já tinha sinalizado como risco (`15-licoes-comunidade-roblox.md`: "modelos gratuitos do Toolbox frequentemente contêm scripts bugados/maliciosos — inspecionar antes de usar"). **Regra reforçada para este projeto**: nunca importar modelos/scripts de terceiros sem ler o conteúdo primeiro, mesmo vindo de um criador de conteúdo aparentemente confiável — isso vale tanto para mim quanto para o usuário.
 
+## De um tutorial de iluminação/atmosfera (D071) — aplicado diretamente no protótipo
+
+Tutorial sobre configuração de `Lighting`/`Atmosphere`/`ColorCorrection` para dar um visual mais "cinematográfico" a um jogo Roblox. Diferente dos tutoriais anteriores, isso **não é um sistema novo** — é configuração de propriedades do Studio, então não conflita com o escopo de infraestrutura da Fase 2 (D022) e foi aplicado diretamente ao lugar de teste via MCP.
+
+### Técnicas extraídas e aplicadas
+- **`Lighting.Technology = Future`** — melhora sombras/qualidade geral (não consegui aplicar via MCP por restrição de segurança do Studio — precisa ser ajustado manualmente pelo usuário em Propriedades > Lighting > Technology).
+- **Ambient (tom da sombra) vs. OutdoorAmbient (luz ambiente geral)** — são duas propriedades diferentes; ajustadas para um tom levemente lavanda/quente, combinando com a identidade "mundo mágico" (D013).
+- **Atmosphere**: `Density` 0.3-0.4 (usamos 0.35), `Offset` 0, `Glare` pequeno e claro, `Haze` mais escuro — adiciona profundidade sem virar neblina.
+- **Bloom**: aumentar `Intensity` para objetos brilhantes (como os casulos de Neon) se destacarem mais — efeito bem visível no teste, o casulo protótipo ficou com brilho muito mais evidente.
+- **SunRays**: intensidade pequena, funciona melhor com `ClockTime` de fim de tarde (usamos 16 = 4pm).
+- **ColorCorrection** (criado do zero, não existe por padrão): tom de cor suave (`TintColor` levemente azulado), leve aumento de `Saturation` e `Contrast` — é o que dá o "acabamento final" da cena.
+- **Truque adicional não aplicado ainda**: randomizar texturas/cores de partes do mapa via script (pegar 3-4 IDs de textura similares, aplicar aleatoriamente nas superfícies) — dá variação orgânica ao cenário sem esforço manual repetitivo. Relevante para quando o Vale das Primeiras Luzes (região do MVP) for construído de verdade (Fase 3).
+
+### Resultado do teste
+Aplicado com sucesso via MCP (`set_properties`/`create_object`) no lugar de teste atual — confirmado visualmente por screenshot que o Bloom afeta o casulo de Neon do protótipo. O efeito completo (atmosfera, cor) só fica visível de verdade com cenário/terreno real — o baseplate cinza atual não mostra a "vibe" completa. **Vale reaplicar/ajustar esses valores quando o Vale das Primeiras Luzes tiver geometria real (Fase 3)**, não são valores finais.
+
 ## Regra geral para tutoriais futuros
 
 Quando o usuário compartilhar mais tutoriais: (1) identificar a técnica/arquitetura reutilizável, separando do conteúdo/nomes específicos; (2) checar contra o roadmap se é escopo da fase atual ou futura; (3) se futura, registrar aqui sem implementar; (4) se atual, implementar de forma mínima e testada, como já foi feito com `MimoData.luau`.

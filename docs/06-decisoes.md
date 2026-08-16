@@ -714,3 +714,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **ACHADO ADICIONAL DE SEGURANÇA**: o próprio tutorial instrui baixar um "modelo gratuito" de um servidor Discord de terceiros e importar sem inspecionar — reforça o alerta já registrado em `15-licoes-comunidade-roblox.md` sobre não confiar em modelos/scripts de terceiros sem ler o conteúdo primeiro. Regra aplicada tanto para o usuário quanto para mim neste projeto.
 - **IMPACTO**: `16-tecnicas-tutoriais-terceiros.md` expandido com a seção do tutorial de teleporte.
 - **DATA**: 2026-08-16
+
+---
+
+## D071 — Técnicas de iluminação/atmosfera aplicadas diretamente ao lugar de teste
+- **DECISÃO**: usuário compartilhou tutorial sobre configuração de `Lighting`/`Atmosphere`/`ColorCorrection` para visual mais cinematográfico. Diferente dos tutoriais anteriores (sistemas de jogo), isso é configuração de propriedades do Studio — não conflita com o escopo de infraestrutura da Fase 2 (D022) — **aplicado diretamente** ao lugar de teste via MCP (`set_properties`/`create_object`): `Ambient`/`OutdoorAmbient` em tom lavanda/quente (combina com "mundo mágico", D013), `Atmosphere` (Density 0.35, Glare/Haze leves), `Bloom` intensificado, `SunRays` com `ClockTime` de fim de tarde, `ColorCorrection` criado do zero (tint azulado suave, saturação/contraste levemente aumentados). Confirmado via screenshot que o Bloom afeta visivelmente o casulo de Neon do protótipo. `Lighting.Technology = Future` não pôde ser aplicado via MCP (restrição de segurança do Studio) — fica pendente de ajuste manual pelo usuário.
+- **MOTIVO**: técnica de baixo custo (só propriedades, não sistema novo) e diretamente alinhada com a identidade visual já definida (mundo mágico, D013; "impressionante", D031) — vale a pena aplicar cedo, diferente de sistemas de jogo que exigiriam esperar a fase certa.
+- **ALTERNATIVAS**: só documentar sem aplicar (rejeitado — configuração de propriedades é reversível e barata, sem motivo para adiar).
+- **TRADE-OFFS**: nenhum — são valores de teste, claramente marcados como "não finais", a reajustar quando houver cenário real (Fase 3).
+- **IMPACTO**: `16-tecnicas-tutoriais-terceiros.md` expandido. Lugar de teste do Studio ganhou iluminação/atmosfera ajustada. Pendência: usuário ajustar `Lighting.Technology` manualmente para `Future`.
+- **DATA**: 2026-08-16
