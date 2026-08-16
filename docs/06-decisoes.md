@@ -622,3 +622,24 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: **não bloqueia o desenvolvimento** — o fluxo via Rojo (editar arquivos localmente, sincronizar com o Studio) já funciona de ponta a ponta e é suficiente para "Claude Code escreve Luau" (a necessidade original que motivou considerar MCP). O MCP adicionaria conveniência (eu rodar comandos/ver a árvore de objetos direto), não é pré-requisito.
 - **IMPACTO**: pendência registrada — reinstalar/reiniciar o Studio por completo e tentar reconectar depois. Desenvolvimento segue via Rojo enquanto isso.
 - **DATA**: 2026-08-14
+
+---
+
+## D062 — Mini-jogo "Grow a Garden" (pausa criativa/calma) adotado na visão de arena + MCP do Roblox Studio conectado
+- **DECISÃO PARTE 1**: adotado um mini-jogo estilo Grow a Garden (plantar/cuidar de jardim, competição leve por jardim mais colorido/cooperativo "super jardim coletivo", eventos surpresa não-violentos) na mesma visão de arena/eventos já estabelecida (D047-D051) — é o contraponto calmo explícito ao ritmo de corridas/fugas/PvP, reforçando o princípio de dosagem tonal já adotado (D046) com um exemplo concreto do lado "calmo", que até agora só tinha exemplos do lado "caótico".
+- **DECISÃO PARTE 2 (muito mais importante)**: o MCP Server `robloxstudio` (Chrrxs) **conectou com sucesso nesta nova sessão** — mais de 70 ferramentas agora disponíveis (capture_screenshot, execute_luau, manage_instance, get_scene_analysis, multiplayer_playtest, get_runtime_logs, etc.). Isso resolve definitivamente a limitação registrada em D061/mensagens anteriores ("eu não vejo a tela do jogo") — agora tenho acesso direto de leitura E escrita ao Studio, não só ao sistema de arquivos via Rojo.
+- **MOTIVO**: usuário trouxe a ideia do jardim como elemento de ritmo; a conexão do MCP é resultado de reiniciar a sessão após a configuração feita anteriormente (D061), como esperado.
+- **ALTERNATIVAS**: nenhuma para a parte 1. Para a parte 2, nenhuma ação adicional necessária — a ferramenta já apareceu sozinha.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `10-gdd.md` ganha o mini-jogo do jardim na lista de exemplos de arena. **Mudança de capacidade de trabalho**: a partir de agora, posso testar/depurar diretamente no Studio (rodar Luau, tirar screenshot, inspecionar cena) em vez de depender só de o usuário reportar o que vê — muda o fluxo de trabalho da Fase 2/3 em diante.
+- **DATA**: 2026-08-14
+
+---
+
+## D063 — Primeiro dado real de validação do Core Gameplay: "toque físico com reação" preferido
+- **DECISÃO**: construído protótipo mínimo (`src/Server/PrototypeCasulos.server.luau`) com 2 dos 6 candidatos de interação central (seção 4b): "toque físico com reação" (casulo esmaga e volta ao tocar, efeito mola via TweenService) e "coleta magnética" (item voa até o jogador por proximidade). Testado ao vivo via MCP (`solo_playtest`, `eval_server_runtime`, `capture_screenshot`) — confirmado que ambos funcionam tecnicamente sem erros (coleta magnética inclusive se auto-validou, consumindo 2 casulos por proximidade antes de qualquer interação manual). Usuário testou pessoalmente com WASD e escolheu **candidato 1 (toque físico com reação)** como o que dá mais vontade de repetir.
+- **MOTIVO**: usuário expressou frustração de que a sessão estava "só teoria" sem provar diversão — esta é a primeira resposta empírica real à hipótese central do GDD (D024), obtida jogando, não discutindo.
+- **ALTERNATIVAS**: continuar testando os outros 4 candidatos (coaxar por ritmo, escavar/limpar, empurrar/rolar, arremesso preciso) antes de decidir — ainda uma opção em aberto, não descartada.
+- **TRADE-OFFS**: este foi um teste rápido (poucos toques, não as "15-20 repetições sem recompensa rara" que o critério de validação completo de D024 pede) — sinal forte, mas não necessariamente definitivo. Vale confirmar com mais repetição antes de considerar o Core Gameplay 100% validado.
+- **IMPACTO**: "toque físico com reação" (squash-and-stretch ao interagir) fica como candidato líder para o verbo central do jogo. Próxima decisão: parar por aqui e seguir com esse candidato, ou testar mais alguns antes de fechar.
+- **DATA**: 2026-08-14
