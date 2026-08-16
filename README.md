@@ -40,6 +40,7 @@ Nenhum código foi escrito, Roblox Studio ainda não foi aberto.
 | [`docs/13-backlog-ideias-futuras.md`](docs/13-backlog-ideias-futuras.md) | Backlog de ideias irreverentes/grandes (bosses, narrativa, gravidade) — não faz parte do MVP ativo |
 | [`docs/14-mecanicas-roblox-oficial.md`](docs/14-mecanicas-roblox-oficial.md) | Documentação oficial da Roblox sobre core loop, prototipagem, onboarding, economia, física/segurança |
 | [`docs/15-licoes-comunidade-roblox.md`](docs/15-licoes-comunidade-roblox.md) | Lições da comunidade de devs: erros comuns, postmortems de jogos que falharam |
+| [`docs/16-tecnicas-tutoriais-terceiros.md`](docs/16-tecnicas-tutoriais-terceiros.md) | Técnicas de arquitetura extraídas de tutoriais em vídeo (sem copiar conteúdo/assets) |
 | [`docs/12-conceitos-mimo.md`](docs/12-conceitos-mimo.md) | Fase 1.5 — 21 esboços de conceito de Mimo em 5 rodadas, avaliação e recomendação |
 
 Esta pasta funciona como GDD vivo — atualizar os arquivos conforme o projeto evolui, em vez de deixar decisões só na conversa.

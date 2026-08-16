@@ -693,3 +693,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — é estritamente uma melhoria sobre o sorteio anterior, mesma complexidade de uso.
 - **IMPACTO**: `src/Shared/MimoData.luau` criado — primeiro módulo de dados real do jogo (antes só havia scripts de protótipo). `PrototypeCasulos.server.luau` atualizado para consumir esse módulo. Base para a Fase 3 (Core Gameplay completo) já commitada.
 - **DATA**: 2026-08-16
+
+---
+
+## D069 — Tutorial de loja de crates: técnica de preview 3D registrada, loja NÃO construída (fora de escopo)
+- **DECISÃO**: usuário compartilhou um tutorial de terceiros sobre loja de "crates" (GUI, preview 3D via `ViewportFrame`, compra validada no servidor, save/load de moeda via DataStore). Avaliado: a técnica de **preview 3D de item em UI** (`ViewportFrame` + `Camera` dedicada olhando para um clone do modelo dentro do próprio viewport) é genuinamente reutilizável para o Bestiary e o momento de reveal — registrada em `16-tecnicas-tutoriais-terceiros.md` para uso na Fase 3. Os demais padrões (RemoteEvent+validação server-side, módulo de config de item, DataStore de moeda) são confirmatórios de decisões já tomadas (D005, D054) ou já superados por elas (ProfileStore > DataStore cru, D032). **A loja em si não foi construída** — pertence à Fase 5 (Economia)/Fase 7 (Monetização), fora do escopo da Fase 2 atual (D022).
+- **MOTIVO**: manter a disciplina de escopo que a própria pesquisa da comunidade (D055) identificou como decisiva para projetos solo terminarem — não adicionar sistemas de fase futura só porque uma referência ficou disponível.
+- **ALTERNATIVAS**: construir a loja completa agora, já que o tutorial fornece o caminho pronto (rejeitado — violaria D022 e repetiria o erro nº1 de "superambição" já documentado).
+- **TRADE-OFFS**: nenhum — a técnica útil (preview 3D) fica documentada e pronta para usar quando a Fase 3 chegar, sem custo de manutenção de código não utilizado agora.
+- **IMPACTO**: novo documento `16-tecnicas-tutoriais-terceiros.md`, que passa a ser o destino padrão para técnicas extraídas de tutoriais futuros que o usuário compartilhar.
+- **DATA**: 2026-08-16
