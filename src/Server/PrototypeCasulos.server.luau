@@ -76,6 +76,7 @@ local function createCasulo(position: Vector3)
 	part.Material = Enum.Material.Neon
 	part.Color = commonColor
 	part.CastShadow = false -- evita sombra "piscando" durante a animação de squash rápida
+	part.CanCollide = false -- evita empurrar/prender o personagem quando o tamanho estica rápido
 	part.Parent = Workspace
 
 	local onCooldown = false

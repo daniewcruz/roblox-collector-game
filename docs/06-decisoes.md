@@ -673,3 +673,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Padrão (gravidade em partículas de impacto) recomendado para qualquer efeito de partícula futuro no jogo.
 - **DATA**: 2026-08-14
+
+---
+
+## D067 — Personagem ficava preso/"estalava" ao explodir (CanCollide ligado no casulo)
+- **DECISÃO**: usuário esclareceu que o problema não era a partícula — era o **personagem** ficando preso no instante da explosão e "voltando rápido" (estalo). Causa: o casulo ainda tinha `CanCollide = true` (padrão de um `Part`), então quando o tamanho esticava rapidamente durante o squash (até 1.9x mais largo), a física empurrava/prendia o personagem que estava sobreposto/próximo, e o retorno elástico do tamanho gerava o "estalo" percebido. Corrigido com `part.CanCollide = false` — como a detecção já é por proximidade (`Heartbeat`, D064), não há mais necessidade de colisão sólida no casulo.
+- **MOTIVO**: bug de jogabilidade real que quebrava a sensação de reação satisfatória — o personagem sendo fisicamente empurrado durante a própria animação de feedback é o oposto de "juice" bem executado.
+- **ALTERNATIVAS**: reduzir a intensidade do squash para evitar empurrar tanto (rejeitado — perderia o impacto visual que o usuário já validou como bom em D063); manter colisão mas excluir o personagem via `CollisionGroup` (mais complexo, desnecessário já que o objeto não precisa ser sólido).
+- **TRADE-OFFS**: nenhum — o casulo nunca precisou ser um obstáculo físico.
+- **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Regra geral para a Fase 3: objetos interativos por proximidade (não por colisão física real) devem ter `CanCollide = false` por padrão.
+- **DATA**: 2026-08-14
