@@ -643,3 +643,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: este foi um teste rápido (poucos toques, não as "15-20 repetições sem recompensa rara" que o critério de validação completo de D024 pede) — sinal forte, mas não necessariamente definitivo. Vale confirmar com mais repetição antes de considerar o Core Gameplay 100% validado.
 - **IMPACTO**: "toque físico com reação" (squash-and-stretch ao interagir) fica como candidato líder para o verbo central do jogo. Próxima decisão: parar por aqui e seguir com esse candidato, ou testar mais alguns antes de fechar.
 - **DATA**: 2026-08-14
+
+---
+
+## D064 — Corrigido bug de re-trigger inconsistente no protótipo (Touched → proximidade contínua)
+- **DECISÃO**: usuário reportou que a reação do casulo "às vezes não acontecia" e parecia travada ao pular/ficar em cima dele repetidamente. Causa raiz identificada: o evento `Touched` do Roblox só dispara na **primeira entrada em contato** — se o jogador permanece tocando (ou volta rápido demais) durante o cooldown, nenhum novo evento dispara quando o cooldown termina, porque tecnicamente não houve uma "nova" entrada em contato. Corrigido trocando `Touched` por checagem de proximidade contínua via `RunService.Heartbeat` (mesmo padrão já usado no candidato "coleta magnética") — agora a reação dispara automaticamente sempre que o cooldown termina e o jogador ainda está por perto, sem exigir sair e voltar a entrar. Testado via MCP: personagem parado 5s perto do casulo, tamanho da parte oscila repetidamente e sozinho (~1 ciclo/segundo), sem erros no log do servidor.
+- **MOTIVO**: bug real de game feel — inconsistência na reação é exatamente o tipo de problema que mata a diversão de um "toque físico com reação" (que depende de feedback confiável a cada interação).
+- **ALTERNATIVAS**: manter `Touched` e resetar o debounce em `TouchEnded` (rejeitado — ainda exigiria o jogador se afastar fisicamente da parte para "resetar", o que não é natural quando o jogador pula em cima repetidamente e permanece próximo).
+- **TRADE-OFFS**: proximidade contínua é levemente mais cara em performance (roda a cada frame via Heartbeat) que um evento — irrelevante na escala de poucos casulos do protótipo/MVP, mas vale revisitar se a Fase 3 tiver centenas de casulos simultâneos no mapa.
+- **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` v3. Padrão de detecção por proximidade (não `Touched`) recomendado para a implementação real do Core Gameplay na Fase 3.
+- **DATA**: 2026-08-14
