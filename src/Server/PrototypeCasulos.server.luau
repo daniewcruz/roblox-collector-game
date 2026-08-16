@@ -11,7 +11,8 @@ local RunService = game:GetService("RunService")
 
 local RARE_CHANCE = 0.2 -- 20% de chance de ser "especial" (ajustável para teste)
 local RESPAWN_DELAY = 1.0 -- segundos até o casulo poder reagir de novo
-local TRIGGER_RADIUS = 3.5 -- distância (studs) para contar como "encostou"
+local HORIZONTAL_RADIUS = 3 -- distância lateral (studs) para contar como "encostou"
+local VERTICAL_RANGE = 6 -- diferença de altura tolerada (cobre ficar em pé em cima do casulo)
 
 local remoteFolder = ReplicatedStorage:FindFirstChild("PrototypeRemotes")
 if not remoteFolder then
@@ -73,6 +74,7 @@ local function createCasulo(position: Vector3)
 	part.Anchored = true
 	part.Material = Enum.Material.Neon
 	part.Color = commonColor
+	part.CastShadow = false -- evita sombra "piscando" durante a animação de squash rápida
 	part.Parent = Workspace
 
 	local onCooldown = false
@@ -82,14 +84,16 @@ local function createCasulo(position: Vector3)
 			return
 		end
 
-		local closestPlayer, closestDist = nil, TRIGGER_RADIUS
+		local closestPlayer, closestHorizontalDist = nil, HORIZONTAL_RADIUS
 		for _, player in Players:GetPlayers() do
 			local character = player.Character
 			local hrp = character and character:FindFirstChild("HumanoidRootPart")
 			if hrp then
-				local dist = (hrp.Position - part.Position).Magnitude
-				if dist < closestDist then
-					closestDist = dist
+				local diff = hrp.Position - part.Position
+				local horizontalDist = Vector2.new(diff.X, diff.Z).Magnitude
+				local verticalDist = math.abs(diff.Y)
+				if horizontalDist < closestHorizontalDist and verticalDist < VERTICAL_RANGE then
+					closestHorizontalDist = horizontalDist
 					closestPlayer = player
 				end
 			end

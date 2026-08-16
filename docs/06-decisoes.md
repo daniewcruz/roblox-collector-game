@@ -653,3 +653,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: proximidade contínua é levemente mais cara em performance (roda a cada frame via Heartbeat) que um evento — irrelevante na escala de poucos casulos do protótipo/MVP, mas vale revisitar se a Fase 3 tiver centenas de casulos simultâneos no mapa.
 - **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` v3. Padrão de detecção por proximidade (não `Touched`) recomendado para a implementação real do Core Gameplay na Fase 3.
 - **DATA**: 2026-08-14
+
+---
+
+## D065 — Corrigido: em pé em cima do casulo não disparava reação + sombra piscando
+- **DECISÃO**: usuário reportou dois problemas: (1) sombra da bola "sumindo" às vezes; (2) ficar em pé em cima do casulo não disparava a reação. Causa de (2): a checagem de proximidade usava distância 3D pura entre o centro do personagem (`HumanoidRootPart`) e o centro da bola — como o `HumanoidRootPart` fica bem acima dos pés do personagem, ficar em pé sobre a bola (raio 1.5) colocava o centro do personagem fora do raio de detecção de 3.5 studs. Corrigido separando a checagem em **distância horizontal** (3 studs, mantém precisão de "encostar de lado") e **distância vertical tolerada** (6 studs, cobre ficar em cima/pular por cima). Causa de (1): material Neon + tween de tamanho rápido causa "flicker" de sombra no Roblox — corrigido com `CastShadow = false` na parte (cosmético, sem impacto de jogabilidade). Testado via MCP: personagem posicionado 4 studs acima do centro da bola (simulando em pé em cima) — tamanho oscila repetidamente, confirmando a correção.
+- **MOTIVO**: bug de jogabilidade real — um jogador pulando em cima do casulo (movimento natural em qualquer jogo 3D) deveria contar como "encostar", e não contava.
+- **ALTERNATIVAS**: aumentar o raio 3D uniforme (rejeitado — deixaria o toque "de lado" impreciso demais, disparando de muito longe lateralmente).
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Padrão de distância horizontal/vertical separada recomendado para qualquer detecção de proximidade futura no jogo (Fase 3+), não só este protótipo.
+- **DATA**: 2026-08-14
