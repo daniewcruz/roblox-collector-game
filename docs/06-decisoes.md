@@ -703,3 +703,14 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum — a técnica útil (preview 3D) fica documentada e pronta para usar quando a Fase 3 chegar, sem custo de manutenção de código não utilizado agora.
 - **IMPACTO**: novo documento `16-tecnicas-tutoriais-terceiros.md`, que passa a ser o destino padrão para técnicas extraídas de tutoriais futuros que o usuário compartilhar.
 - **DATA**: 2026-08-16
+
+---
+
+## D070 — Tutorial de teleporte multi-lugar (estilo 99 Nights): UX de grupo registrada, arquitetura multi-place descartada
+- **DECISÃO**: usuário compartilhou tutorial sobre sistema de "zona de teleporte" com formação de grupo (min/máx jogadores, contagem regressiva) que usa `TeleportService` para levar o jogador a um **Place separado publicado** (arquitetura multi-lugar do Roblox, usada por jogos como 99 Nights). Avaliado: o **padrão de UX de formação de grupo** (zona detecta jogadores, UI de criar grupo com +/-, contagem regressiva, expulsão automática se não preencher) é reutilizável para os mini-jogos cooperativos da visão de arena (D047-D051) e o evento "Mimo Lendário avistado" (2d) — registrado em `16-tecnicas-tutoriais-terceiros.md` como referência de UX para a Fase 6+, não implementado agora. A **arquitetura de múltiplos Places via TeleportService não é necessária** — nossos mini-jogos cooperativos podem rodar dentro do mesmo lugar (zona/sala diferente no mesmo mapa), evitando o custo de gerenciar múltiplos Places sincronizados, mesma régua de simplicidade de D022/D044/D045.
+- **MOTIVO**: manter a mesma disciplina de extração de arquitetura sem copiar/adotar escopo desproporcional (D069).
+- **ALTERNATIVAS**: adotar a arquitetura multi-place completa (rejeitado — desproporcional ao tamanho do projeto, sem necessidade comprovada).
+- **TRADE-OFFS**: nenhum.
+- **ACHADO ADICIONAL DE SEGURANÇA**: o próprio tutorial instrui baixar um "modelo gratuito" de um servidor Discord de terceiros e importar sem inspecionar — reforça o alerta já registrado em `15-licoes-comunidade-roblox.md` sobre não confiar em modelos/scripts de terceiros sem ler o conteúdo primeiro. Regra aplicada tanto para o usuário quanto para mim neste projeto.
+- **IMPACTO**: `16-tecnicas-tutoriais-terceiros.md` expandido com a seção do tutorial de teleporte.
+- **DATA**: 2026-08-16

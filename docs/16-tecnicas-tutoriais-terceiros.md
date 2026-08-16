@@ -23,6 +23,21 @@ Tutorial sobre uma loja de "crates" com GUI, preview 3D dos itens, compra valida
 ### Por que a loja em si não foi construída agora
 O sistema de loja/moeda pertence à **Fase 5 (Economia)** e **Fase 7 (Monetização)** do roadmap — o projeto está na Fase 2 (Configuração Técnica + validação do Core Gameplay), e D022 restringe explicitamente esta fase a infraestrutura, não economia. Construir a loja agora repetiria exatamente o erro de "superambição" que a própria comunidade identificou como causa nº1 de projetos travarem (D055) — features antes do núcleo estar prontos.
 
+## De um tutorial de sistema de teleporte entre lugares (party/lobby estilo 99 Nights) (D070)
+
+Tutorial sobre um sistema de "zona de teleporte": jogador entra numa área, forma um grupo (mín/máx de jogadores), espera contagem regressiva, e é teleportado via `TeleportService` para outro **Place** publicado separadamente (arquitetura multi-lugar do Roblox).
+
+### Técnica extraída e considerada valiosa: padrão de UX de formação de grupo
+- **Como funciona**: zona/parte no mapa detecta jogadores próximos, abre uma UI de "criar grupo" com botões +/- para ajustar tamanho desejado (min/máx), contagem regressiva visível, botão de sair. Se o tempo esgotar sem preencher o grupo, expulsa os jogadores da zona automaticamente.
+- **Por que é relevante para nós**: esse padrão de UX (não a arquitetura de teleporte entre lugares) se aplica bem aos **mini-jogos cooperativos da visão de arena** (D047-D051 — corridas, fugas, PvP leve) e ao evento **"Mimo Lendário avistado"** (2d do GDD) — qualquer atividade que precise reunir um grupo antes de começar. **Fica registrado como referência de UX para quando a arena for construída (Fase 6+)**, não implementado agora.
+
+### O que NÃO é necessário para nós: arquitetura de múltiplos Places
+- O tutorial usa `TeleportService` para levar o jogador a um **Place separado publicado** (arquitetura multi-lugar) — isso exige gerenciar múltiplos Place IDs, publicar cada lugar separadamente, e é uma decisão de arquitetura de jogo inteiro (usada por jogos como 99 Nights que têm lobby + rodada como lugares distintos).
+- **Nosso MVP e mesmo a visão de arena pós-MVP não precisam disso**: os mini-jogos cooperativos podem rodar dentro do **mesmo lugar** (uma zona/sala diferente no mesmo mapa), sem o custo de manter múltiplos Places sincronizados. Isso é consistente com a régua de simplicidade já aplicada em D022/D044/D045 — não adotar arquitetura de escala de jogo grande (multi-place) sem necessidade comprovada.
+
+### ⚠️ Alerta de segurança encontrado no próprio tutorial
+O tutorial instrui baixar um "modelo gratuito" de um servidor Discord de terceiros e importar direto no jogo sem inspecionar o conteúdo. Isso é exatamente o tipo de prática que a pesquisa da comunidade já tinha sinalizado como risco (`15-licoes-comunidade-roblox.md`: "modelos gratuitos do Toolbox frequentemente contêm scripts bugados/maliciosos — inspecionar antes de usar"). **Regra reforçada para este projeto**: nunca importar modelos/scripts de terceiros sem ler o conteúdo primeiro, mesmo vindo de um criador de conteúdo aparentemente confiável — isso vale tanto para mim quanto para o usuário.
+
 ## Regra geral para tutoriais futuros
 
 Quando o usuário compartilhar mais tutoriais: (1) identificar a técnica/arquitetura reutilizável, separando do conteúdo/nomes específicos; (2) checar contra o roadmap se é escopo da fase atual ou futura; (3) se futura, registrar aqui sem implementar; (4) se atual, implementar de forma mínima e testada, como já foi feito com `MimoData.luau`.
