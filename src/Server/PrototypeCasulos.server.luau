@@ -34,14 +34,15 @@ local specialColor = Color3.fromRGB(255, 215, 60)
 local function burstParticles(part: Part)
 	local emitter = Instance.new("ParticleEmitter")
 	emitter.Texture = "rbxasset://textures/particles/sparkles_main.dds"
-	emitter.Lifetime = NumberRange.new(0.4, 0.7)
+	emitter.Lifetime = NumberRange.new(0.6, 1.0)
 	emitter.Rate = 0
 	emitter.Speed = NumberRange.new(8, 14)
 	emitter.SpreadAngle = Vector2.new(180, 180)
 	emitter.Size = NumberSequence.new(1.2, 0)
+	emitter.Acceleration = Vector3.new(0, -25, 0) -- gravidade: faz as partículas caírem em vez de flutuar
 	emitter.Parent = part
 	emitter:Emit(24)
-	task.delay(1, function()
+	task.delay(1.2, function()
 		emitter:Destroy()
 	end)
 end

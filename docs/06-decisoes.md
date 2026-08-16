@@ -663,3 +663,13 @@ Formato: DECISÃO / MOTIVO / ALTERNATIVAS / TRADE-OFFS / IMPACTO / DATA
 - **TRADE-OFFS**: nenhum.
 - **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Padrão de distância horizontal/vertical separada recomendado para qualquer detecção de proximidade futura no jogo (Fase 3+), não só este protótipo.
 - **DATA**: 2026-08-14
+
+---
+
+## D066 — Partículas ganham gravidade (caíam flutuando em vez de cair como destroço)
+- **DECISÃO**: usuário observou que a explosão de partículas ficava flutuando ao redor do personagem em vez de cair, quebrando a sensação de "destroço"/impacto físico. Corrigido adicionando `Acceleration = Vector3.new(0, -25, 0)` ao `ParticleEmitter` — as partículas agora sobem, desaceleram e caem como debris real, em vez de flutuar até sumir. Lifetime das partículas também aumentado (0.4-0.7s → 0.6-1.0s) para dar tempo de a queda ficar visível antes de desaparecer.
+- **MOTIVO**: reforça o princípio de "game feel"/juice já documentado (`14-mecanicas-roblox-oficial.md`, seção 4b do GDD) — física de partículas sem gravidade lê como "flutuante"/artificial, gravidade parcial é o que faz uma explosão parecer ter peso.
+- **ALTERNATIVAS**: nenhuma — ajuste direto de propriedade padrão do `ParticleEmitter`.
+- **TRADE-OFFS**: nenhum.
+- **IMPACTO**: `src/Server/PrototypeCasulos.server.luau` atualizado. Padrão (gravidade em partículas de impacto) recomendado para qualquer efeito de partícula futuro no jogo.
+- **DATA**: 2026-08-14
